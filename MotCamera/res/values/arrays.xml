@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="pref_camera_resolution_entries">
+        <item>@string/camera_resolution_checked</item>
+        <item>@string/camera_resolution_unchecked</item>
+    </array>
+    <string-array name="pref_checkbox_entryvalues">
+        <item>false</item>
+        <item>true</item>
+    </string-array>
+    <array name="pref_camera_effect_entries">
+        <item>@string/camera_effect_normal</item>
+        <item>@string/camera_effect_mono</item>
+        <item>@string/camera_effect_negative</item>
+        <item>@string/camera_effect_sepia</item>
+        <item>@string/camera_effect_solarize</item>
+        <item>@string/camera_effect_posterize</item>
+        <item>@string/camera_effect_whiteboard</item>
+        <item>@string/camera_effect_blackboard</item>
+        <item>@string/camera_effect_aqua</item>
+        <item>@string/camera_effect_tint_red</item>
+        <item>@string/camera_effect_tint_green</item>
+        <item>@string/camera_effect_tint_blue</item>
+    </array>
+    <string-array name="pref_camera_effect_entryvalues">
+        <item>none</item>
+        <item>mono</item>
+        <item>negative</item>
+        <item>sepia</item>
+        <item>solarize</item>
+        <item>posterize</item>
+        <item>whiteboard</item>
+        <item>blackboard</item>
+        <item>aqua</item>
+        <item>red-tint</item>
+        <item>green-tint</item>
+        <item>blue-tint</item>
+    </string-array>
+    <array name="camera_effect_icons">
+        <item>@drawable/ic_menu_effect_normal</item>
+        <item>@drawable/ic_menu_effect_mono</item>
+        <item>@drawable/ic_menu_effect_negative</item>
+        <item>@drawable/ic_menu_effect_sepia</item>
+        <item>@drawable/ic_menu_effect_solarize</item>
+        <item>@drawable/ic_menu_effect_posterize</item>
+        <item>@drawable/ic_menu_effect_whiteboard</item>
+        <item>@drawable/ic_menu_effect_blackboard</item>
+        <item>@drawable/ic_menu_effect_aqua</item>
+        <item>@drawable/ic_menu_effect_red_tint</item>
+        <item>@drawable/ic_menu_effect_green_tint</item>
+        <item>@drawable/ic_menu_effect_blue_tint</item>
+    </array>
+    <array name="pref_camera_scene_entries">
+        <item>@string/camera_scene_auto</item>
+        <item>@string/camera_scene_portrait</item>
+        <item>@string/camera_scene_landscape</item>
+        <item>@string/camera_scene_sport</item>
+        <item>@string/camera_scene_night_portrait</item>
+        <item>@string/camera_scene_sunset</item>
+        <item>@string/camera_scene_macro</item>
+        <item>@string/camera_scene_low_light</item>
+    </array>
+    <string-array name="pref_camera_scene_entryvalues">
+        <item>auto</item>
+        <item>portrait</item>
+        <item>landscape</item>
+        <item>sport</item>
+        <item>night-portrait</item>
+        <item>sunset</item>
+        <item>closeup</item>
+        <item></item>
+    </string-array>
+    <array name="camera_scene_icons">
+        <item>@drawable/ic_menu_scene_auto</item>
+        <item>@drawable/ic_menu_scene_portrait</item>
+        <item>@drawable/ic_menu_scene_landscape</item>
+        <item>@drawable/ic_menu_scene_sport</item>
+        <item>@drawable/ic_menu_scene_night</item>
+        <item>@drawable/ic_menu_scene_sunset</item>
+        <item>@drawable/ic_menu_scene_macro</item>
+        <item>@drawable/ic_menu_scene_low_light</item>
+    </array>
+    <array name="pref_camera_mode_entries">
+        <item>@string/camera_mode_singleshot</item>
+        <item>@string/camera_mode_panorama</item>
+        <item>@string/camera_mode_burst</item>
+        <item>@string/camera_mode_timer</item>
+        <item>@string/camera_mode_hdr</item>
+        <item>@string/camera_mode_wdr</item>
+    </array>
+    <string-array name="pref_camera_mode_entryvalues">
+        <item>SINGLESHOT</item>
+        <item>PANORAMA</item>
+        <item>MULTISHOT</item>
+        <item>TIMER</item>
+        <item>HDR</item>
+        <item>WDR</item>
+    </string-array>
+    <array name="camera_mode_icons">
+        <item>@drawable/ic_menu_mode_single_shot</item>
+        <item>@drawable/ic_menu_mode_panorama</item>
+        <item>@drawable/ic_menu_mode_multi_shot</item>
+        <item>@drawable/ic_menu_mode_timer</item>
+        <item>@drawable/ic_menu_mode_hdr</item>
+        <item>@drawable/ic_menu_mode_wdr</item>
+    </array>
+    <array name="pref_camera_mode_feedback_title">
+        <item>@string/dialog_placeholder_suggestions</item>
+        <item>@string/dialog_placeholder_suggestions</item>
+        <item>@string/dialog_placeholder_suggestions</item>
+        <item>@string/dialog_placeholder_suggestions</item>
+        <item>@string/dialog_hdr_title</item>
+        <item>@string/dialog_placeholder_suggestions</item>
+    </array>
+    <array name="pref_camera_mode_feedback_message">
+        <item>@string/dialog_placeholder_suggestions</item>
+        <item>@string/dialog_placeholder_suggestions</item>
+        <item>@string/dialog_placeholder_suggestions</item>
+        <item>@string/dialog_placeholder_suggestions</item>
+        <item>@string/dialog_hdr_suggestion</item>
+        <item>@string/dialog_placeholder_suggestions</item>
+    </array>
+    <string-array name="pref_camera_mode_feedback_topic_id">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item>lm-camera</item>
+        <item></item>
+    </string-array>
+    <array name="pref_camera_mode_timer_entries">
+        <item>@string/second_3</item>
+        <item>@string/second_5</item>
+        <item>@string/second_10</item>
+    </array>
+    <string-array name="pref_camera_mode_timer_entryvalues">
+        <item>3</item>
+        <item>5</item>
+        <item>10</item>
+    </string-array>
+    <array name="auto_timer_icons">
+        <item>@drawable/countdown_num_1</item>
+        <item>@drawable/countdown_num_2</item>
+        <item>@drawable/countdown_num_3</item>
+        <item>@drawable/countdown_num_4</item>
+        <item>@drawable/countdown_num_5</item>
+        <item>@drawable/countdown_num_6</item>
+        <item>@drawable/countdown_num_7</item>
+        <item>@drawable/countdown_num_8</item>
+        <item>@drawable/countdown_num_9</item>
+        <item>@drawable/countdown_num_10</item>
+    </array>
+    <array name="camera_mode_timer_icons">
+        <item>@drawable/ic_menu_time_3</item>
+        <item>@drawable/ic_menu_time_5</item>
+        <item>@drawable/ic_menu_time_10</item>
+    </array>
+    <array name="pref_camera_flash_entries">
+        <item>@string/camera_flash_off</item>
+        <item>@string/camera_flash_on</item>
+        <item>@string/camera_flash_auto</item>
+    </array>
+    <string-array name="pref_camera_flash_entryvalues">
+        <item>off</item>
+        <item>on</item>
+        <item>auto</item>
+    </string-array>
+    <array name="camera_flash_icons">
+        <item>@drawable/ic_menu_flash_off</item>
+        <item>@drawable/ic_menu_flash_on</item>
+        <item>@drawable/ic_menu_flash_auto</item>
+    </array>
+    <array name="pref_video_effect_entries">
+        <item>@string/camera_effect_normal</item>
+        <item>@string/camera_effect_mono</item>
+        <item>@string/camera_effect_negative</item>
+        <item>@string/camera_effect_sepia</item>
+        <item>@string/camera_effect_solarize</item>
+        <item>@string/camera_effect_posterize</item>
+        <item>@string/camera_effect_whiteboard</item>
+        <item>@string/camera_effect_blackboard</item>
+        <item>@string/camera_effect_aqua</item>
+        <item>@string/camera_effect_tint_red</item>
+        <item>@string/camera_effect_tint_green</item>
+        <item>@string/camera_effect_tint_blue</item>
+    </array>
+    <string-array name="pref_video_effect_entryvalues">
+        <item>none</item>
+        <item>mono</item>
+        <item>negative</item>
+        <item>sepia</item>
+        <item>solarize</item>
+        <item>posterize</item>
+        <item>whiteboard</item>
+        <item>blackboard</item>
+        <item>aqua</item>
+        <item>red-tint</item>
+        <item>green-tint</item>
+        <item>blue-tint</item>
+    </string-array>
+    <array name="video_effect_icons">
+        <item>@drawable/ic_menu_effect_normal</item>
+        <item>@drawable/ic_menu_effect_mono</item>
+        <item>@drawable/ic_menu_effect_negative</item>
+        <item>@drawable/ic_menu_effect_sepia</item>
+        <item>@drawable/ic_menu_effect_solarize</item>
+        <item>@drawable/ic_menu_effect_posterize</item>
+        <item>@drawable/ic_menu_effect_whiteboard</item>
+        <item>@drawable/ic_menu_effect_blackboard</item>
+        <item>@drawable/ic_menu_effect_aqua</item>
+        <item>@drawable/ic_menu_effect_red_tint</item>
+        <item>@drawable/ic_menu_effect_green_tint</item>
+        <item>@drawable/ic_menu_effect_blue_tint</item>
+    </array>
+    <array name="pref_video_scene_entries">
+        <item>@string/video_scene_stereo</item>
+        <item>@string/video_scene_wind</item>
+        <item>@string/video_scene_concert</item>
+        <item>@string/video_scene_balanced</item>
+        <item>@string/video_scene_front</item>
+    </array>
+    <string-array name="pref_video_scene_entryvalues">
+        <item>Off</item>
+        <item>Outdoor</item>
+        <item>Concert</item>
+        <item>Narrative</item>
+        <item>Subject</item>
+    </string-array>
+    <array name="video_scene_icons">
+        <item>@drawable/ic_menu_audio_stereo</item>
+        <item>@drawable/ic_menu_audio_wind_reduction</item>
+        <item>@drawable/ic_menu_audio_concert</item>
+        <item>@drawable/ic_menu_audio_balanced</item>
+        <item>@drawable/ic_menu_audio_front_facing</item>
+    </array>
+    <array name="pref_video_mode_entries">
+        <item>@string/video_mode_normal</item>
+        <item>@string/video_mode_slow_motion</item>
+        <item>@string/video_mode_time_lapse</item>
+    </array>
+    <string-array name="pref_video_mode_entryvalues">
+        <item>CAMCORDER</item>
+        <item>SLOW_MOTION</item>
+        <item>TIMELAPSE</item>
+    </string-array>
+    <array name="video_mode_icons">
+        <item>@drawable/ic_menu_mode_video</item>
+        <item>@drawable/ic_menu_mode_video_slow_motion</item>
+        <item>@drawable/ic_menu_mode_timelapse</item>
+    </array>
+    <array name="video_mode_timelapse_icons">
+        <item>@drawable/ic_timelapse_1</item>
+        <item>@drawable/ic_timelapse_5</item>
+        <item>@drawable/ic_timelapse_10</item>
+    </array>
+    <array name="pref_video_mode_timelapse_entries">
+        <item>@string/second_1</item>
+        <item>@string/second_5</item>
+        <item>@string/second_10</item>
+    </array>
+    <string-array name="pref_video_mode_timelapse_entryvalues">
+        <item>1</item>
+        <item>5</item>
+        <item>10</item>
+    </string-array>
+    <array name="pref_video_flash_entries">
+        <item>@string/video_flash_off</item>
+        <item>@string/video_flash_on</item>
+    </array>
+    <string-array name="pref_video_flash_entryvalues">
+        <item>off</item>
+        <item>torch</item>
+    </string-array>
+    <array name="video_flash_icons">
+        <item>@drawable/ic_menu_light_off</item>
+        <item>@drawable/ic_menu_light_on</item>
+    </array>
+    <array name="pref_video_resolution_entries">
+        <item>@string/video_res_1080p</item>
+        <item>@string/video_res_720p</item>
+        <item>@string/video_res_480p</item>
+        <item>@string/video_res_vga</item>
+        <item>@string/video_res_qvga</item>
+    </array>
+    <string-array name="pref_video_resolution_entryvalues">
+        <item>1080p</item>
+        <item>720p</item>
+        <item>480p</item>
+        <item>vga</item>
+        <item>qvga</item>
+    </string-array>
+    <array name="video_resolution_onscreen_entries">
+        <item>@string/video_res_onscreen_1080p</item>
+        <item>@string/video_res_onscreen_720p</item>
+        <item>@string/video_res_onscreen_480p</item>
+        <item>@string/video_res_onscreen_cif</item>
+        <item>@string/video_res_onscreen_high</item>
+        <item>@string/video_res_onscreen_low</item>
+        <item>@string/video_res_onscreen_vga</item>
+        <item>@string/video_res_onscreen_qcif</item>
+        <item>@string/video_res_onscreen_qvga</item>
+        <item>@string/video_res_onscreen_qvga</item>
+    </array>
+    <string-array name="video_resolution_onscreen_entryvalues">
+        <item>1080p</item>
+        <item>720p</item>
+        <item>480p</item>
+        <item>cif</item>
+        <item>high</item>
+        <item>low</item>
+        <item>vga</item>
+        <item>qcif</item>
+        <item>qvga</item>
+        <item>mms</item>
+    </string-array>
+    <array name="pref_vol_func_entries">
+        <item>@string/volume_function_zoom</item>
+        <item>@string/volume_function_capture</item>
+    </array>
+    <string-array name="pref_vol_func_entryvalues">
+        <item>zoom</item>
+        <item>capture</item>
+    </string-array>
+    <array name="pref_instant_on_func_entries">
+        <item>@string/instant_on_function_single_press</item>
+        <item>@string/instant_on_function_press_hold</item>
+    </array>
+    <string-array name="pref_instant_on_func_entryvalues">
+        <item>single_press</item>
+        <item>press_hold</item>
+    </string-array>
+    <array name="pref_storage_location_entries">
+        <item>@string/storage_location_internal</item>
+        <item>@string/storage_location_external</item>
+    </array>
+    <string-array name="pref_storage_location_entryvalues">
+        <item>internal</item>
+        <item>external</item>
+    </string-array>
+</resources>

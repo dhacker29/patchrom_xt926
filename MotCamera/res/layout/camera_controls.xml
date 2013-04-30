@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.motorola.camera.ui.v2.RotateLayout android:id="@id/rotate" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/controls" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <include layout="@layout/storage_progress_layout" />
+        <include layout="@layout/capture_cluster" />
+        <com.motorola.camera.ui.v2.CaptureButton android:gravity="fill" android:id="@id/capture" android:background="@drawable/ic_capture_button_bg" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/capture_cluster_right_offset" android:src="@drawable/ic_capture_button" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:soundEffectsEnabled="false" android:contentDescription="@string/accessibility_capture" />
+        <com.motorola.camera.ui.v2.RotateImageView android:id="@id/autotimer_count" android:background="@drawable/countdown_frame" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="16.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        <include layout="@layout/toolbar" />
+        <com.motorola.camera.ui.v2.RotateImageView android:id="@id/thumbnail" android:padding="@dimen/thumbnail_margin" android:layout_width="@dimen/thumbnail_side_length" android:layout_height="@dimen/thumbnail_side_length" android:src="@drawable/thumbnail" android:scaleType="centerInside" />
+        <RelativeLayout android:id="@id/infobarContainer" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="8.0dip" android:layout_toRightOf="@id/thumbnail">
+            <include android:id="@id/infobar" layout="@layout/infobarlayout" />
+        </RelativeLayout>
+        <com.motorola.camera.ui.v2.RotateLayout android:id="@id/icszoomslider_container" android:layout_width="202.0dip" android:layout_height="202.0dip" android:layout_below="@id/thumbnail">
+            <com.motorola.camera.ui.v2.widgets.ZoomControlBar android:id="@id/icszoomslider" android:paddingLeft="20.0dip" android:paddingTop="5.0dip" android:paddingRight="20.0dip" android:paddingBottom="5.0dip" android:layout_width="74.0dip" android:layout_height="fill_parent">
+                <com.motorola.camera.ui.v2.widgets.SliderBarWidget android:id="@id/slider_bar" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            </com.motorola.camera.ui.v2.widgets.ZoomControlBar>
+        </com.motorola.camera.ui.v2.RotateLayout>
+        <include layout="@layout/panorama_controls" />
+        <include layout="@layout/panorama_saving_layout" />
+        <FrameLayout android:id="@id/video_snapshot_border" android:background="@drawable/ic_snapshot_border" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </RelativeLayout>
+</com.motorola.camera.ui.v2.RotateLayout>

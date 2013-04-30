@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="setting_inactivity_timeout_value">120000</integer>
+    <integer name="dialog_num_columns">3</integer>
+    <integer name="thumbnail_transition">500</integer>
+</resources>

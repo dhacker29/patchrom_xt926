@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/pano_saving_layout" android:background="#ff000000" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/pano_saving_preview_image" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitCenter" />
+    <com.motorola.camera.ui.v2.RotateLayout android:id="@id/pano_saving_progress_bar_layout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip">
+        <com.motorola.camera.ui.v2.widgets.PanoProgressBar android:id="@id/pano_saving_progress_bar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_pan_progression" />
+    </com.motorola.camera.ui.v2.RotateLayout>
+    <com.motorola.camera.ui.v2.RotateLayout android:id="@id/pano_saving_msg_layout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="0.0dip">
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:textColor="@android:color/white" android:id="@id/pano_saving_msg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/dialog_panorama_saving_msg" android:shadowColor="#bb000000" android:shadowRadius="2.75" />
+    </com.motorola.camera.ui.v2.RotateLayout>
+</RelativeLayout>

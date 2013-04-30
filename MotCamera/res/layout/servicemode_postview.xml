@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.motorola.camera.ui.v2.RotateLayout android:id="@id/picture_service" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:id="@id/postcaptureimg" android:background="#ff000000" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="#ff000000" />
+        <LinearLayout android:id="@id/bottombar" android:background="@drawable/action_bar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignBottom="@id/postcaptureimg" android:layout_alignParentBottom="true">
+            <ImageButton android:id="@id/takenewphoto" android:nextFocusLeft="@id/cancelphoto" android:nextFocusRight="@id/selectphoto" android:nextFocusUp="@id/cancelphoto" android:nextFocusDown="@id/selectphoto" android:src="@drawable/ic_camera" style="@style/OnScreenActionIcon" />
+            <ImageView android:id="@id/postCaptureVerticalDivider10" android:background="@drawable/divider_vertical_actionmenu" android:layout_width="2.0dip" android:layout_height="fill_parent" android:layout_weight="0.0" />
+            <ImageButton android:id="@id/selectphoto" android:nextFocusLeft="@id/takenewphoto" android:nextFocusRight="@id/cancelphoto" android:nextFocusUp="@id/takenewphoto" android:nextFocusDown="@id/cancelphoto" android:src="@drawable/ic_done" style="@style/OnScreenActionIcon" />
+            <ImageView android:id="@id/postCaptureVerticalDivider11" android:background="@drawable/divider_vertical_actionmenu" android:layout_width="2.0dip" android:layout_height="fill_parent" android:layout_weight="0.0" />
+            <ImageButton android:id="@id/cancelphoto" android:nextFocusLeft="@id/selectphoto" android:nextFocusRight="@id/takenewphoto" android:nextFocusUp="@id/selectphoto" android:nextFocusDown="@id/takenewphoto" android:src="@drawable/ic_cancel" style="@style/OnScreenActionIcon" />
+        </LinearLayout>
+        <ImageButton android:id="@id/play" android:background="@android:color/transparent" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/btn_play" android:layout_centerInParent="true" />
+    </RelativeLayout>
+</com.motorola.camera.ui.v2.RotateLayout>

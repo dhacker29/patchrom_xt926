@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:camera="http://schemas.android.com/apk/res/com.motorola.camera">
+    <item android:drawable="@drawable/ic_cam_shutter" camera:mode="SINGLESHOT" />
+    <item android:drawable="@drawable/ic_cam_shutter" camera:mode="MULTISHOT" />
+    <item android:drawable="@drawable/ic_cam_stop_recording" camera:mode="CAMCORDER" />
+    <item android:drawable="@drawable/ic_cam_shutter" />
+</selector>

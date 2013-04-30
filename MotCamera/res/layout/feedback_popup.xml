@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.motorola.camera.ui.v2.UserFeedbackPopup style="@style/SettingPopupWindow"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:background="@drawable/popup_bubble" android:layout_width="@dimen/setting_popup_window_width" android:layout_height="wrap_content">
+        <FrameLayout android:id="@id/titleContainer" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/popup_title_frame_min_height">
+            <TextView android:id="@id/title" style="@style/PopupTitleText" />
+        </FrameLayout>
+        <ScrollView android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginTop="8.0dip" android:layout_marginRight="8.0dip" android:layout_marginBottom="8.0dip">
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:id="@id/text" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@android:style/TextAppearance.Medium" />
+                <CheckBox android:id="@id/checkbox" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/checkbox_do_not_show" />
+            </LinearLayout>
+        </ScrollView>
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:divider="?android:dividerHorizontal" android:minHeight="@dimen/alert_dialog_button_bar_height" android:showDividers="beginning" android:dividerPadding="0.0dip">
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:divider="?android:dividerVertical" android:measureWithLargestChild="true" android:showDividers="middle" android:dividerPadding="0.0dip">
+                <Button android:textSize="14.0sp" android:layout_gravity="left" android:id="@id/negativeButton" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="wrap_content" android:minHeight="@dimen/alert_dialog_button_bar_height" android:text="@string/dialog_learn_more" android:maxLines="2" android:layout_weight="1.0" style="@android:style/Widget.Holo.Button.Borderless" />
+                <Button android:textSize="14.0sp" android:layout_gravity="right" android:id="@id/positiveButton" android:layout_width="0.0dip" android:layout_height="wrap_content" android:minHeight="@dimen/alert_dialog_button_bar_height" android:text="@string/dialog_ok" android:maxLines="2" android:layout_weight="1.0" style="@android:style/Widget.Holo.Button.Borderless" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</com.motorola.camera.ui.v2.UserFeedbackPopup>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.motorola.camera.ui.v2.InLineSettingSpinner android:id="@id/setting_item" style="@style/OtherSettingRow"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:id="@id/title" style="@style/OtherSettingItemTitle" />
+    <TextView android:id="@id/summary" android:layout_width="fill_parent" style="@style/OtherSettingItemSummary" />
+    <TextView android:id="@id/subSummary" android:visibility="gone" android:layout_width="fill_parent" style="@style/OtherSettingItemSummary" />
+</com.motorola.camera.ui.v2.InLineSettingSpinner>

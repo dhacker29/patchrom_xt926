@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="disabled">#ff575757</color>
+    <color name="popup_background">#ff282828</color>
+    <color name="popup_title_color">#ff33b5e5</color>
+    <color name="progress_bar_background_start_color">#ff9d9e9d</color>
+    <color name="progress_bar_background_center_color">#ff5a5d5a</color>
+    <color name="progress_bar_background_end_color">#ff747674</color>
+    <color name="pano_progress_indication">#ff0099cc</color>
+    <color name="pano_progress_indication_fast">#ffff2222</color>
+    <color name="pano_progress_empty">#ff2e2e2e</color>
+    <color name="pano_progress_done">#ff33525e</color>
+</resources>

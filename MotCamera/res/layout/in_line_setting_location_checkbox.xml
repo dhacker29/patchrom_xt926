@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.motorola.camera.ui.v2.LocationSettingItem android:id="@id/setting_item" style="@style/OtherSettingRow"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <CheckBox android:id="@id/checkbox" android:focusable="false" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        <TextView android:id="@id/title" android:layout_toLeftOf="@id/checkbox" style="@style/OtherSettingItemTitle" />
+        <TextView android:id="@id/summary" android:layout_toLeftOf="@id/checkbox" android:layout_below="@id/title" style="@style/OtherSettingItemSummary" />
+    </RelativeLayout>
+</com.motorola.camera.ui.v2.LocationSettingItem>

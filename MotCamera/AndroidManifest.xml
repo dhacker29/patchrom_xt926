@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:sharedUserId="com.motorola.camera" android:versionCode="16" android:versionName="4.1.2-6" package="com.motorola.camera"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="15" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="com.motorola.messaging.permission.MESSAGE_SETTINGS_PROVIDER" />
+    <application android:theme="@style/CameraAppTheme" android:label="@string/act_name_camera" android:icon="@drawable/ic_launcher_camera" android:name=".CameraApp" android:hardwareAccelerated="true">
+        <uses-library android:name="com.motorola.android.storage" android:required="false" />
+        <uses-library android:name="com.motorola.blur.library.apputils" android:required="false" />
+        <uses-library android:name="com.motorola.blur.library.serviceutils" android:required="false" />
+        <uses-library android:name="com.motorola.frameworks.core.checkin" android:required="false" />
+        <uses-library android:name="com.motorola.frameworks.core.addon" android:required="false" />
+        <receiver android:name=".CameraButtonIntentReceiver" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.CAMERA_BUTTON" />
+                <action android:name="android.intent.action.CAMERA_BUTTON_INSTANT_ON" />
+                <action android:name="motorola.camera.intent.action.START" />
+            </intent-filter>
+        </receiver>
+        <activity android:label="@string/act_name_camera" android:icon="@drawable/ic_launcher_camera" android:name=".Camera" android:exported="true" android:clearTaskOnLaunch="true" android:launchMode="singleTop" android:screenOrientation="nosensor" android:configChanges="keyboardHidden|orientation|screenSize" android:windowSoftInputMode="stateAlwaysHidden|adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.media.action.IMAGE_CAPTURE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.media.action.STILL_IMAGE_CAMERA" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.motorola.activity.AnimInLaunchDisabled" android:value="true" />
+        </activity>
+        <activity-alias android:label="@string/act_name_camcorder" android:icon="@drawable/ic_launcher_camera" android:name="com.motorola.camcorder" android:enabled="true" android:exported="true" android:targetActivity=".Camera">
+            <intent-filter>
+                <action android:name="android.media.action.VIDEO_CAMERA" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.media.action.VIDEO_CAPTURE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.motorola.activity.AnimInLaunchDisabled" android:value="true" />
+        </activity-alias>
+        <activity android:name=".PostProcessing" android:exported="false" android:excludeFromRecents="true" android:screenOrientation="sensor" android:configChanges="keyboardHidden" android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+        <service android:name="com.motorola.camera.saving.SaveImageService" android:exported="false">
+            <intent-filter>
+                <action android:name="com.motorola.camera.SaveImageService" />
+            </intent-filter>
+        </service>
+    </application>
+</manifest>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="horizontal" android:paddingLeft="5.0dip" android:paddingRight="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textColor="@android:color/white" android:id="@id/exposureText" android:paddingBottom="2.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" />
+    <com.motorola.camera.ui.v2.RotateLayout android:id="@id/sliderContainer" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="30.0dip" android:layout_marginRight="30.0dip" android:layout_below="@id/exposureText">
+        <com.motorola.camera.ui.v2.widgets.SliderBarWidget android:id="@id/slider" android:layout_width="28.0dip" android:layout_height="wrap_content" />
+    </com.motorola.camera.ui.v2.RotateLayout>
+    <ImageView android:id="@id/exposureLow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_menu_brightness_low" android:layout_below="@id/exposureText" android:layout_alignParentLeft="true" />
+    <ImageView android:id="@id/exposureCenter" android:paddingRight="1.0dip" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/ic_pano_arrow_up_white" android:layout_below="@id/sliderContainer" android:layout_centerHorizontal="true" />
+    <ImageView android:id="@id/exposureHigh" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_menu_brightness_high" android:layout_below="@id/exposureText" android:layout_alignParentRight="true" />
+</RelativeLayout>
