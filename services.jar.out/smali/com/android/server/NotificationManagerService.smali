@@ -9,7 +9,8 @@
         Lcom/android/server/NotificationManagerService$WorkerHandler;,
         Lcom/android/server/NotificationManagerService$SettingsObserver;,
         Lcom/android/server/NotificationManagerService$ToastRecord;,
-        Lcom/android/server/NotificationManagerService$NotificationRecord;
+        Lcom/android/server/NotificationManagerService$NotificationRecord;,
+        Lcom/android/server/NotificationManagerService$Injector;
     }
 .end annotation
 
@@ -2201,6 +2202,9 @@
 
 .method private updateLightsLocked()V
     .locals 6
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_CODE:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
 
     .prologue
     .line 1370
@@ -2294,22 +2298,37 @@
 
     if-eqz v4, :cond_4
 
-    .line 1386
     iget v0, p0, Lcom/android/server/NotificationManagerService;->mDefaultNotificationColor:I
 
-    .line 1387
     iget v2, p0, Lcom/android/server/NotificationManagerService;->mDefaultNotificationLedOn:I
 
-    .line 1388
     iget v1, p0, Lcom/android/server/NotificationManagerService;->mDefaultNotificationLedOff:I
 
-    .line 1390
+    invoke-static {p0}, Lcom/android/server/NotificationManagerService$Injector;->updateNotificationLight(Lcom/android/server/NotificationManagerService;)V
+
+    iget-object v4, p0, Lcom/android/server/NotificationManagerService;->mLedNotification:Lcom/android/server/NotificationManagerService$NotificationRecord;
+
+    iget-object v4, v4, Lcom/android/server/NotificationManagerService$NotificationRecord;->notification:Landroid/app/Notification;
+
+    iget v0, v4, Landroid/app/Notification;->ledARGB:I
+
+    iget-object v4, p0, Lcom/android/server/NotificationManagerService;->mLedNotification:Lcom/android/server/NotificationManagerService$NotificationRecord;
+
+    iget-object v4, v4, Lcom/android/server/NotificationManagerService$NotificationRecord;->notification:Landroid/app/Notification;
+
+    iget v2, v4, Landroid/app/Notification;->ledOnMS:I
+
+    iget-object v4, p0, Lcom/android/server/NotificationManagerService;->mLedNotification:Lcom/android/server/NotificationManagerService$NotificationRecord;
+
+    iget-object v4, v4, Lcom/android/server/NotificationManagerService$NotificationRecord;->notification:Landroid/app/Notification;
+
+    iget v1, v4, Landroid/app/Notification;->ledOffMS:I
+
     :cond_4
     iget-boolean v4, p0, Lcom/android/server/NotificationManagerService;->mNotificationPulseEnabled:Z
 
     if-eqz v4, :cond_2
 
-    .line 1392
     iget-object v4, p0, Lcom/android/server/NotificationManagerService;->mNotificationLight:Lcom/android/server/LightsService$Light;
 
     const/4 v5, 0x1
@@ -5328,6 +5347,30 @@
     throw v13
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_0
+.end method
+
+.method getDefaultNotificationColor()I
+    .locals 1
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
+
+    .prologue
+    iget v0, p0, Lcom/android/server/NotificationManagerService;->mDefaultNotificationColor:I
+
+    return v0
+.end method
+
+.method getLedNotification()Lcom/android/server/NotificationManagerService$NotificationRecord;
+    .locals 1
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
+
+    .prologue
+    iget-object v0, p0, Lcom/android/server/NotificationManagerService;->mLedNotification:Lcom/android/server/NotificationManagerService$NotificationRecord;
+
+    return-object v0
 .end method
 
 .method public setNotificationsEnabledForPackage(Ljava/lang/String;Z)V

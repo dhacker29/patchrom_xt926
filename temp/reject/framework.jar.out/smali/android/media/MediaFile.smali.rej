@@ -1,0 +1,53 @@
+*** MediaFile.smali	2013-04-30 04:50:55.243191000 -0500
+--- MediaFile.smali	2013-04-30 04:53:21.131191000 -0500
+***************
+*** 105,110 ****
+  
+  .field private static final FIRST_DRM_FILE_TYPE:I = 0x33
+  
+  .field private static final FIRST_IMAGE_FILE_TYPE:I = 0x1f
+  
+  .field private static final FIRST_MIDI_FILE_TYPE:I = 0xb
+--- 108,115 ----
+  
+  .field private static final FIRST_DRM_FILE_TYPE:I = 0x33
+  
++ .field private static final FIRST_FFMPEG_AUDIO_FILE_TYPE:I = 0x3e9
++ 
+  .field private static final FIRST_IMAGE_FILE_TYPE:I = 0x1f
+  
+  .field private static final FIRST_MIDI_FILE_TYPE:I = 0xb
+***************
+*** 119,124 ****
+  
+  .field private static final LAST_DRM_FILE_TYPE:I = 0x33
+  
+  .field private static final LAST_IMAGE_FILE_TYPE:I = 0x24
+  
+  .field private static final LAST_MIDI_FILE_TYPE:I = 0xd
+--- 124,131 ----
+  
+  .field private static final LAST_DRM_FILE_TYPE:I = 0x33
+  
++ .field private static final LAST_FFMPEG_AUDIO_FILE_TYPE:I = 0x3e9
++ 
+  .field private static final LAST_IMAGE_FILE_TYPE:I = 0x24
+  
+  .field private static final LAST_MIDI_FILE_TYPE:I = 0xd
+***************
+*** 406,411 ****
+  
+      invoke-static {v0, v4, v1}, Landroid/media/MediaFile;->addFileType(Ljava/lang/String;ILjava/lang/String;)V
+  
+      const-string v0, "MPEG"
+  
+      const-string v1, "video/mpeg"
+--- 413,420 ----
+  
+      invoke-static {v0, v4, v1}, Landroid/media/MediaFile;->addFileType(Ljava/lang/String;ILjava/lang/String;)V
+  
++     invoke-static {}, Landroid/media/MediaFile$Injector;->addAPE()V
++ 
+      const-string v0, "MPEG"
+  
+      const-string v1, "video/mpeg"

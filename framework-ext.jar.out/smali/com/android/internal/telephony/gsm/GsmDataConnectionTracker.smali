@@ -4163,6 +4163,9 @@
 .method private isDataAllowed(Lcom/android/internal/telephony/ApnContext;)Z
     .locals 1
     .parameter "apnContext"
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_CODE:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
 
     .prologue
     .line 725
@@ -4172,7 +4175,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {p0}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->isDataAllowed()Z
+    invoke-static {p0, p1}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$Injector;->isDataAllowed(Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;Lcom/android/internal/telephony/ApnContext;)Z
 
     move-result v0
 
@@ -10425,6 +10428,9 @@
 
 .method public getAnyDataEnabled()Z
     .locals 5
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_CODE:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
 
     .prologue
     const/4 v2, 0x0
@@ -10584,6 +10590,18 @@
     const/4 v0, 0x0
 
     goto :goto_0
+.end method
+
+.method getInternalDataEnabled()Z
+    .locals 1
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
+
+    .prologue
+    iget-boolean v0, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->mInternalDataEnabled:Z
+
+    return v0
 .end method
 
 .method protected getLinkCapabilities(Ljava/lang/String;)Landroid/net/LinkCapabilities;
@@ -10974,6 +10992,18 @@
     move-result-object v0
 
     return-object v0
+.end method
+
+.method getUserDataEnabled()Z
+    .locals 1
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
+
+    .prologue
+    iget-boolean v0, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->mUserDataEnabled:Z
+
+    return v0
 .end method
 
 .method protected gotoIdleAndNotifyDataConnection(Ljava/lang/String;)V
@@ -13391,6 +13421,9 @@
 .method protected onDataSetupComplete(Landroid/os/AsyncResult;)V
     .locals 21
     .parameter "ar"
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_CODE:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
 
     .prologue
     .line 2550
@@ -14383,6 +14416,9 @@
     .locals 6
     .parameter "connId"
     .parameter "ar"
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_CODE:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
 
     .prologue
     const/4 v5, 0x0

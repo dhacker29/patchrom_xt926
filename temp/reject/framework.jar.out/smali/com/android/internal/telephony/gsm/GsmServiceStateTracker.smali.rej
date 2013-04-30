@@ -1,0 +1,78 @@
+*** GsmServiceStateTracker.smali	2013-04-30 04:51:45.507191000 -0500
+--- GsmServiceStateTracker.smali	2013-04-30 04:54:12.423191000 -0500
+***************
+*** 6,12 ****
+  # annotations
+  .annotation system Ldalvik/annotation/MemberClasses;
+      value = {
+!         Lcom/android/internal/telephony/gsm/GsmServiceStateTracker$4;
+      }
+  .end annotation
+  
+--- 6,13 ----
+  # annotations
+  .annotation system Ldalvik/annotation/MemberClasses;
+      value = {
+!         Lcom/android/internal/telephony/gsm/GsmServiceStateTracker$4;,
+!         Lcom/android/internal/telephony/gsm/GsmServiceStateTracker$Injector;
+      }
+  .end annotation
+  
+***************
+*** 1623,1628 ****
+  
+  .method private pollStateDone()V
+      .locals 38
+  
+      .prologue
+      new-instance v34, Ljava/lang/StringBuilder;
+--- 1624,1632 ----
+  
+  .method private pollStateDone()V
+      .locals 38
++     .annotation build Landroid/annotation/MiuiHook;
++         value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_CODE:Landroid/annotation/MiuiHook$MiuiHookType;
++     .end annotation
+  
+      .prologue
+      new-instance v34, Ljava/lang/StringBuilder;
+***************
+*** 2549,2555 ****
+  
+      invoke-virtual {v0, v1, v2}, Lcom/android/internal/telephony/gsm/GSMPhone;->setSystemProperty(Ljava/lang/String;Ljava/lang/String;)V
+  
+!     if-nez v24, :cond_18
+  
+      const-string v34, "operatorNumeric is null"
+  
+--- 2553,2563 ----
+  
+      invoke-virtual {v0, v1, v2}, Lcom/android/internal/telephony/gsm/GSMPhone;->setSystemProperty(Ljava/lang/String;Ljava/lang/String;)V
+  
+!     invoke-static/range {v24 .. v24}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+! 
+!     move-result v34
+! 
+!     if-eqz v34, :cond_18
+  
+      const-string v34, "operatorNumeric is null"
+  
+***************
+*** 8016,8021 ****
+  
+      invoke-virtual {v8}, Landroid/telephony/ServiceState;->getOperatorAlphaLong()Ljava/lang/String;
+  
+      move-result-object v1
+  
+      .local v1, plmn:Ljava/lang/String;
+--- 8031,8040 ----
+  
+      invoke-virtual {v8}, Landroid/telephony/ServiceState;->getOperatorAlphaLong()Ljava/lang/String;
+  
++     move-result-object v8
++ 
++     invoke-static {p0, v8}, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker$Injector;->getPlmn(Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;Ljava/lang/String;)Ljava/lang/String;
++ 
+      move-result-object v1
+  
+      .local v1, plmn:Ljava/lang/String;

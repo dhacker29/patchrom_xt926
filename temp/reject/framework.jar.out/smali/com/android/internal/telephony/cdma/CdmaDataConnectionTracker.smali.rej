@@ -1,0 +1,19 @@
+*** CdmaDataConnectionTracker.smali	2013-04-30 04:51:41.079191000 -0500
+--- CdmaDataConnectionTracker.smali	2013-04-30 04:54:08.159191000 -0500
+***************
+*** 3173,3178 ****
+  
+      if-eqz v3, :cond_1
+  
+      invoke-direct {p0, v1}, Lcom/android/internal/telephony/cdma/CdmaDataConnectionTracker;->notifyDefaultData(Ljava/lang/String;)V
+  
+      :goto_0
+--- 3219,3226 ----
+  
+      if-eqz v3, :cond_1
+  
++     invoke-static {p0}, Lcom/android/internal/telephony/cdma/CdmaDataConnectionTracker$Injector;->onDataSetupComplete(Lcom/android/internal/telephony/cdma/CdmaDataConnectionTracker;)V
++ 
+      invoke-direct {p0, v1}, Lcom/android/internal/telephony/cdma/CdmaDataConnectionTracker;->notifyDefaultData(Ljava/lang/String;)V
+  
+      :goto_0

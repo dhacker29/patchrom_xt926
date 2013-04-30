@@ -6,7 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/server/pm/ShutdownThread$CloseDialogReceiver;
+        Lcom/android/server/pm/ShutdownThread$CloseDialogReceiver;,
+        Lcom/android/server/pm/ShutdownThread$Injector;
     }
 .end annotation
 
@@ -151,6 +152,9 @@
 .method private static beginShutdownSequence(Landroid/content/Context;)V
     .locals 7
     .parameter "context"
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_CODE:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
 
     .prologue
     const/4 v5, 0x1
@@ -241,15 +245,12 @@
 
     invoke-virtual {v2, v3}, Landroid/view/Window;->setType(I)V
 
-    .line 245
-    invoke-virtual {v1}, Landroid/app/ProgressDialog;->show()V
+    invoke-static {p0}, Lcom/android/server/pm/ShutdownThread$Injector;->createShutDownDialog(Landroid/content/Context;)V
 
-    .line 247
     sget-object v2, Lcom/android/server/pm/ShutdownThread;->sInstance:Lcom/android/server/pm/ShutdownThread;
 
     iput-object p0, v2, Lcom/android/server/pm/ShutdownThread;->mContext:Landroid/content/Context;
 
-    .line 248
     sget-object v3, Lcom/android/server/pm/ShutdownThread;->sInstance:Lcom/android/server/pm/ShutdownThread;
 
     const-string v2, "power"
@@ -425,6 +426,42 @@
     iput-object v6, v2, Lcom/android/server/pm/ShutdownThread;->mScreenWakeLock:Landroid/os/PowerManager$WakeLock;
 
     goto :goto_2
+.end method
+
+.method static getIsStarted()Z
+    .locals 1
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
+
+    .prologue
+    sget-boolean v0, Lcom/android/server/pm/ShutdownThread;->sIsStarted:Z
+
+    return v0
+.end method
+
+.method static getIsStartedGuard()Ljava/lang/Object;
+    .locals 1
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
+
+    .prologue
+    sget-object v0, Lcom/android/server/pm/ShutdownThread;->sIsStartedGuard:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method static getReboot()Z
+    .locals 1
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
+
+    .prologue
+    sget-boolean v0, Lcom/android/server/pm/ShutdownThread;->mReboot:Z
+
+    return v0
 .end method
 
 .method public static reboot(Landroid/content/Context;Ljava/lang/String;Z)V
@@ -630,25 +667,51 @@
     .locals 1
     .parameter "context"
     .parameter "confirm"
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_CODE:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
 
     .prologue
     const/4 v0, 0x1
 
-    .line 219
     sput-boolean v0, Lcom/android/server/pm/ShutdownThread;->mReboot:Z
 
-    .line 220
+    const/4 v0, 0x0
+
     sput-boolean v0, Lcom/android/server/pm/ShutdownThread;->mRebootSafeMode:Z
 
-    .line 221
     const/4 v0, 0x0
 
     sput-object v0, Lcom/android/server/pm/ShutdownThread;->mRebootReason:Ljava/lang/String;
 
-    .line 222
     invoke-static {p0, p1}, Lcom/android/server/pm/ShutdownThread;->shutdownInner(Landroid/content/Context;Z)V
 
-    .line 223
+    return-void
+.end method
+
+.method static setReboot(Z)V
+    .locals 0
+    .parameter "value"
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
+
+    .prologue
+    sput-boolean p0, Lcom/android/server/pm/ShutdownThread;->mReboot:Z
+
+    return-void
+.end method
+
+.method static setRebootReason(Ljava/lang/String;)V
+    .locals 0
+    .parameter "value"
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
+
+    .prologue
+    sput-object p0, Lcom/android/server/pm/ShutdownThread;->mRebootReason:Ljava/lang/String;
+
     return-void
 .end method
 
@@ -677,6 +740,9 @@
     .locals 7
     .parameter "context"
     .parameter "confirm"
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_CODE:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
 
     .prologue
     .line 134
@@ -732,6 +798,10 @@
     .line 149
     .local v3, resourceId:I
     :goto_1
+    invoke-static {v3}, Lcom/android/server/pm/ShutdownThread$Injector;->getResourceId(I)I
+
+    move-result v3
+
     const-string v4, "ShutdownThread"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -805,14 +875,13 @@
 
     move-result-object v1
 
-    .line 165
     .local v1, dialog:Landroid/app/AlertDialog;
+    invoke-static {v1}, Lcom/android/server/pm/ShutdownThread$Injector;->setDialogTitle(Landroid/app/Dialog;)V
+
     iput-object v1, v0, Lcom/android/server/pm/ShutdownThread$CloseDialogReceiver;->dialog:Landroid/app/Dialog;
 
-    .line 166
     invoke-virtual {v1, v0}, Landroid/app/AlertDialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    .line 167
     invoke-virtual {v1}, Landroid/app/AlertDialog;->getWindow()Landroid/view/Window;
 
     move-result-object v4

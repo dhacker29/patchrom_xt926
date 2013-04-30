@@ -7,7 +7,8 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/android/internal/telephony/SMSDispatcher$ConfirmDialogListener;,
-        Lcom/android/internal/telephony/SMSDispatcher$SmsTracker;
+        Lcom/android/internal/telephony/SMSDispatcher$SmsTracker;,
+        Lcom/android/internal/telephony/SMSDispatcher$Injector;
     }
 .end annotation
 
@@ -2033,6 +2034,9 @@
 .method protected dispatchNormalMessage(Lcom/android/internal/telephony/SmsMessageBase;)I
     .locals 14
     .parameter "sms"
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_CODE:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
 
     .prologue
     const/4 v9, 0x0
@@ -2089,7 +2093,11 @@
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcom/android/internal/telephony/WapPushOverSms;->dispatchWapPdu([B)I
+    invoke-virtual {p1}, Lcom/android/internal/telephony/SmsMessageBase;->getOriginatingAddress()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Lcom/android/internal/telephony/WapPushOverSms;->dispatchWapPdu([BLjava/lang/String;)I
 
     move-result v8
 
@@ -2495,15 +2503,13 @@
     .locals 2
 
     .prologue
-    .line 364
     const-string v0, "SMSDispatcher"
 
     const-string v1, "SMSDispatcher finalized"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 365
-    return-void
+    goto :goto_0
 .end method
 
 .method protected abstract getFormat()Ljava/lang/String;
@@ -3508,6 +3514,9 @@
     .parameter "timestamp"
     .parameter "destPort"
     .parameter "isCdmaWapPush"
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_CODE:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
 
     .prologue
     .line 794

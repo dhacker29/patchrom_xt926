@@ -6,7 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/media/MediaFile$MediaFileType;
+        Landroid/media/MediaFile$MediaFileType;,
+        Landroid/media/MediaFile$Injector;
     }
 .end annotation
 
@@ -25,6 +26,8 @@
 .field public static final FILE_TYPE_AC3:I = 0xc
 
 .field public static final FILE_TYPE_AMR:I = 0x4
+
+.field public static final FILE_TYPE_APE:I = 0x3e9
 
 .field public static final FILE_TYPE_ASF:I = 0x1a
 
@@ -321,17 +324,15 @@
 
     invoke-static {v0, v1, v2}, Landroid/media/MediaFile;->addFileType(Ljava/lang/String;ILjava/lang/String;)V
 
-    .line 233
     const-string v0, "DIVX"
 
     const/16 v1, 0x1f
 
-    const-string/jumbo v2, "video/divx"
+    const-string v2, "video/divx"
 
     invoke-static {v0, v1, v2}, Landroid/media/MediaFile;->addFileType(Ljava/lang/String;ILjava/lang/String;)V
 
-    .line 234
-    invoke-static {}, Landroid/media/MediaFile;->isWMAEnabled()Z
+    invoke-static {}, Landroid/media/MediaFile$Injector;->isWMAEnabled()Z
 
     move-result v0
 
@@ -1697,6 +1698,12 @@
     return v0
 
     :cond_2
+    invoke-static {p0}, Landroid/media/MediaFile$Injector;->isFFMpegAudoFileType(I)Z
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
     const/4 v0, 0x0
 
     goto :goto_0

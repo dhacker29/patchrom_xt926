@@ -291,6 +291,9 @@
     .parameter "netd"
     .parameter "statsService"
     .parameter "policyManager"
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_CODE:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
 
     .prologue
     .line 440
@@ -10148,16 +10151,15 @@
 
     move-result v8
 
-    .line 1624
     .local v8, usedNetworkType:I
+    invoke-static {p1, v8}, Lcom/android/server/ConnectivityService$Injector;->stopUsingNetworkFeature(Lcom/android/server/ConnectivityService$FeatureUser;I)V
+
     iget-object v10, p0, Lcom/android/server/ConnectivityService;->mNetTrackers:[Landroid/net/NetworkStateTracker;
 
     aget-object v6, v10, v8
 
-    .line 1625
     if-nez v6, :cond_4
 
-    .line 1627
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -16383,6 +16385,9 @@
     .parameter "networkType"
     .parameter "feature"
     .parameter "binder"
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_CODE:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
 
     .prologue
     .line 1376

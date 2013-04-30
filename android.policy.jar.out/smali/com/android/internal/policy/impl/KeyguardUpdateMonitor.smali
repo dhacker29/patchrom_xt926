@@ -10,7 +10,8 @@
         Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$InfoCallbackImpl;,
         Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$InfoCallback;,
         Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$BatteryStatus;,
-        Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$SimArgs;
+        Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$SimArgs;,
+        Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$Injector;
     }
 .end annotation
 
@@ -2230,6 +2231,8 @@
     .local v0, subscription:I
     iget-object v1, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mSimState:[Lcom/android/internal/telephony/IccCard$State;
 
+    iput-boolean v4, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mSkipSimStateChange:Z
+
     sget-object v2, Lcom/android/internal/telephony/IccCard$State;->READY:Lcom/android/internal/telephony/IccCard$State;
 
     aput-object v2, v1, v0
@@ -2300,6 +2303,19 @@
     return-void
 .end method
 
+.method public setSkipSimStateChange(Z)V
+    .locals 0
+    .parameter "skip"
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
+
+    .prologue
+    iput-boolean p1, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mSkipSimStateChange:Z
+
+    return-void
+.end method
+
 .method public shouldShowBatteryInfo()Z
     .locals 1
 
@@ -2322,6 +2338,12 @@
     if-eqz v0, :cond_1
 
     :cond_0
+    invoke-static {}, Landroid/app/MiuiThemeHelper;->isScreenshotMode()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
     const/4 v0, 0x1
 
     :goto_0

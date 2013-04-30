@@ -24,7 +24,8 @@
         Landroid/media/AudioService$SoundPoolCallback;,
         Landroid/media/AudioService$SoundPoolListenerThread;,
         Landroid/media/AudioService$SetModeDeathHandler;,
-        Landroid/media/AudioService$ForceControlStreamClient;
+        Landroid/media/AudioService$ForceControlStreamClient;,
+        Landroid/media/AudioService$Injector;
     }
 .end annotation
 
@@ -363,7 +364,7 @@
 
 .field private mVolumeControlStream:I
 
-.field private mVolumePanel:Landroid/view/VolumePanel;
+.field private mVolumePanel:Lmiui/view/VolumePanel;
 
 
 # direct methods
@@ -2264,9 +2265,9 @@
 
     .line 5556
     :cond_1
-    iget-object v2, p0, Landroid/media/AudioService;->mVolumePanel:Landroid/view/VolumePanel;
+    iget-object v2, p0, Landroid/media/AudioService;->mVolumePanel:Lmiui/view/VolumePanel;
 
-    invoke-virtual {v2, p1, p3}, Landroid/view/VolumePanel;->postRemoteVolumeChanged(II)V
+    invoke-virtual {v2, p1, p3}, Lmiui/view/VolumePanel;->postRemoteVolumeChanged(II)V
 
     goto :goto_0
 
@@ -6499,17 +6500,14 @@
 
     if-ne p1, v2, :cond_1
 
-    .line 5419
     iget-object v2, p0, Landroid/media/AudioService;->mMainRemote:Landroid/media/AudioService$RemotePlaybackState;
 
     iput p3, v2, Landroid/media/AudioService$RemotePlaybackState;->mVolume:I
 
-    .line 5420
-    iget-object v2, p0, Landroid/media/AudioService;->mVolumePanel:Landroid/view/VolumePanel;
+    iget-object v2, p0, Landroid/media/AudioService;->mVolumePanel:Lmiui/view/VolumePanel;
 
-    invoke-virtual {v2}, Landroid/view/VolumePanel;->postHasNewRemotePlaybackInfo()V
+    invoke-virtual {v2}, Lmiui/view/VolumePanel;->postHasNewRemotePlaybackInfo()V
 
-    .line 5422
     :cond_1
     monitor-exit v4
 
@@ -6544,17 +6542,14 @@
 
     if-ne p1, v2, :cond_2
 
-    .line 5428
     iget-object v2, p0, Landroid/media/AudioService;->mMainRemote:Landroid/media/AudioService$RemotePlaybackState;
 
     iput p3, v2, Landroid/media/AudioService$RemotePlaybackState;->mVolumeMax:I
 
-    .line 5429
-    iget-object v2, p0, Landroid/media/AudioService;->mVolumePanel:Landroid/view/VolumePanel;
+    iget-object v2, p0, Landroid/media/AudioService;->mVolumePanel:Lmiui/view/VolumePanel;
 
-    invoke-virtual {v2}, Landroid/view/VolumePanel;->postHasNewRemotePlaybackInfo()V
+    invoke-virtual {v2}, Lmiui/view/VolumePanel;->postHasNewRemotePlaybackInfo()V
 
-    .line 5431
     :cond_2
     monitor-exit v4
 
@@ -6589,17 +6584,14 @@
 
     if-ne p1, v2, :cond_3
 
-    .line 5437
     iget-object v2, p0, Landroid/media/AudioService;->mMainRemote:Landroid/media/AudioService$RemotePlaybackState;
 
     iput p3, v2, Landroid/media/AudioService$RemotePlaybackState;->mVolumeHandling:I
 
-    .line 5438
-    iget-object v2, p0, Landroid/media/AudioService;->mVolumePanel:Landroid/view/VolumePanel;
+    iget-object v2, p0, Landroid/media/AudioService;->mVolumePanel:Lmiui/view/VolumePanel;
 
-    invoke-virtual {v2}, Landroid/view/VolumePanel;->postHasNewRemotePlaybackInfo()V
+    invoke-virtual {v2}, Lmiui/view/VolumePanel;->postHasNewRemotePlaybackInfo()V
 
-    .line 5440
     :cond_3
     monitor-exit v4
 
@@ -6949,45 +6941,36 @@
 
     if-ne v3, v5, :cond_0
 
-    .line 5652
     const/4 v0, 0x1
 
-    .line 5656
     .end local v1           #rcse:Landroid/media/AudioService$RemoteControlStackEntry;
     :cond_1
     monitor-exit v4
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 5657
     iget-object v4, p0, Landroid/media/AudioService;->mMainRemote:Landroid/media/AudioService$RemotePlaybackState;
 
     monitor-enter v4
 
-    .line 5658
     :try_start_1
     iget-boolean v3, p0, Landroid/media/AudioService;->mHasRemotePlayback:Z
 
     if-eq v3, v0, :cond_2
 
-    .line 5659
     iput-boolean v0, p0, Landroid/media/AudioService;->mHasRemotePlayback:Z
 
-    .line 5660
-    iget-object v3, p0, Landroid/media/AudioService;->mVolumePanel:Landroid/view/VolumePanel;
+    iget-object v3, p0, Landroid/media/AudioService;->mVolumePanel:Lmiui/view/VolumePanel;
 
-    invoke-virtual {v3, v0}, Landroid/view/VolumePanel;->postRemoteSliderVisibility(Z)V
+    invoke-virtual {v3, v0}, Lmiui/view/VolumePanel;->postRemoteSliderVisibility(Z)V
 
-    .line 5662
     :cond_2
     monitor-exit v4
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 5663
     return-void
 
-    .line 5656
     .end local v2           #stackIterator:Ljava/util/Iterator;,"Ljava/util/Iterator<Landroid/media/AudioService$RemoteControlStackEntry;>;"
     :catchall_0
     move-exception v3
@@ -8945,15 +8928,12 @@
     .parameter "flags"
 
     .prologue
-    .line 1030
-    iget-object v0, p0, Landroid/media/AudioService;->mVolumePanel:Landroid/view/VolumePanel;
+    iget-object v0, p0, Landroid/media/AudioService;->mVolumePanel:Lmiui/view/VolumePanel;
 
-    invoke-virtual {v0, p2}, Landroid/view/VolumePanel;->postMasterMuteChanged(I)V
+    invoke-virtual {v0, p2}, Lmiui/view/VolumePanel;->postMasterMuteChanged(I)V
 
-    .line 1031
     invoke-direct {p0, p1}, Landroid/media/AudioService;->broadcastMasterMuteStatus(Z)V
 
-    .line 1032
     return-void
 .end method
 
@@ -8964,35 +8944,29 @@
     .parameter "newVolume"
 
     .prologue
-    .line 1020
-    iget-object v1, p0, Landroid/media/AudioService;->mVolumePanel:Landroid/view/VolumePanel;
+    iget-object v1, p0, Landroid/media/AudioService;->mVolumePanel:Lmiui/view/VolumePanel;
 
-    invoke-virtual {v1, p1}, Landroid/view/VolumePanel;->postMasterVolumeChanged(I)V
+    invoke-virtual {v1, p1}, Lmiui/view/VolumePanel;->postMasterVolumeChanged(I)V
 
-    .line 1022
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.media.MASTER_VOLUME_CHANGED_ACTION"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1023
     .local v0, intent:Landroid/content/Intent;
     const-string v1, "android.media.EXTRA_PREV_MASTER_VOLUME_VALUE"
 
     invoke-virtual {v0, v1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 1024
     const-string v1, "android.media.EXTRA_MASTER_VOLUME_VALUE"
 
     invoke-virtual {v0, v1, p3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 1025
     iget-object v1, p0, Landroid/media/AudioService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 1026
     return-void
 .end method
 
@@ -9090,54 +9064,44 @@
 
     if-ne p1, v1, :cond_0
 
-    .line 1004
     const/4 p1, 0x5
 
-    .line 1007
     :cond_0
-    iget-object v1, p0, Landroid/media/AudioService;->mVolumePanel:Landroid/view/VolumePanel;
+    iget-object v1, p0, Landroid/media/AudioService;->mVolumePanel:Lmiui/view/VolumePanel;
 
-    invoke-virtual {v1, p1, p4}, Landroid/view/VolumePanel;->postVolumeChanged(II)V
+    invoke-virtual {v1, p1, p4}, Lmiui/view/VolumePanel;->postVolumeChanged(II)V
 
-    .line 1009
     add-int/lit8 v1, p2, 0x5
 
     div-int/lit8 p2, v1, 0xa
 
-    .line 1010
     add-int/lit8 v1, p3, 0x5
 
     div-int/lit8 p3, v1, 0xa
 
-    .line 1011
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.media.VOLUME_CHANGED_ACTION"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1012
     .local v0, intent:Landroid/content/Intent;
     const-string v1, "android.media.EXTRA_VOLUME_STREAM_TYPE"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 1013
     const-string v1, "android.media.EXTRA_VOLUME_STREAM_VALUE"
 
     invoke-virtual {v0, v1, p3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 1014
     const-string v1, "android.media.EXTRA_PREV_VOLUME_STREAM_VALUE"
 
     invoke-virtual {v0, v1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 1015
     iget-object v1, p0, Landroid/media/AudioService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 1016
     return-void
 .end method
 
@@ -10791,6 +10755,9 @@
     .parameter "direction"
     .parameter "suggestedStreamType"
     .parameter "flags"
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_CODE:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
 
     .prologue
     const/16 v3, -0xc8
@@ -10834,27 +10801,27 @@
 
     if-eqz v1, :cond_1
 
-    .line 771
     :cond_0
     and-int/lit8 p3, p3, -0x5
 
-    .line 774
     :cond_1
+    iget-object v1, p0, Landroid/media/AudioService;->mVolumePanel:Lmiui/view/VolumePanel;
+
+    invoke-static {v1, p3, p1}, Landroid/media/AudioService$Injector;->adjustDirection(Lmiui/view/VolumePanel;II)I
+
+    move-result p1
+
     if-ne v0, v3, :cond_3
 
-    .line 776
     and-int/lit8 p3, p3, -0x5
 
-    .line 778
     const/4 v1, 0x3
 
     invoke-direct {p0, v1, p1, p3}, Landroid/media/AudioService;->adjustRemoteVolume(III)V
 
-    .line 782
     :goto_1
     return-void
 
-    .line 763
     .end local v0           #streamType:I
     :cond_2
     invoke-direct {p0, p2}, Landroid/media/AudioService;->getActiveStreamType(I)I

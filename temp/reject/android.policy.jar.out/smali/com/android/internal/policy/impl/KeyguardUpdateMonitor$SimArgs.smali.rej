@@ -1,0 +1,21 @@
+*** KeyguardUpdateMonitor$SimArgs.smali	2013-04-30 04:49:30.663191000 -0500
+--- KeyguardUpdateMonitor$SimArgs.smali	2013-04-30 04:51:57.795191000 -0500
+***************
+*** 196,202 ****
+  
+      .end local v2           #state:Lcom/android/internal/telephony/IccCard$State;
+      :cond_7
+!     sget-object v2, Lcom/android/internal/telephony/IccCard$State;->UNKNOWN:Lcom/android/internal/telephony/IccCard$State;
+  
+      .restart local v2       #state:Lcom/android/internal/telephony/IccCard$State;
+      goto :goto_0
+--- 200,208 ----
+  
+      .end local v2           #state:Lcom/android/internal/telephony/IccCard$State;
+      :cond_7
+!     invoke-static {v3}, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$Injector;->getIccCardState(Ljava/lang/String;)Lcom/android/internal/telephony/IccCard$State;
+! 
+!     move-result-object v2
+  
+      .restart local v2       #state:Lcom/android/internal/telephony/IccCard$State;
+      goto :goto_0

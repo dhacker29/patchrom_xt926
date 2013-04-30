@@ -4,12 +4,16 @@
 
 
 # annotations
+.annotation build Landroid/annotation/MiuiHook;
+    value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_ACCESS:Landroid/annotation/MiuiHook$MiuiHookType;
+.end annotation
+
 .annotation system Ldalvik/annotation/EnclosingClass;
     value = Landroid/app/DownloadManager;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
+    accessFlags = 0x8
     name = "CursorTranslator"
 .end annotation
 
@@ -291,36 +295,35 @@
 .method private getPausedReason(I)J
     .locals 2
     .parameter "status"
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_CODE:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
 
     .prologue
-    .line 1382
     packed-switch p1, :pswitch_data_0
 
-    .line 1393
-    const-wide/16 v0, 0x4
+    invoke-static {p1}, Landroid/app/DownloadManager$Injector;->getPausedReason(I)J
+
+    move-result-wide v0
 
     :goto_0
     return-wide v0
 
-    .line 1384
     :pswitch_0
     const-wide/16 v0, 0x1
 
     goto :goto_0
 
-    .line 1387
     :pswitch_1
     const-wide/16 v0, 0x2
 
     goto :goto_0
 
-    .line 1390
     :pswitch_2
     const-wide/16 v0, 0x3
 
     goto :goto_0
 
-    .line 1382
     nop
 
     :pswitch_data_0
@@ -336,20 +339,17 @@
     .parameter "status"
 
     .prologue
-    .line 1369
-    invoke-direct {p0, p1}, Landroid/app/DownloadManager$CursorTranslator;->translateStatus(I)I
+    invoke-static {p1}, Landroid/app/DownloadManager$CursorTranslator;->translateStatus(I)I
 
     move-result v0
 
     sparse-switch v0, :sswitch_data_0
 
-    .line 1377
     const-wide/16 v0, 0x0
 
     :goto_0
     return-wide v0
 
-    .line 1371
     :sswitch_0
     invoke-direct {p0, p1}, Landroid/app/DownloadManager$CursorTranslator;->getErrorCode(I)J
 
@@ -373,21 +373,22 @@
     .end sparse-switch
 .end method
 
-.method private translateStatus(I)I
+.method static translateStatus(I)I
     .locals 1
     .parameter "status"
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_ACCESS:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
 
     .prologue
-    .line 1436
-    packed-switch p1, :pswitch_data_0
+    packed-switch p0, :pswitch_data_0
 
-    .line 1453
     :pswitch_0
     sget-boolean v0, Landroid/app/DownloadManager$CursorTranslator;->$assertionsDisabled:Z
 
     if-nez v0, :cond_0
 
-    invoke-static {p1}, Landroid/provider/Downloads$Impl;->isStatusError(I)Z
+    invoke-static {p0}, Landroid/provider/Downloads$Impl;->isStatusError(I)Z
 
     move-result v0
 
@@ -452,6 +453,20 @@
 
 
 # virtual methods
+.method callGetLocalUri()Ljava/lang/String;
+    .locals 1
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
+
+    .prologue
+    invoke-direct {p0}, Landroid/app/DownloadManager$CursorTranslator;->getLocalUri()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public getInt(I)I
     .locals 2
     .parameter "columnIndex"
@@ -529,7 +544,7 @@
 
     move-result v0
 
-    invoke-direct {p0, v0}, Landroid/app/DownloadManager$CursorTranslator;->translateStatus(I)I
+    invoke-static {v0}, Landroid/app/DownloadManager$CursorTranslator;->translateStatus(I)I
 
     move-result v0
 
@@ -549,6 +564,9 @@
 .method public getString(I)Ljava/lang/String;
     .locals 2
     .parameter "columnIndex"
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_CODE:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
 
     .prologue
     .line 1333
@@ -564,7 +582,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-direct {p0}, Landroid/app/DownloadManager$CursorTranslator;->getLocalUri()Ljava/lang/String;
+    invoke-static {p0}, Landroid/app/DownloadManager$Injector;->getLocalUri(Landroid/app/DownloadManager$CursorTranslator;)Ljava/lang/String;
 
     move-result-object v0
 

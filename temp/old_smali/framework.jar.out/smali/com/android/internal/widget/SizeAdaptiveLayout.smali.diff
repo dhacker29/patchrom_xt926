@@ -1,0 +1,19 @@
+*** ./smali/com/android/internal/widget/SizeAdaptiveLayout.smali	2013-04-30 04:51:39.139191000 -0500
+--- /home/dhacker29/patchrom/xt926/temp/new_smali/framework.jar.out/./smali/com/android/internal/widget/SizeAdaptiveLayout.smali	2013-04-30 04:54:06.247191000 -0500
+***************
+*** 429,435 ****
+      :cond_1
+      iget-object v3, p0, Lcom/android/internal/widget/SizeAdaptiveLayout;->mModestyPanel:Landroid/view/View;
+  
+!     const/high16 v4, -0x100
+  
+      invoke-virtual {v3, v4}, Landroid/view/View;->setBackgroundColor(I)V
+  
+--- 429,435 ----
+      :cond_1
+      iget-object v3, p0, Lcom/android/internal/widget/SizeAdaptiveLayout;->mModestyPanel:Landroid/view/View;
+  
+!     const/high16 v4, 0x0
+  
+      invoke-virtual {v3, v4}, Landroid/view/View;->setBackgroundColor(I)V
+  

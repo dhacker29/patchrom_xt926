@@ -40,20 +40,6 @@
 
 
 # virtual methods
-.method public getAdnCapacity()I
-    .locals 1
-
-    .prologue
-    .line 94
-    iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
-
-    invoke-virtual {v0}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->getAdnCapacity()I
-
-    move-result v0
-
-    return v0
-.end method
-
 .method public getAdnRecordsInEf(I)Ljava/util/List;
     .locals 1
     .parameter "efid"
@@ -74,6 +60,7 @@
     .end annotation
 
     .prologue
+    .line 94
     .line 86
     iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
 
@@ -104,29 +91,13 @@
     return-object v0
 .end method
 
-.method public getFreeAdn()I
-    .locals 1
-
-    .prologue
-    .line 90
-    iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
-
-    invoke-virtual {v0}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->getFreeAdn()I
-
-    move-result v0
-
-    return v0
-.end method
-
 .method public setmIccPhoneBookInterfaceManager(Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;)V
     .locals 0
     .parameter "iccPhoneBookInterfaceManager"
 
     .prologue
-    .line 52
     iput-object p1, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
 
-    .line 53
     return-void
 .end method
 
@@ -144,7 +115,7 @@
     .end annotation
 
     .prologue
-    .line 77
+    .line 90
     iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
 
     move v1, p1
@@ -179,7 +150,7 @@
     .end annotation
 
     .prologue
-    .line 60
+    .line 77
     iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
 
     move v1, p1
@@ -220,6 +191,7 @@
     .end annotation
 
     .prologue
+    .line 60
     .line 70
     iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
 

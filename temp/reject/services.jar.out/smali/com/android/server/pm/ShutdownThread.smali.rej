@@ -1,0 +1,36 @@
+*** ShutdownThread.smali	2013-04-30 04:49:47.655191000 -0500
+--- ShutdownThread.smali	2013-04-30 04:52:14.679191000 -0500
+***************
+*** 155,161 ****
+      invoke-direct {v1, p0}, Landroid/app/ProgressDialog;-><init>(Landroid/content/Context;)V
+  
+      .local v1, pd:Landroid/app/ProgressDialog;
+!     const v2, 0x104012a
+  
+      invoke-virtual {p0, v2}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
+  
+--- 159,165 ----
+      invoke-direct {v1, p0}, Landroid/app/ProgressDialog;-><init>(Landroid/content/Context;)V
+  
+      .local v1, pd:Landroid/app/ProgressDialog;
+!     const v2, 0x60c0026
+  
+      invoke-virtual {p0, v2}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
+  
+***************
+*** 163,169 ****
+  
+      invoke-virtual {v1, v2}, Landroid/app/ProgressDialog;->setTitle(Ljava/lang/CharSequence;)V
+  
+!     const v2, 0x104012e
+  
+      invoke-virtual {p0, v2}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
+  
+--- 167,173 ----
+  
+      invoke-virtual {v1, v2}, Landroid/app/ProgressDialog;->setTitle(Ljava/lang/CharSequence;)V
+  
+!     const v2, 0x60c002c
+  
+      invoke-virtual {p0, v2}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
+  
