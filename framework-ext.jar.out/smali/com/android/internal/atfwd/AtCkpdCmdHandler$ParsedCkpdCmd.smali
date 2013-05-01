@@ -49,42 +49,34 @@
     .end annotation
 
     .prologue
-    .line 86
     iput-object p1, p0, Lcom/android/internal/atfwd/AtCkpdCmdHandler$ParsedCkpdCmd;->this$0:Lcom/android/internal/atfwd/AtCkpdCmdHandler;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 84
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/atfwd/AtCkpdCmdHandler$ParsedCkpdCmd;->mDialnum:Ljava/lang/StringBuilder;
 
-    .line 87
     iput-object p2, p0, Lcom/android/internal/atfwd/AtCkpdCmdHandler$ParsedCkpdCmd;->mOriginalCommand:Lcom/android/internal/atfwd/AtCmd;
 
-    .line 88
     const-wide/16 v0, 0xc8
 
     iput-wide v0, p0, Lcom/android/internal/atfwd/AtCkpdCmdHandler$ParsedCkpdCmd;->mPressTime:J
 
-    .line 89
     const-wide/16 v0, 0x190
 
     iput-wide v0, p0, Lcom/android/internal/atfwd/AtCkpdCmdHandler$ParsedCkpdCmd;->mPauseTime:J
 
-    .line 90
     new-instance v0, Ljava/util/Vector;
 
     invoke-direct {v0}, Ljava/util/Vector;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/atfwd/AtCkpdCmdHandler$ParsedCkpdCmd;->mEvents:Ljava/util/Vector;
 
-    .line 91
     invoke-direct {p0}, Lcom/android/internal/atfwd/AtCkpdCmdHandler$ParsedCkpdCmd;->parse_cmd()V
 
-    .line 92
     return-void
 .end method
 
@@ -93,7 +85,6 @@
     .parameter "number"
 
     .prologue
-    .line 103
     const-string v2, "AtCkpdCmdHandler"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -116,7 +107,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 104
     const-string v2, "tel"
 
     const/4 v3, 0x0
@@ -125,7 +115,6 @@
 
     move-result-object v1
 
-    .line 105
     .local v1, teluri:Landroid/net/Uri;
     new-instance v0, Landroid/content/Intent;
 
@@ -133,20 +122,17 @@
 
     invoke-direct {v0, v2, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 106
     .local v0, startcall:Landroid/content/Intent;
     const/high16 v2, 0x1000
 
     invoke-virtual {v0, v2}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 107
     iget-object v2, p0, Lcom/android/internal/atfwd/AtCkpdCmdHandler$ParsedCkpdCmd;->this$0:Lcom/android/internal/atfwd/AtCkpdCmdHandler;
 
     iget-object v2, v2, Lcom/android/internal/atfwd/AtCmdBaseHandler;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 108
     return-void
 .end method
 
@@ -155,7 +141,6 @@
     .parameter "key"
 
     .prologue
-    .line 99
     const/16 v0, 0x30
 
     if-lt p1, v0, :cond_0
@@ -194,7 +179,6 @@
     .end annotation
 
     .prologue
-    .line 112
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/internal/atfwd/AtCkpdCmdHandler$ParsedCkpdCmd;->mOriginalCommand:Lcom/android/internal/atfwd/AtCmd;
@@ -203,7 +187,6 @@
 
     move-result-object v20
 
-    .line 116
     .local v20, tokens:[Ljava/lang/String;
     if-eqz v20, :cond_0
 
@@ -221,7 +204,6 @@
 
     if-le v1, v2, :cond_1
 
-    .line 117
     :cond_0
     new-instance v1, Lcom/android/internal/atfwd/AtCmdHandler$AtCmdParseException;
 
@@ -231,7 +213,6 @@
 
     throw v1
 
-    .line 119
     :cond_1
     const/4 v1, 0x0
 
@@ -245,7 +226,6 @@
 
     move-result-object v16
 
-    .line 120
     .local v16, keys:[C
     const/4 v1, 0x0
 
@@ -255,7 +235,6 @@
 
     move-result-object v18
 
-    .line 123
     .local v18, orig:[C
     move-object/from16 v0, v20
 
@@ -265,7 +244,6 @@
 
     if-lt v1, v2, :cond_2
 
-    .line 126
     const/4 v1, 0x1
 
     :try_start_0
@@ -285,7 +263,6 @@
     :try_end_0
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 132
     :cond_2
     move-object/from16 v0, v20
 
@@ -295,7 +272,6 @@
 
     if-ne v1, v2, :cond_3
 
-    .line 134
     const/4 v1, 0x2
 
     :try_start_1
@@ -315,17 +291,14 @@
     :try_end_1
     .catch Ljava/lang/NumberFormatException; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 140
     :cond_3
     const/4 v14, 0x0
 
-    .line 141
     .local v14, instring:Z
     new-instance v19, Ljava/lang/StringBuilder;
 
     invoke-direct/range {v19 .. v19}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 142
     .local v19, theString:Ljava/lang/StringBuilder;
     const/4 v12, 0x0
 
@@ -337,20 +310,16 @@
 
     if-ge v12, v1, :cond_10
 
-    .line 143
     if-eqz v14, :cond_6
 
-    .line 144
     aget-char v1, v16, v12
 
     const/16 v2, 0x3b
 
     if-ne v1, v2, :cond_5
 
-    .line 145
     const/4 v14, 0x0
 
-    .line 146
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/internal/atfwd/AtCkpdCmdHandler$ParsedCkpdCmd;->this$0:Lcom/android/internal/atfwd/AtCkpdCmdHandler;
@@ -369,7 +338,6 @@
 
     move-result-object v11
 
-    .line 147
     .local v11, events:[Landroid/view/KeyEvent;
     const/4 v1, 0x0
 
@@ -377,10 +345,8 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 148
     if-eqz v11, :cond_4
 
-    .line 149
     move-object v9, v11
 
     .local v9, arr$:[Landroid/view/KeyEvent;
@@ -399,7 +365,6 @@
 
     aget-object v15, v9, v13
 
-    .line 150
     .local v15, keyEvent:Landroid/view/KeyEvent;
     move-object/from16 v0, p0
 
@@ -407,12 +372,10 @@
 
     invoke-virtual {v1, v15}, Ljava/util/Vector;->add(Ljava/lang/Object;)Z
 
-    .line 149
     add-int/lit8 v13, v13, 0x1
 
     goto :goto_1
 
-    .line 127
     .end local v9           #arr$:[Landroid/view/KeyEvent;
     .end local v11           #events:[Landroid/view/KeyEvent;
     .end local v12           #i:I
@@ -424,7 +387,6 @@
     :catch_0
     move-exception v10
 
-    .line 128
     .local v10, e:Ljava/lang/NumberFormatException;
     new-instance v1, Lcom/android/internal/atfwd/AtCmdHandler$AtCmdParseException;
 
@@ -454,12 +416,10 @@
 
     throw v1
 
-    .line 135
     .end local v10           #e:Ljava/lang/NumberFormatException;
     :catch_1
     move-exception v10
 
-    .line 136
     .restart local v10       #e:Ljava/lang/NumberFormatException;
     new-instance v1, Lcom/android/internal/atfwd/AtCmdHandler$AtCmdParseException;
 
@@ -489,7 +449,6 @@
 
     throw v1
 
-    .line 153
     .end local v10           #e:Ljava/lang/NumberFormatException;
     .restart local v11       #events:[Landroid/view/KeyEvent;
     .restart local v12       #i:I
@@ -528,7 +487,6 @@
 
     throw v1
 
-    .line 157
     .end local v11           #events:[Landroid/view/KeyEvent;
     :cond_5
     aget-char v1, v18, v12
@@ -537,7 +495,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 159
     :cond_6
     aget-char v1, v16, v12
 
@@ -545,17 +502,14 @@
 
     if-ne v1, v2, :cond_8
 
-    .line 160
     const/4 v14, 0x1
 
-    .line 142
     :cond_7
     :goto_2
     add-int/lit8 v12, v12, 0x1
 
     goto/16 :goto_0
 
-    .line 163
     :cond_8
     aget-char v1, v16, v12
 
@@ -563,14 +517,12 @@
 
     if-eq v1, v2, :cond_7
 
-    .line 165
     aget-char v1, v16, v12
 
     const/16 v2, 0x57
 
     if-ne v1, v2, :cond_9
 
-    .line 166
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/internal/atfwd/AtCkpdCmdHandler$ParsedCkpdCmd;->mEvents:Ljava/util/Vector;
@@ -587,7 +539,6 @@
 
     goto :goto_2
 
-    .line 170
     :cond_9
     aget-char v1, v16, v12
 
@@ -595,7 +546,6 @@
 
     if-ne v1, v2, :cond_a
 
-    .line 171
     const-string v1, "AtCkpdCmdHandler"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -626,7 +576,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 172
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/internal/atfwd/AtCkpdCmdHandler$ParsedCkpdCmd;->mDialnum:Ljava/lang/StringBuilder;
@@ -639,7 +588,6 @@
 
     invoke-direct {v0, v1}, Lcom/android/internal/atfwd/AtCkpdCmdHandler$ParsedCkpdCmd;->call(Ljava/lang/String;)V
 
-    .line 173
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/internal/atfwd/AtCkpdCmdHandler$ParsedCkpdCmd;->mDialnum:Ljava/lang/StringBuilder;
@@ -658,7 +606,6 @@
 
     goto :goto_2
 
-    .line 177
     :cond_a
     aget-char v1, v16, v12
 
@@ -670,7 +617,6 @@
 
     if-eqz v1, :cond_b
 
-    .line 178
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/internal/atfwd/AtCkpdCmdHandler$ParsedCkpdCmd;->mDialnum:Ljava/lang/StringBuilder;
@@ -679,7 +625,6 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 182
     :goto_3
     aget-char v1, v16, v12
 
@@ -687,7 +632,6 @@
 
     if-ne v1, v2, :cond_d
 
-    .line 183
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/internal/atfwd/AtCkpdCmdHandler$ParsedCkpdCmd;->this$0:Lcom/android/internal/atfwd/AtCkpdCmdHandler;
@@ -696,7 +640,6 @@
 
     if-nez v1, :cond_c
 
-    .line 184
     const-string v1, "AtCkpdCmdHandler"
 
     const-string v2, "telephony is null,failed to end the call"
@@ -705,7 +648,6 @@
 
     goto/16 :goto_2
 
-    .line 180
     :cond_b
     move-object/from16 v0, p0
 
@@ -725,7 +667,6 @@
 
     goto :goto_3
 
-    .line 186
     :cond_c
     new-instance v1, Lcom/android/internal/atfwd/AtCkpdCmdHandler$ParsedCkpdCmd$1;
 
@@ -737,7 +678,6 @@
 
     goto/16 :goto_2
 
-    .line 203
     :cond_d
     aget-char v1, v16, v12
 
@@ -745,7 +685,6 @@
 
     if-ne v1, v2, :cond_e
 
-    .line 204
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/atfwd/AtCkpdCmdHandler$ParsedCkpdCmd;->mEvents:Ljava/util/Vector;
@@ -770,7 +709,6 @@
 
     invoke-virtual {v0, v1}, Ljava/util/Vector;->add(Ljava/lang/Object;)Z
 
-    .line 205
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/atfwd/AtCkpdCmdHandler$ParsedCkpdCmd;->mEvents:Ljava/util/Vector;
@@ -813,7 +751,6 @@
 
     invoke-virtual {v0, v1}, Ljava/util/Vector;->add(Ljava/lang/Object;)Z
 
-    .line 206
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/atfwd/AtCkpdCmdHandler$ParsedCkpdCmd;->mEvents:Ljava/util/Vector;
@@ -856,7 +793,6 @@
 
     invoke-virtual {v0, v1}, Ljava/util/Vector;->add(Ljava/lang/Object;)Z
 
-    .line 207
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/atfwd/AtCkpdCmdHandler$ParsedCkpdCmd;->mEvents:Ljava/util/Vector;
@@ -881,7 +817,6 @@
 
     invoke-virtual {v0, v1}, Ljava/util/Vector;->add(Ljava/lang/Object;)Z
 
-    .line 208
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/internal/atfwd/AtCkpdCmdHandler$ParsedCkpdCmd;->mEvents:Ljava/util/Vector;
@@ -898,7 +833,6 @@
 
     goto/16 :goto_2
 
-    .line 212
     :cond_e
     invoke-static {}, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->access$000()Ljava/util/HashMap;
 
@@ -916,7 +850,6 @@
 
     if-nez v1, :cond_f
 
-    .line 213
     new-instance v1, Lcom/android/internal/atfwd/AtCmdHandler$AtCmdParseException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -943,7 +876,6 @@
 
     throw v1
 
-    .line 215
     :cond_f
     move-object/from16 v0, p0
 
@@ -987,7 +919,6 @@
 
     invoke-virtual {v0, v1}, Ljava/util/Vector;->add(Ljava/lang/Object;)Z
 
-    .line 216
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/atfwd/AtCkpdCmdHandler$ParsedCkpdCmd;->mEvents:Ljava/util/Vector;
@@ -1030,7 +961,6 @@
 
     invoke-virtual {v0, v1}, Ljava/util/Vector;->add(Ljava/lang/Object;)Z
 
-    .line 217
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/internal/atfwd/AtCkpdCmdHandler$ParsedCkpdCmd;->mEvents:Ljava/util/Vector;
@@ -1047,7 +977,6 @@
 
     goto/16 :goto_2
 
-    .line 219
     :cond_10
     return-void
 .end method
@@ -1067,7 +996,6 @@
     .end annotation
 
     .prologue
-    .line 95
     iget-object v0, p0, Lcom/android/internal/atfwd/AtCkpdCmdHandler$ParsedCkpdCmd;->mEvents:Ljava/util/Vector;
 
     return-object v0

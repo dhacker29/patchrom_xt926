@@ -54,7 +54,6 @@
 
     const/4 v3, 0x0
 
-    .line 44
     new-instance v0, Lcom/qualcomm/location/vzw_library/imp/VzwHalGpsLocationProviderImp$ResetCategories;
 
     const-string v1, "Ephemeris"
@@ -93,7 +92,6 @@
 
     sput-object v0, Lcom/qualcomm/location/vzw_library/imp/VzwHalGpsLocationProviderImp$ResetCategories;->Time:Lcom/qualcomm/location/vzw_library/imp/VzwHalGpsLocationProviderImp$ResetCategories;
 
-    .line 43
     new-array v0, v7, [Lcom/qualcomm/location/vzw_library/imp/VzwHalGpsLocationProviderImp$ResetCategories;
 
     sget-object v1, Lcom/qualcomm/location/vzw_library/imp/VzwHalGpsLocationProviderImp$ResetCategories;->Ephemeris:Lcom/qualcomm/location/vzw_library/imp/VzwHalGpsLocationProviderImp$ResetCategories;
@@ -129,13 +127,10 @@
     .end annotation
 
     .prologue
-    .line 46
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 47
     iput p3, p0, Lcom/qualcomm/location/vzw_library/imp/VzwHalGpsLocationProviderImp$ResetCategories;->mMask:I
 
-    .line 48
     return-void
 .end method
 
@@ -144,7 +139,6 @@
     .parameter "x0"
 
     .prologue
-    .line 43
     iget v0, p0, Lcom/qualcomm/location/vzw_library/imp/VzwHalGpsLocationProviderImp$ResetCategories;->mMask:I
 
     return v0
@@ -155,7 +149,6 @@
     .parameter "name"
 
     .prologue
-    .line 43
     const-class v0, Lcom/qualcomm/location/vzw_library/imp/VzwHalGpsLocationProviderImp$ResetCategories;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -171,7 +164,6 @@
     .locals 1
 
     .prologue
-    .line 43
     sget-object v0, Lcom/qualcomm/location/vzw_library/imp/VzwHalGpsLocationProviderImp$ResetCategories;->$VALUES:[Lcom/qualcomm/location/vzw_library/imp/VzwHalGpsLocationProviderImp$ResetCategories;
 
     invoke-virtual {v0}, [Lcom/qualcomm/location/vzw_library/imp/VzwHalGpsLocationProviderImp$ResetCategories;->clone()Ljava/lang/Object;

@@ -41,17 +41,14 @@
     .locals 2
 
     .prologue
-    .line 37
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 33
     new-instance v0, Ljava/util/LinkedList;
 
     invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
 
     iput-object v0, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator;->mCallbackQueue:Ljava/util/LinkedList;
 
-    .line 35
     new-instance v0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;
 
     const/4 v1, 0x0
@@ -60,7 +57,6 @@
 
     iput-object v0, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator;->mThread:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;
 
-    .line 38
     return-void
 .end method
 
@@ -69,7 +65,6 @@
     .parameter "x0"
 
     .prologue
-    .line 26
     iget-object v0, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator;->mCallbackQueue:Ljava/util/LinkedList;
 
     return-object v0
@@ -81,12 +76,10 @@
     .locals 1
 
     .prologue
-    .line 355
     iget-object v0, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator;->mThread:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;
 
     invoke-virtual {v0}, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->cleanup()V
 
-    .line 356
     return-void
 .end method
 
@@ -94,7 +87,6 @@
     .locals 1
 
     .prologue
-    .line 359
     iget-object v0, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator;->mThread:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;
 
     invoke-virtual {v0}, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->init()Z
@@ -109,12 +101,10 @@
     .parameter "bits"
 
     .prologue
-    .line 396
     iget-object v0, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator;->mThread:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;
 
     invoke-virtual {v0, p1}, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->resetGps(I)V
 
-    .line 397
     return-void
 .end method
 
@@ -123,12 +113,10 @@
     .parameter "callback"
 
     .prologue
-    .line 363
     iget-object v0, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator;->mThread:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;
 
     invoke-virtual {v0, p1}, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->setCallbackInterface(Lcom/qualcomm/location/vzw_library/IVzwHalGpsCallback;)V
 
-    .line 364
     return-void
 .end method
 
@@ -139,12 +127,10 @@
     .parameter "port"
 
     .prologue
-    .line 367
     iget-object v0, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator;->mThread:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;
 
     invoke-virtual {v0, p1, p2, p3}, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->set_agps_server(ILjava/lang/String;I)V
 
-    .line 368
     return-void
 .end method
 
@@ -155,7 +141,6 @@
     .parameter "app"
 
     .prologue
-    .line 371
     iget-object v0, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator;->mThread:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;
 
     invoke-virtual {v0, p1, p2}, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->simStart(Lcom/qualcomm/location/vzw_library/VzwHalCriteria;I)Z
@@ -169,12 +154,10 @@
     .locals 5
 
     .prologue
-    .line 375
     iget-object v2, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator;->mThread:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;
 
     invoke-virtual {v2}, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->simStop()Z
 
-    .line 376
     const/4 v1, 0x0
 
     .local v1, i:I
@@ -183,7 +166,6 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 378
     iget-object v2, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator;->mThread:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;
 
     #calls: Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->getEngineState()Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineState;
@@ -206,7 +188,6 @@
 
     if-ne v2, v3, :cond_2
 
-    .line 392
     :cond_0
     iget-object v2, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator;->mThread:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;
 
@@ -236,7 +217,6 @@
     :goto_1
     return v2
 
-    .line 385
     :cond_2
     :try_start_0
     const-string v2, "VzwHalEngineSim"
@@ -268,30 +248,25 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 386
     const-wide/16 v2, 0x12c
 
     invoke-static {v2, v3}, Ljava/lang/Thread;->sleep(J)V
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 376
     :goto_2
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 387
     :catch_0
     move-exception v0
 
-    .line 388
     .local v0, e:Ljava/lang/InterruptedException;
     invoke-virtual {v0}, Ljava/lang/InterruptedException;->printStackTrace()V
 
     goto :goto_2
 
-    .line 392
     .end local v0           #e:Ljava/lang/InterruptedException;
     :cond_3
     const/4 v2, 0x0

@@ -51,10 +51,8 @@
     .end annotation
 
     .prologue
-    .line 171
     invoke-direct {p0, p1}, Lcom/android/internal/atfwd/AtCmdBaseHandler;-><init>(Landroid/content/Context;)V
 
-    .line 172
     const-string v1, "window"
 
     invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -65,11 +63,9 @@
 
     move-result-object v0
 
-    .line 174
     .local v0, service:Landroid/view/IWindowManager;
     if-nez v0, :cond_0
 
-    .line 175
     new-instance v1, Ljava/lang/RuntimeException;
 
     const-string v2, "Unable to connect to Window Service"
@@ -78,18 +74,15 @@
 
     throw v1
 
-    .line 176
     :cond_0
     iput-object v0, p0, Lcom/android/internal/atfwd/AtCtsaCmdHandler;->mWm:Landroid/view/IWindowManager;
 
-    .line 177
     new-instance v1, Ljava/util/LinkedList;
 
     invoke-direct {v1}, Ljava/util/LinkedList;-><init>()V
 
     iput-object v1, p0, Lcom/android/internal/atfwd/AtCtsaCmdHandler;->mEventQ:Ljava/util/LinkedList;
 
-    .line 179
     new-instance v1, Lcom/android/internal/atfwd/AtCtsaCmdHandler$1;
 
     const-string v2, "CTSA Inject Thread"
@@ -100,12 +93,10 @@
 
     iput-object v1, p0, Lcom/android/internal/atfwd/AtCtsaCmdHandler;->mInjectThread:Landroid/os/HandlerThread;
 
-    .line 182
     iget-object v1, p0, Lcom/android/internal/atfwd/AtCtsaCmdHandler;->mInjectThread:Landroid/os/HandlerThread;
 
     invoke-virtual {v1}, Landroid/os/HandlerThread;->start()V
 
-    .line 183
     new-instance v1, Lcom/android/internal/atfwd/AtCtsaCmdHandler$2;
 
     iget-object v2, p0, Lcom/android/internal/atfwd/AtCtsaCmdHandler;->mInjectThread:Landroid/os/HandlerThread;
@@ -118,7 +109,6 @@
 
     iput-object v1, p0, Lcom/android/internal/atfwd/AtCtsaCmdHandler;->mInjectHandler:Landroid/os/Handler;
 
-    .line 223
     return-void
 .end method
 
@@ -129,7 +119,6 @@
     .parameter "x2"
 
     .prologue
-    .line 59
     invoke-direct {p0, p1, p2}, Lcom/android/internal/atfwd/AtCtsaCmdHandler;->injectPointerEvent(Landroid/view/MotionEvent;Z)V
 
     return-void
@@ -141,12 +130,10 @@
     .parameter "sync"
 
     .prologue
-    .line 263
     const/16 v0, 0x1002
 
     invoke-virtual {p1, v0}, Landroid/view/MotionEvent;->setSource(I)V
 
-    .line 264
     const-string v0, "Input"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -169,7 +156,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 265
     invoke-static {}, Landroid/hardware/input/InputManager;->getInstance()Landroid/hardware/input/InputManager;
 
     move-result-object v1
@@ -181,10 +167,8 @@
     :goto_0
     invoke-virtual {v1, p1, v0}, Landroid/hardware/input/InputManager;->injectInputEvent(Landroid/view/InputEvent;I)Z
 
-    .line 268
     return-void
 
-    .line 265
     :cond_0
     const/4 v0, 0x1
 
@@ -197,7 +181,6 @@
     .locals 1
 
     .prologue
-    .line 254
     const-string v0, "+CTSA"
 
     return-object v0
@@ -212,18 +195,14 @@
 
     const/4 v7, 0x0
 
-    .line 226
     const/4 v2, 0x0
 
-    .line 227
     .local v2, ret:Lcom/android/internal/atfwd/AtCmdResponse;
     const/4 v4, 0x0
 
-    .line 228
     .local v4, valid:Lcom/android/internal/atfwd/AtCtsaCmdHandler$ParsedCtsaCmd;
     const/4 v0, 0x0
 
-    .line 229
     .local v0, dead:Z
     const-string v8, "AtCtsaCmdHandler"
 
@@ -247,7 +226,6 @@
 
     invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 231
     iget-object v8, p0, Lcom/android/internal/atfwd/AtCtsaCmdHandler;->mInjectThread:Landroid/os/HandlerThread;
 
     invoke-virtual {v8}, Landroid/os/HandlerThread;->isAlive()Z
@@ -258,11 +236,9 @@
 
     move v0, v6
 
-    .line 232
     :goto_0
     if-nez v0, :cond_1
 
-    .line 238
     :try_start_0
     new-instance v5, Lcom/android/internal/atfwd/AtCtsaCmdHandler$ParsedCtsaCmd;
 
@@ -270,7 +246,6 @@
     :try_end_0
     .catch Lcom/android/internal/atfwd/AtCmdHandler$AtCmdParseException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 239
     .end local v4           #valid:Lcom/android/internal/atfwd/AtCtsaCmdHandler$ParsedCtsaCmd;
     .local v5, valid:Lcom/android/internal/atfwd/AtCtsaCmdHandler$ParsedCtsaCmd;
     :try_start_1
@@ -284,7 +259,6 @@
     :try_end_1
     .catch Lcom/android/internal/atfwd/AtCmdHandler$AtCmdParseException; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 240
     .end local v2           #ret:Lcom/android/internal/atfwd/AtCmdResponse;
     .local v3, ret:Lcom/android/internal/atfwd/AtCmdResponse;
     :try_start_2
@@ -294,7 +268,6 @@
 
     invoke-static {v6, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 241
     iget-object v6, p0, Lcom/android/internal/atfwd/AtCtsaCmdHandler;->mInjectHandler:Landroid/os/Handler;
 
     const/4 v8, 0x0
@@ -305,7 +278,6 @@
 
     invoke-virtual {v6}, Landroid/os/Message;->sendToTarget()V
 
-    .line 242
     const-string v6, "AtCtsaCmdHandler"
 
     const-string v8, "Command queued"
@@ -320,7 +292,6 @@
     .restart local v4       #valid:Lcom/android/internal/atfwd/AtCtsaCmdHandler$ParsedCtsaCmd;
     move-object v2, v3
 
-    .line 250
     .end local v3           #ret:Lcom/android/internal/atfwd/AtCmdResponse;
     .restart local v2       #ret:Lcom/android/internal/atfwd/AtCmdResponse;
     :goto_1
@@ -329,14 +300,11 @@
     :cond_0
     move v0, v7
 
-    .line 231
     goto :goto_0
 
-    .line 243
     :catch_0
     move-exception v1
 
-    .line 244
     .local v1, e:Lcom/android/internal/atfwd/AtCmdHandler$AtCmdParseException;
     :goto_2
     const-string v6, "AtCtsaCmdHandler"
@@ -361,7 +329,6 @@
 
     invoke-static {v6, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 245
     new-instance v2, Lcom/android/internal/atfwd/AtCmdResponse;
 
     .end local v2           #ret:Lcom/android/internal/atfwd/AtCmdResponse;
@@ -369,11 +336,9 @@
 
     invoke-direct {v2, v7, v6}, Lcom/android/internal/atfwd/AtCmdResponse;-><init>(ILjava/lang/String;)V
 
-    .line 246
     .restart local v2       #ret:Lcom/android/internal/atfwd/AtCmdResponse;
     goto :goto_1
 
-    .line 248
     .end local v1           #e:Lcom/android/internal/atfwd/AtCmdHandler$AtCmdParseException;
     :cond_1
     new-instance v2, Lcom/android/internal/atfwd/AtCmdResponse;
@@ -386,7 +351,6 @@
     .restart local v2       #ret:Lcom/android/internal/atfwd/AtCmdResponse;
     goto :goto_1
 
-    .line 243
     .end local v4           #valid:Lcom/android/internal/atfwd/AtCtsaCmdHandler$ParsedCtsaCmd;
     .restart local v5       #valid:Lcom/android/internal/atfwd/AtCtsaCmdHandler$ParsedCtsaCmd;
     :catch_1

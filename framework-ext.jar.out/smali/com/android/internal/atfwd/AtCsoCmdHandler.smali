@@ -25,17 +25,14 @@
     .end annotation
 
     .prologue
-    .line 52
     invoke-direct {p0, p1}, Lcom/android/internal/atfwd/AtCmdBaseHandler;-><init>(Landroid/content/Context;)V
 
-    .line 53
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/internal/atfwd/AtCsoCmdHandler;->mResources:Landroid/content/res/Resources;
 
-    .line 54
     return-void
 .end method
 
@@ -45,7 +42,6 @@
     .locals 1
 
     .prologue
-    .line 58
     const-string v0, "+CSO"
 
     return-object v0
@@ -62,18 +58,15 @@
 
     const/4 v6, 0x1
 
-    .line 64
     invoke-virtual {p1}, Lcom/android/internal/atfwd/AtCmd;->getTokens()[Ljava/lang/String;
 
     move-result-object v2
 
-    .line 65
     .local v2, tokens:[Ljava/lang/String;
     invoke-virtual {p1}, Lcom/android/internal/atfwd/AtCmd;->getOpcode()I
 
     move-result v0
 
-    .line 66
     .local v0, opCode:I
     const-string v3, "AtCsoCmdHandler"
 
@@ -109,51 +102,42 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 68
     const/4 v3, 0x7
 
     if-ne v0, v3, :cond_0
 
-    .line 69
     const-string v3, "AtCsoCmdHandler"
 
     const-string v4, "+CSO=? test command, RESULT OK "
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 70
     new-instance v3, Lcom/android/internal/atfwd/AtCmdResponse;
 
     const-string v4, "(0,1)"
 
     invoke-direct {v3, v6, v4}, Lcom/android/internal/atfwd/AtCmdResponse;-><init>(ILjava/lang/String;)V
 
-    .line 96
     :goto_0
     return-object v3
 
-    .line 72
     :cond_0
     const/4 v3, 0x5
 
     if-ne v0, v3, :cond_3
 
-    .line 73
     const-string v3, "AtCsoCmdHandler"
 
     const-string v4, "+CSO read"
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 74
     iget-object v3, p0, Lcom/android/internal/atfwd/AtCsoCmdHandler;->mResources:Landroid/content/res/Resources;
 
     if-eqz v3, :cond_2
 
-    .line 75
     const/4 v1, -0x1
 
-    .line 76
     .local v1, orientation:I
     iget-object v3, p0, Lcom/android/internal/atfwd/AtCsoCmdHandler;->mResources:Landroid/content/res/Resources;
 
@@ -163,7 +147,6 @@
 
     iget v1, v3, Landroid/content/res/Configuration;->orientation:I
 
-    .line 77
     const-string v3, "AtCsoCmdHandler"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -186,12 +169,10 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 78
     const/4 v3, 0x2
 
     if-ne v1, v3, :cond_1
 
-    .line 79
     new-instance v3, Lcom/android/internal/atfwd/AtCmdResponse;
 
     const-string v4, "+CSO: 1"
@@ -200,11 +181,9 @@
 
     goto :goto_0
 
-    .line 81
     :cond_1
     if-ne v1, v6, :cond_2
 
-    .line 82
     new-instance v3, Lcom/android/internal/atfwd/AtCmdResponse;
 
     const-string v4, "+CSO: 0"
@@ -213,7 +192,6 @@
 
     goto :goto_0
 
-    .line 85
     .end local v1           #orientation:I
     :cond_2
     const-string v3, "AtCsoCmdHandler"
@@ -222,7 +200,6 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 86
     new-instance v3, Lcom/android/internal/atfwd/AtCmdResponse;
 
     invoke-virtual {p1, v7}, Lcom/android/internal/atfwd/AtCmd;->getAtCmdErrStr(I)Ljava/lang/String;
@@ -233,13 +210,11 @@
 
     goto :goto_0
 
-    .line 88
     :cond_3
     const/16 v3, 0xb
 
     if-ne v0, v3, :cond_6
 
-    .line 89
     const-string v3, "AtCsoCmdHandler"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -264,14 +239,12 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 90
     if-eqz v2, :cond_4
 
     array-length v3, v2
 
     if-eq v3, v6, :cond_5
 
-    .line 91
     :cond_4
     new-instance v3, Lcom/android/internal/atfwd/AtCmdResponse;
 
@@ -285,7 +258,6 @@
 
     goto/16 :goto_0
 
-    .line 93
     :cond_5
     new-instance v3, Lcom/android/internal/atfwd/AtCmdResponse;
 
@@ -293,7 +265,6 @@
 
     goto/16 :goto_0
 
-    .line 96
     :cond_6
     new-instance v3, Lcom/android/internal/atfwd/AtCmdResponse;
 

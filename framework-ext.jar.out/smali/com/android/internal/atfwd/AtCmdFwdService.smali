@@ -31,26 +31,21 @@
     .parameter "c"
 
     .prologue
-    .line 52
     invoke-direct {p0}, Lcom/android/internal/atfwd/IAtCmdFwd$Stub;-><init>()V
 
-    .line 53
     iput-object p1, p0, Lcom/android/internal/atfwd/AtCmdFwdService;->mContext:Landroid/content/Context;
 
-    .line 54
     new-instance v2, Ljava/util/HashMap;
 
     invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
 
     iput-object v2, p0, Lcom/android/internal/atfwd/AtCmdFwdService;->mCmdHandlers:Ljava/util/HashMap;
 
-    .line 59
     :try_start_0
     new-instance v0, Lcom/android/internal/atfwd/AtCkpdCmdHandler;
 
     invoke-direct {v0, p1}, Lcom/android/internal/atfwd/AtCkpdCmdHandler;-><init>(Landroid/content/Context;)V
 
-    .line 60
     .local v0, cmd:Lcom/android/internal/atfwd/AtCmdHandler;
     iget-object v2, p0, Lcom/android/internal/atfwd/AtCmdFwdService;->mCmdHandlers:Ljava/util/HashMap;
 
@@ -66,7 +61,6 @@
     :try_end_0
     .catch Lcom/android/internal/atfwd/AtCmdHandler$AtCmdHandlerInstantiationException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 66
     .end local v0           #cmd:Lcom/android/internal/atfwd/AtCmdHandler;
     :goto_0
     :try_start_1
@@ -74,7 +68,6 @@
 
     invoke-direct {v0, p1}, Lcom/android/internal/atfwd/AtCtsaCmdHandler;-><init>(Landroid/content/Context;)V
 
-    .line 67
     .restart local v0       #cmd:Lcom/android/internal/atfwd/AtCmdHandler;
     iget-object v2, p0, Lcom/android/internal/atfwd/AtCmdFwdService;->mCmdHandlers:Ljava/util/HashMap;
 
@@ -90,7 +83,6 @@
     :try_end_1
     .catch Lcom/android/internal/atfwd/AtCmdHandler$AtCmdHandlerInstantiationException; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 73
     .end local v0           #cmd:Lcom/android/internal/atfwd/AtCmdHandler;
     :goto_1
     :try_start_2
@@ -98,7 +90,6 @@
 
     invoke-direct {v0, p1}, Lcom/android/internal/atfwd/AtCfunCmdHandler;-><init>(Landroid/content/Context;)V
 
-    .line 74
     .restart local v0       #cmd:Lcom/android/internal/atfwd/AtCmdHandler;
     iget-object v2, p0, Lcom/android/internal/atfwd/AtCmdFwdService;->mCmdHandlers:Ljava/util/HashMap;
 
@@ -114,7 +105,6 @@
     :try_end_2
     .catch Lcom/android/internal/atfwd/AtCmdHandler$AtCmdHandlerInstantiationException; {:try_start_2 .. :try_end_2} :catch_2
 
-    .line 80
     .end local v0           #cmd:Lcom/android/internal/atfwd/AtCmdHandler;
     :goto_2
     :try_start_3
@@ -122,7 +112,6 @@
 
     invoke-direct {v0, p1}, Lcom/android/internal/atfwd/AtCrslCmdHandler;-><init>(Landroid/content/Context;)V
 
-    .line 81
     .restart local v0       #cmd:Lcom/android/internal/atfwd/AtCmdHandler;
     iget-object v2, p0, Lcom/android/internal/atfwd/AtCmdFwdService;->mCmdHandlers:Ljava/util/HashMap;
 
@@ -138,7 +127,6 @@
     :try_end_3
     .catch Lcom/android/internal/atfwd/AtCmdHandler$AtCmdHandlerInstantiationException; {:try_start_3 .. :try_end_3} :catch_3
 
-    .line 87
     .end local v0           #cmd:Lcom/android/internal/atfwd/AtCmdHandler;
     :goto_3
     :try_start_4
@@ -146,7 +134,6 @@
 
     invoke-direct {v0, p1}, Lcom/android/internal/atfwd/AtCssCmdHandler;-><init>(Landroid/content/Context;)V
 
-    .line 88
     .restart local v0       #cmd:Lcom/android/internal/atfwd/AtCmdHandler;
     iget-object v2, p0, Lcom/android/internal/atfwd/AtCmdFwdService;->mCmdHandlers:Ljava/util/HashMap;
 
@@ -162,7 +149,6 @@
     :try_end_4
     .catch Lcom/android/internal/atfwd/AtCmdHandler$AtCmdHandlerInstantiationException; {:try_start_4 .. :try_end_4} :catch_4
 
-    .line 94
     .end local v0           #cmd:Lcom/android/internal/atfwd/AtCmdHandler;
     :goto_4
     :try_start_5
@@ -170,7 +156,6 @@
 
     invoke-direct {v0, p1}, Lcom/android/internal/atfwd/AtCmarCmdHandler;-><init>(Landroid/content/Context;)V
 
-    .line 95
     .restart local v0       #cmd:Lcom/android/internal/atfwd/AtCmdHandler;
     iget-object v2, p0, Lcom/android/internal/atfwd/AtCmdFwdService;->mCmdHandlers:Ljava/util/HashMap;
 
@@ -186,7 +171,6 @@
     :try_end_5
     .catch Lcom/android/internal/atfwd/AtCmdHandler$AtCmdHandlerInstantiationException; {:try_start_5 .. :try_end_5} :catch_5
 
-    .line 101
     .end local v0           #cmd:Lcom/android/internal/atfwd/AtCmdHandler;
     :goto_5
     :try_start_6
@@ -194,7 +178,6 @@
 
     invoke-direct {v0, p1}, Lcom/android/internal/atfwd/AtCsoCmdHandler;-><init>(Landroid/content/Context;)V
 
-    .line 102
     .restart local v0       #cmd:Lcom/android/internal/atfwd/AtCmdHandler;
     iget-object v2, p0, Lcom/android/internal/atfwd/AtCmdFwdService;->mCmdHandlers:Ljava/util/HashMap;
 
@@ -210,16 +193,13 @@
     :try_end_6
     .catch Lcom/android/internal/atfwd/AtCmdHandler$AtCmdHandlerInstantiationException; {:try_start_6 .. :try_end_6} :catch_6
 
-    .line 106
     .end local v0           #cmd:Lcom/android/internal/atfwd/AtCmdHandler;
     :goto_6
     return-void
 
-    .line 61
     :catch_0
     move-exception v1
 
-    .line 62
     .local v1, e:Lcom/android/internal/atfwd/AtCmdHandler$AtCmdHandlerInstantiationException;
     const-string v2, "AtCmdFwdService"
 
@@ -229,12 +209,10 @@
 
     goto :goto_0
 
-    .line 68
     .end local v1           #e:Lcom/android/internal/atfwd/AtCmdHandler$AtCmdHandlerInstantiationException;
     :catch_1
     move-exception v1
 
-    .line 69
     .restart local v1       #e:Lcom/android/internal/atfwd/AtCmdHandler$AtCmdHandlerInstantiationException;
     const-string v2, "AtCmdFwdService"
 
@@ -244,12 +222,10 @@
 
     goto :goto_1
 
-    .line 75
     .end local v1           #e:Lcom/android/internal/atfwd/AtCmdHandler$AtCmdHandlerInstantiationException;
     :catch_2
     move-exception v1
 
-    .line 76
     .restart local v1       #e:Lcom/android/internal/atfwd/AtCmdHandler$AtCmdHandlerInstantiationException;
     const-string v2, "AtCmdFwdService"
 
@@ -259,12 +235,10 @@
 
     goto :goto_2
 
-    .line 82
     .end local v1           #e:Lcom/android/internal/atfwd/AtCmdHandler$AtCmdHandlerInstantiationException;
     :catch_3
     move-exception v1
 
-    .line 83
     .restart local v1       #e:Lcom/android/internal/atfwd/AtCmdHandler$AtCmdHandlerInstantiationException;
     const-string v2, "AtCmdFwdService"
 
@@ -274,12 +248,10 @@
 
     goto :goto_3
 
-    .line 89
     .end local v1           #e:Lcom/android/internal/atfwd/AtCmdHandler$AtCmdHandlerInstantiationException;
     :catch_4
     move-exception v1
 
-    .line 90
     .restart local v1       #e:Lcom/android/internal/atfwd/AtCmdHandler$AtCmdHandlerInstantiationException;
     const-string v2, "AtCmdFwdService"
 
@@ -289,12 +261,10 @@
 
     goto :goto_4
 
-    .line 96
     .end local v1           #e:Lcom/android/internal/atfwd/AtCmdHandler$AtCmdHandlerInstantiationException;
     :catch_5
     move-exception v1
 
-    .line 97
     .restart local v1       #e:Lcom/android/internal/atfwd/AtCmdHandler$AtCmdHandlerInstantiationException;
     const-string v2, "AtCmdFwdService"
 
@@ -304,12 +274,10 @@
 
     goto :goto_5
 
-    .line 103
     .end local v1           #e:Lcom/android/internal/atfwd/AtCmdHandler$AtCmdHandlerInstantiationException;
     :catch_6
     move-exception v1
 
-    .line 104
     .restart local v1       #e:Lcom/android/internal/atfwd/AtCmdHandler$AtCmdHandlerInstantiationException;
     const-string v2, "AtCmdFwdService"
 
@@ -334,7 +302,6 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 109
     iget-object v3, p0, Lcom/android/internal/atfwd/AtCmdFwdService;->mContext:Landroid/content/Context;
 
     const-string v4, "android.permission.ATCMD"
@@ -343,7 +310,6 @@
 
     invoke-virtual {v3, v4, v5}, Landroid/content/Context;->enforceCallingPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 110
     const-string v3, "AtCmdFwdService"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -370,7 +336,6 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 112
     iget-object v3, p0, Lcom/android/internal/atfwd/AtCmdFwdService;->mCmdHandlers:Ljava/util/HashMap;
 
     invoke-virtual {p1}, Lcom/android/internal/atfwd/AtCmd;->getName()Ljava/lang/String;
@@ -387,11 +352,9 @@
 
     check-cast v1, Lcom/android/internal/atfwd/AtCmdHandler;
 
-    .line 113
     .local v1, h:Lcom/android/internal/atfwd/AtCmdHandler;
     if-eqz v1, :cond_0
 
-    .line 115
     :try_start_0
     invoke-interface {v1, p1}, Lcom/android/internal/atfwd/AtCmdHandler;->handleCommand(Lcom/android/internal/atfwd/AtCmd;)Lcom/android/internal/atfwd/AtCmdResponse;
     :try_end_0
@@ -399,17 +362,14 @@
 
     move-result-object v2
 
-    .line 123
     .local v2, ret:Lcom/android/internal/atfwd/AtCmdResponse;
     :goto_0
     return-object v2
 
-    .line 116
     .end local v2           #ret:Lcom/android/internal/atfwd/AtCmdResponse;
     :catch_0
     move-exception v0
 
-    .line 117
     .local v0, e:Ljava/lang/Throwable;
     new-instance v2, Lcom/android/internal/atfwd/AtCmdResponse;
 
@@ -417,11 +377,9 @@
 
     invoke-direct {v2, v6, v3}, Lcom/android/internal/atfwd/AtCmdResponse;-><init>(ILjava/lang/String;)V
 
-    .line 118
     .restart local v2       #ret:Lcom/android/internal/atfwd/AtCmdResponse;
     goto :goto_0
 
-    .line 120
     .end local v0           #e:Ljava/lang/Throwable;
     .end local v2           #ret:Lcom/android/internal/atfwd/AtCmdResponse;
     :cond_0
@@ -447,7 +405,6 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 121
     new-instance v2, Lcom/android/internal/atfwd/AtCmdResponse;
 
     const-string v3, "+CME ERROR: 4"

@@ -26,7 +26,6 @@
     .parameter "x1"
 
     .prologue
-    .line 180
     iput-object p1, p0, Lcom/android/internal/atfwd/AtCtsaCmdHandler$1;->this$0:Lcom/android/internal/atfwd/AtCtsaCmdHandler;
 
     invoke-direct {p0, p2, p3}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;I)V

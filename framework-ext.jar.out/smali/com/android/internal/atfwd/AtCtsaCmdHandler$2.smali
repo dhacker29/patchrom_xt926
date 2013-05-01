@@ -25,7 +25,6 @@
     .parameter "x0"
 
     .prologue
-    .line 183
     iput-object p1, p0, Lcom/android/internal/atfwd/AtCtsaCmdHandler$2;->this$0:Lcom/android/internal/atfwd/AtCtsaCmdHandler;
 
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
@@ -40,18 +39,15 @@
     .parameter "msg"
 
     .prologue
-    .line 185
     move-object/from16 v0, p1
 
     iget v3, v0, Landroid/os/Message;->what:I
 
     packed-switch v3, :pswitch_data_0
 
-    .line 221
     :cond_0
     return-void
 
-    .line 187
     :pswitch_0
     move-object/from16 v0, p1
 
@@ -59,7 +55,6 @@
 
     check-cast v9, Lcom/android/internal/atfwd/AtCtsaCmdHandler$ParsedCtsaCmd;
 
-    .line 188
     .local v9, cmd:Lcom/android/internal/atfwd/AtCtsaCmdHandler$ParsedCtsaCmd;
     const-string v3, "AtCtsaCmdHandler"
 
@@ -83,10 +78,8 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 189
     if-eqz v9, :cond_0
 
-    .line 191
     invoke-virtual {v9}, Lcom/android/internal/atfwd/AtCtsaCmdHandler$ParsedCtsaCmd;->getEvents()Ljava/util/Vector;
 
     move-result-object v3
@@ -107,7 +100,6 @@
 
     move-result-object v14
 
-    .line 192
     .local v14, obj:Ljava/lang/Object;
     instance-of v3, v14, Lcom/android/internal/atfwd/AtCmdHandler$PauseEvent;
 
@@ -115,10 +107,8 @@
 
     move-object v12, v14
 
-    .line 193
     check-cast v12, Lcom/android/internal/atfwd/AtCmdHandler$PauseEvent;
 
-    .line 195
     .local v12, evt:Lcom/android/internal/atfwd/AtCmdHandler$PauseEvent;
     :try_start_0
     invoke-virtual {v12}, Lcom/android/internal/atfwd/AtCmdHandler$PauseEvent;->getTime()J
@@ -131,11 +121,9 @@
 
     goto :goto_0
 
-    .line 197
     :catch_0
     move-exception v10
 
-    .line 198
     .local v10, e:Ljava/lang/InterruptedException;
     const-string v3, "AtCtsaCmdHandler"
 
@@ -143,7 +131,6 @@
 
     invoke-static {v3, v4, v10}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 202
     .end local v10           #e:Ljava/lang/InterruptedException;
     .end local v12           #evt:Lcom/android/internal/atfwd/AtCmdHandler$PauseEvent;
     :cond_1
@@ -151,7 +138,6 @@
 
     if-nez v3, :cond_2
 
-    .line 203
     const-string v3, "AtCtsaCmdHandler"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -184,7 +170,6 @@
 
     goto :goto_0
 
-    .line 208
     :cond_2
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
@@ -193,10 +178,8 @@
     .local v1, time:J
     move-object v15, v14
 
-    .line 210
     check-cast v15, Landroid/view/MotionEvent;
 
-    .line 211
     .local v15, oev:Landroid/view/MotionEvent;
     invoke-virtual {v15}, Landroid/view/MotionEvent;->getAction()I
 
@@ -220,11 +203,9 @@
 
     move-result-object v11
 
-    .line 216
     .local v11, ev:Landroid/view/MotionEvent;
     invoke-virtual {v15}, Landroid/view/MotionEvent;->recycle()V
 
-    .line 217
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/internal/atfwd/AtCtsaCmdHandler$2;->this$0:Lcom/android/internal/atfwd/AtCtsaCmdHandler;
@@ -236,7 +217,6 @@
 
     goto :goto_0
 
-    .line 185
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0

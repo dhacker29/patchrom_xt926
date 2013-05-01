@@ -64,7 +64,6 @@
     .locals 1
 
     .prologue
-    .line 170
     new-instance v0, Lcom/android/internal/atfwd/AtCmd$1;
 
     invoke-direct {v0}, Lcom/android/internal/atfwd/AtCmd$1;-><init>()V
@@ -81,13 +80,10 @@
     .parameter "tokens"
 
     .prologue
-    .line 89
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 90
     invoke-direct {p0, p1, p2, p3}, Lcom/android/internal/atfwd/AtCmd;->init(ILjava/lang/String;[Ljava/lang/String;)V
 
-    .line 91
     return-void
 .end method
 
@@ -96,31 +92,25 @@
     .parameter "source"
 
     .prologue
-    .line 93
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 94
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
-    .line 95
     .local v1, opcode:I
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 96
     .local v0, name:Ljava/lang/String;
     invoke-virtual {p1}, Landroid/os/Parcel;->readStringArray()[Ljava/lang/String;
 
     move-result-object v2
 
-    .line 97
     .local v2, tokens:[Ljava/lang/String;
     invoke-direct {p0, v1, v0, v2}, Lcom/android/internal/atfwd/AtCmd;->init(ILjava/lang/String;[Ljava/lang/String;)V
 
-    .line 98
     return-void
 .end method
 
@@ -130,7 +120,6 @@
     .parameter "x1"
 
     .prologue
-    .line 35
     invoke-direct {p0, p1}, Lcom/android/internal/atfwd/AtCmd;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -143,16 +132,12 @@
     .parameter "tokens"
 
     .prologue
-    .line 101
     iput p1, p0, Lcom/android/internal/atfwd/AtCmd;->mOpcode:I
 
-    .line 102
     iput-object p2, p0, Lcom/android/internal/atfwd/AtCmd;->mName:Ljava/lang/String;
 
-    .line 103
     iput-object p3, p0, Lcom/android/internal/atfwd/AtCmd;->mTokens:[Ljava/lang/String;
 
-    .line 104
     return-void
 .end method
 
@@ -162,7 +147,6 @@
     .locals 1
 
     .prologue
-    .line 108
     const/4 v0, 0x0
 
     return v0
@@ -173,75 +157,55 @@
     .parameter "errCode"
 
     .prologue
-    .line 134
     const-string v0, "+CME ERROR: 100"
 
-    .line 136
     .local v0, errStrResult:Ljava/lang/String;
     sparse-switch p1, :sswitch_data_0
 
-    .line 167
     :goto_0
     :sswitch_0
     return-object v0
 
-    .line 138
     :sswitch_1
     const-string v0, "+CME ERROR: 0"
 
-    .line 139
     goto :goto_0
 
-    .line 141
     :sswitch_2
     const-string v0, "+CME ERROR: 1"
 
-    .line 142
     goto :goto_0
 
-    .line 144
     :sswitch_3
     const-string v0, "+CME ERROR: 3"
 
-    .line 145
     goto :goto_0
 
-    .line 147
     :sswitch_4
     const-string v0, "+CME ERROR: 4"
 
-    .line 148
     goto :goto_0
 
-    .line 150
     :sswitch_5
     const-string v0, "+CME ERROR: 16"
 
-    .line 151
     goto :goto_0
 
-    .line 153
     :sswitch_6
     const-string v0, "+CME ERROR: 22"
 
-    .line 154
     goto :goto_0
 
-    .line 156
     :sswitch_7
     const-string v0, "+CME ERROR: 25"
 
-    .line 157
     goto :goto_0
 
-    .line 159
     :sswitch_8
     const-string v0, "+CME ERROR: 50"
 
-    .line 160
     goto :goto_0
 
-    .line 136
     :sswitch_data_0
     .sparse-switch
         0x0 -> :sswitch_1
@@ -260,7 +224,6 @@
     .locals 1
 
     .prologue
-    .line 73
     iget-object v0, p0, Lcom/android/internal/atfwd/AtCmd;->mName:Ljava/lang/String;
 
     return-object v0
@@ -270,7 +233,6 @@
     .locals 1
 
     .prologue
-    .line 65
     iget v0, p0, Lcom/android/internal/atfwd/AtCmd;->mOpcode:I
 
     return v0
@@ -280,7 +242,6 @@
     .locals 1
 
     .prologue
-    .line 81
     iget-object v0, p0, Lcom/android/internal/atfwd/AtCmd;->mTokens:[Ljava/lang/String;
 
     return-object v0
@@ -291,10 +252,8 @@
     .parameter "mName"
 
     .prologue
-    .line 77
     iput-object p1, p0, Lcom/android/internal/atfwd/AtCmd;->mName:Ljava/lang/String;
 
-    .line 78
     return-void
 .end method
 
@@ -303,10 +262,8 @@
     .parameter "mOpcode"
 
     .prologue
-    .line 69
     iput p1, p0, Lcom/android/internal/atfwd/AtCmd;->mOpcode:I
 
-    .line 70
     return-void
 .end method
 
@@ -315,10 +272,8 @@
     .parameter "mTokens"
 
     .prologue
-    .line 85
     iput-object p1, p0, Lcom/android/internal/atfwd/AtCmd;->mTokens:[Ljava/lang/String;
 
-    .line 86
     return-void
 .end method
 
@@ -326,7 +281,6 @@
     .locals 7
 
     .prologue
-    .line 118
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -365,7 +319,6 @@
 
     move-result-object v3
 
-    .line 119
     .local v3, ret:Ljava/lang/String;
     iget-object v0, p0, Lcom/android/internal/atfwd/AtCmd;->mTokens:[Ljava/lang/String;
 
@@ -381,7 +334,6 @@
 
     aget-object v4, v0, v1
 
-    .line 120
     .local v4, token:Ljava/lang/String;
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -411,12 +363,10 @@
 
     move-result-object v3
 
-    .line 119
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 122
     .end local v4           #token:Ljava/lang/String;
     :cond_0
     new-instance v5, Ljava/lang/StringBuilder;
@@ -437,7 +387,6 @@
 
     move-result-object v3
 
-    .line 123
     return-object v3
 .end method
 
@@ -447,21 +396,17 @@
     .parameter "flags"
 
     .prologue
-    .line 112
     iget v0, p0, Lcom/android/internal/atfwd/AtCmd;->mOpcode:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 113
     iget-object v0, p0, Lcom/android/internal/atfwd/AtCmd;->mName:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 114
     iget-object v0, p0, Lcom/android/internal/atfwd/AtCmd;->mTokens:[Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeStringArray([Ljava/lang/String;)V
 
-    .line 115
     return-void
 .end method

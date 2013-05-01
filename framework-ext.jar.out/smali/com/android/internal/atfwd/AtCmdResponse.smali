@@ -36,7 +36,6 @@
     .locals 1
 
     .prologue
-    .line 83
     new-instance v0, Lcom/android/internal/atfwd/AtCmdResponse$1;
 
     invoke-direct {v0}, Lcom/android/internal/atfwd/AtCmdResponse$1;-><init>()V
@@ -52,13 +51,10 @@
     .parameter "response"
 
     .prologue
-    .line 60
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 61
     invoke-direct {p0, p1, p2}, Lcom/android/internal/atfwd/AtCmdResponse;->init(ILjava/lang/String;)V
 
-    .line 62
     return-void
 .end method
 
@@ -68,25 +64,20 @@
     .parameter "flags"
 
     .prologue
-    .line 64
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 65
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
-    .line 66
     .local v1, result:I
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 67
     .local v0, response:Ljava/lang/String;
     invoke-direct {p0, v1, v0}, Lcom/android/internal/atfwd/AtCmdResponse;->init(ILjava/lang/String;)V
 
-    .line 68
     return-void
 .end method
 
@@ -96,13 +87,10 @@
     .parameter "response"
 
     .prologue
-    .line 71
     iput p1, p0, Lcom/android/internal/atfwd/AtCmdResponse;->mResult:I
 
-    .line 72
     iput-object p2, p0, Lcom/android/internal/atfwd/AtCmdResponse;->mResponse:Ljava/lang/String;
 
-    .line 73
     return-void
 .end method
 
@@ -112,7 +100,6 @@
     .locals 1
 
     .prologue
-    .line 75
     const/4 v0, 0x0
 
     return v0
@@ -122,7 +109,6 @@
     .locals 1
 
     .prologue
-    .line 53
     iget-object v0, p0, Lcom/android/internal/atfwd/AtCmdResponse;->mResponse:Ljava/lang/String;
 
     return-object v0
@@ -132,7 +118,6 @@
     .locals 1
 
     .prologue
-    .line 45
     iget v0, p0, Lcom/android/internal/atfwd/AtCmdResponse;->mResult:I
 
     return v0
@@ -143,10 +128,8 @@
     .parameter "mResponse"
 
     .prologue
-    .line 57
     iput-object p1, p0, Lcom/android/internal/atfwd/AtCmdResponse;->mResponse:Ljava/lang/String;
 
-    .line 58
     return-void
 .end method
 
@@ -155,10 +138,8 @@
     .parameter "mResult"
 
     .prologue
-    .line 49
     iput p1, p0, Lcom/android/internal/atfwd/AtCmdResponse;->mResult:I
 
-    .line 50
     return-void
 .end method
 
@@ -168,16 +149,13 @@
     .parameter "flags"
 
     .prologue
-    .line 79
     iget v0, p0, Lcom/android/internal/atfwd/AtCmdResponse;->mResult:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 80
     iget-object v0, p0, Lcom/android/internal/atfwd/AtCmdResponse;->mResponse:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 81
     return-void
 .end method

@@ -85,10 +85,8 @@
 
     const/16 v6, 0x4d
 
-    .line 223
     invoke-direct {p0, p1}, Lcom/android/internal/atfwd/AtCmdBaseHandler;-><init>(Landroid/content/Context;)V
 
-    .line 224
     const-string v3, "window"
 
     invoke-static {v3}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -99,11 +97,9 @@
 
     move-result-object v2
 
-    .line 227
     .local v2, service:Landroid/view/IWindowManager;
     if-nez v2, :cond_0
 
-    .line 228
     new-instance v3, Ljava/lang/RuntimeException;
 
     const-string v4, "Unable to connect to Window Service"
@@ -112,11 +108,9 @@
 
     throw v3
 
-    .line 230
     :cond_0
     iput-object v2, p0, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->mWm:Landroid/view/IWindowManager;
 
-    .line 232
     const-string v3, "phone"
 
     invoke-static {v3}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -129,26 +123,22 @@
 
     iput-object v3, p0, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->telephony:Lcom/android/internal/telephony/ITelephony;
 
-    .line 234
     iget-object v3, p0, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->telephony:Lcom/android/internal/telephony/ITelephony;
 
     if-nez v3, :cond_1
 
-    .line 236
     const-string v3, "AtCkpdCmdHandler"
 
     const-string v4, "telephony is not ready now"
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 237
     new-instance v3, Lcom/android/internal/atfwd/AtCkpdCmdHandler$1;
 
     invoke-direct {v3, p0}, Lcom/android/internal/atfwd/AtCkpdCmdHandler$1;-><init>(Lcom/android/internal/atfwd/AtCkpdCmdHandler;)V
 
     invoke-virtual {v3}, Lcom/android/internal/atfwd/AtCkpdCmdHandler$1;->start()V
 
-    .line 260
     :cond_1
     new-instance v3, Ljava/util/LinkedList;
 
@@ -156,14 +146,12 @@
 
     iput-object v3, p0, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->mEventQ:Ljava/util/LinkedList;
 
-    .line 261
     new-instance v3, Ljava/util/HashMap;
 
     invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
 
     sput-object v3, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->key2keycode:Ljava/util/HashMap;
 
-    .line 262
     sget-object v3, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->key2keycode:Ljava/util/HashMap;
 
     const/16 v4, 0x23
@@ -180,7 +168,6 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 264
     sget-object v3, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->key2keycode:Ljava/util/HashMap;
 
     const/16 v4, 0x40
@@ -195,7 +182,6 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 266
     sget-object v3, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->key2keycode:Ljava/util/HashMap;
 
     const/16 v4, 0x2a
@@ -210,7 +196,6 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 267
     sget-object v3, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->key2keycode:Ljava/util/HashMap;
 
     const/16 v4, 0x30
@@ -227,7 +212,6 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 268
     sget-object v3, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->key2keycode:Ljava/util/HashMap;
 
     const/16 v4, 0x31
@@ -244,7 +228,6 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 269
     sget-object v3, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->key2keycode:Ljava/util/HashMap;
 
     const/16 v4, 0x32
@@ -259,7 +242,6 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 270
     sget-object v3, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->key2keycode:Ljava/util/HashMap;
 
     const/16 v4, 0x33
@@ -274,7 +256,6 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 271
     sget-object v3, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->key2keycode:Ljava/util/HashMap;
 
     const/16 v4, 0x34
@@ -291,7 +272,6 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 272
     sget-object v3, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->key2keycode:Ljava/util/HashMap;
 
     const/16 v4, 0x35
@@ -308,7 +288,6 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 273
     sget-object v3, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->key2keycode:Ljava/util/HashMap;
 
     const/16 v4, 0x36
@@ -325,7 +304,6 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 274
     sget-object v3, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->key2keycode:Ljava/util/HashMap;
 
     const/16 v4, 0x37
@@ -342,7 +320,6 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 275
     sget-object v3, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->key2keycode:Ljava/util/HashMap;
 
     const/16 v4, 0x38
@@ -359,7 +336,6 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 276
     sget-object v3, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->key2keycode:Ljava/util/HashMap;
 
     const/16 v4, 0x39
@@ -376,7 +352,6 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 277
     sget-object v3, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->key2keycode:Ljava/util/HashMap;
 
     const/16 v4, 0x3c
@@ -393,7 +368,6 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 278
     sget-object v3, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->key2keycode:Ljava/util/HashMap;
 
     const/16 v4, 0x3e
@@ -410,7 +384,6 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 279
     sget-object v3, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->key2keycode:Ljava/util/HashMap;
 
     const/16 v4, 0x5e
@@ -427,7 +400,6 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 280
     sget-object v3, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->key2keycode:Ljava/util/HashMap;
 
     const/16 v4, 0x56
@@ -444,7 +416,6 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 281
     sget-object v3, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->key2keycode:Ljava/util/HashMap;
 
     const/16 v4, 0x44
@@ -461,7 +432,6 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 282
     sget-object v3, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->key2keycode:Ljava/util/HashMap;
 
     const/16 v4, 0x45
@@ -478,7 +448,6 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 283
     sget-object v3, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->key2keycode:Ljava/util/HashMap;
 
     invoke-static {v6}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
@@ -493,7 +462,6 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 284
     sget-object v3, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->key2keycode:Ljava/util/HashMap;
 
     const/16 v4, 0x50
@@ -510,7 +478,6 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 285
     sget-object v3, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->key2keycode:Ljava/util/HashMap;
 
     const/16 v4, 0x51
@@ -525,7 +492,6 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 286
     sget-object v3, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->key2keycode:Ljava/util/HashMap;
 
     const/16 v4, 0x53
@@ -542,7 +508,6 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 287
     sget-object v3, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->key2keycode:Ljava/util/HashMap;
 
     const/16 v4, 0x55
@@ -559,7 +524,6 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 288
     sget-object v3, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->key2keycode:Ljava/util/HashMap;
 
     const/16 v4, 0x56
@@ -576,7 +540,6 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 289
     sget-object v3, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->key2keycode:Ljava/util/HashMap;
 
     const/16 v4, 0x59
@@ -593,7 +556,6 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 290
     sget-object v3, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->key2keycode:Ljava/util/HashMap;
 
     invoke-static {v7}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
@@ -608,7 +570,6 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 291
     sget-object v3, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->key2keycode:Ljava/util/HashMap;
 
     const/16 v4, 0x5d
@@ -625,14 +586,12 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 293
     new-instance v3, Ljava/util/HashMap;
 
     invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
 
     sput-object v3, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->alphacode:Ljava/util/HashMap;
 
-    .line 294
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -641,7 +600,6 @@
 
     if-ge v0, v3, :cond_2
 
-    .line 295
     sget-object v3, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->alphacode:Ljava/util/HashMap;
 
     add-int/lit8 v4, v0, 0x41
@@ -660,19 +618,16 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 294
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 296
     :cond_2
     const/4 v0, 0x0
 
     :goto_1
     if-ge v0, v9, :cond_3
 
-    .line 297
     sget-object v3, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->alphacode:Ljava/util/HashMap;
 
     add-int/lit8 v4, v0, 0x30
@@ -691,12 +646,10 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 296
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 298
     :cond_3
     sget-object v3, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->alphacode:Ljava/util/HashMap;
 
@@ -712,7 +665,6 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 299
     sget-object v3, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->alphacode:Ljava/util/HashMap;
 
     const/16 v4, 0x3d
@@ -729,7 +681,6 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 300
     sget-object v3, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->alphacode:Ljava/util/HashMap;
 
     invoke-static {v7}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
@@ -744,7 +695,6 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 301
     sget-object v3, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->alphacode:Ljava/util/HashMap;
 
     const/16 v4, 0x2e
@@ -761,7 +711,6 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 302
     sget-object v3, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->alphacode:Ljava/util/HashMap;
 
     const/16 v4, 0x2b
@@ -778,7 +727,6 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 303
     sget-object v3, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->alphacode:Ljava/util/HashMap;
 
     const/16 v4, 0x23
@@ -795,7 +743,6 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 304
     sget-object v3, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->alphacode:Ljava/util/HashMap;
 
     const/16 v4, 0x5d
@@ -812,7 +759,6 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 305
     sget-object v3, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->alphacode:Ljava/util/HashMap;
 
     const/16 v4, 0x2f
@@ -829,7 +775,6 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 306
     sget-object v3, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->alphacode:Ljava/util/HashMap;
 
     const/16 v4, 0x20
@@ -846,7 +791,6 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 307
     sget-object v3, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->alphacode:Ljava/util/HashMap;
 
     const/16 v4, 0x2a
@@ -861,7 +805,6 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 308
     sget-object v3, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->alphacode:Ljava/util/HashMap;
 
     invoke-static {v8}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
@@ -876,30 +819,25 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 309
     const/4 v3, 0x0
 
     invoke-static {v3}, Landroid/view/KeyCharacterMap;->load(I)Landroid/view/KeyCharacterMap;
 
     move-result-object v1
 
-    .line 310
     .local v1, kcm:Landroid/view/KeyCharacterMap;
     iput-object v1, p0, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->mKcm:Landroid/view/KeyCharacterMap;
 
-    .line 312
     new-instance v3, Lcom/android/internal/atfwd/AtCkpdCmdHandler$2;
 
     invoke-direct {v3, p0}, Lcom/android/internal/atfwd/AtCkpdCmdHandler$2;-><init>(Lcom/android/internal/atfwd/AtCkpdCmdHandler;)V
 
     iput-object v3, p0, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->mInjectThread:Ljava/lang/Thread;
 
-    .line 366
     iget-object v3, p0, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->mInjectThread:Ljava/lang/Thread;
 
     invoke-virtual {v3}, Ljava/lang/Thread;->start()V
 
-    .line 367
     return-void
 .end method
 
@@ -907,7 +845,6 @@
     .locals 1
 
     .prologue
-    .line 61
     sget-object v0, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->key2keycode:Ljava/util/HashMap;
 
     return-object v0
@@ -918,7 +855,6 @@
     .parameter "x0"
 
     .prologue
-    .line 61
     iget-object v0, p0, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->mEventQ:Ljava/util/LinkedList;
 
     return-object v0
@@ -931,7 +867,6 @@
     .parameter "x2"
 
     .prologue
-    .line 61
     invoke-direct {p0, p1, p2}, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->injectKeyEvent(Landroid/view/KeyEvent;Z)V
 
     return-void
@@ -943,7 +878,6 @@
     .parameter "sync"
 
     .prologue
-    .line 412
     const-string v0, "AtCkpdCmdHandler"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -966,7 +900,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 413
     invoke-static {}, Landroid/hardware/input/InputManager;->getInstance()Landroid/hardware/input/InputManager;
 
     move-result-object v1
@@ -978,10 +911,8 @@
     :goto_0
     invoke-virtual {v1, p1, v0}, Landroid/hardware/input/InputManager;->injectInputEvent(Landroid/view/InputEvent;I)Z
 
-    .line 416
     return-void
 
-    .line 413
     :cond_0
     const/4 v0, 0x1
 
@@ -994,7 +925,6 @@
     .locals 1
 
     .prologue
-    .line 401
     const-string v0, "+CKPD"
 
     return-object v0
@@ -1009,18 +939,14 @@
 
     const/4 v7, 0x0
 
-    .line 370
     const/4 v2, 0x0
 
-    .line 371
     .local v2, ret:Lcom/android/internal/atfwd/AtCmdResponse;
     const/4 v4, 0x0
 
-    .line 372
     .local v4, valid:Lcom/android/internal/atfwd/AtCkpdCmdHandler$ParsedCkpdCmd;
     const/4 v0, 0x0
 
-    .line 373
     .local v0, dead:Z
     const-string v8, "AtCkpdCmdHandler"
 
@@ -1044,7 +970,6 @@
 
     invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 375
     iget-object v8, p0, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->mInjectThread:Ljava/lang/Thread;
 
     invoke-virtual {v8}, Ljava/lang/Thread;->isAlive()Z
@@ -1055,11 +980,9 @@
 
     move v0, v6
 
-    .line 376
     :goto_0
     if-nez v0, :cond_1
 
-    .line 382
     :try_start_0
     new-instance v5, Lcom/android/internal/atfwd/AtCkpdCmdHandler$ParsedCkpdCmd;
 
@@ -1067,7 +990,6 @@
     :try_end_0
     .catch Lcom/android/internal/atfwd/AtCmdHandler$AtCmdParseException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 383
     .end local v4           #valid:Lcom/android/internal/atfwd/AtCkpdCmdHandler$ParsedCkpdCmd;
     .local v5, valid:Lcom/android/internal/atfwd/AtCkpdCmdHandler$ParsedCkpdCmd;
     :try_start_1
@@ -1081,7 +1003,6 @@
     :try_end_1
     .catch Lcom/android/internal/atfwd/AtCmdHandler$AtCmdParseException; {:try_start_1 .. :try_end_1} :catch_2
 
-    .line 384
     .end local v2           #ret:Lcom/android/internal/atfwd/AtCmdResponse;
     .local v3, ret:Lcom/android/internal/atfwd/AtCmdResponse;
     :try_start_2
@@ -1091,30 +1012,25 @@
 
     invoke-static {v6, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 385
     iget-object v8, p0, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->mEventQ:Ljava/util/LinkedList;
 
     monitor-enter v8
     :try_end_2
     .catch Lcom/android/internal/atfwd/AtCmdHandler$AtCmdParseException; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 386
     :try_start_3
     iget-object v6, p0, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->mEventQ:Ljava/util/LinkedList;
 
     invoke-virtual {v6, v5}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
 
-    .line 387
     iget-object v6, p0, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->mEventQ:Ljava/util/LinkedList;
 
     invoke-virtual {v6}, Ljava/lang/Object;->notify()V
 
-    .line 388
     monitor-exit v8
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 389
     :try_start_4
     const-string v6, "AtCkpdCmdHandler"
 
@@ -1130,7 +1046,6 @@
     .restart local v4       #valid:Lcom/android/internal/atfwd/AtCkpdCmdHandler$ParsedCkpdCmd;
     move-object v2, v3
 
-    .line 397
     .end local v3           #ret:Lcom/android/internal/atfwd/AtCmdResponse;
     .restart local v2       #ret:Lcom/android/internal/atfwd/AtCmdResponse;
     :goto_1
@@ -1139,10 +1054,8 @@
     :cond_0
     move v0, v7
 
-    .line 375
     goto :goto_0
 
-    .line 388
     .end local v2           #ret:Lcom/android/internal/atfwd/AtCmdResponse;
     .end local v4           #valid:Lcom/android/internal/atfwd/AtCkpdCmdHandler$ParsedCkpdCmd;
     .restart local v3       #ret:Lcom/android/internal/atfwd/AtCmdResponse;
@@ -1160,7 +1073,6 @@
     :try_end_6
     .catch Lcom/android/internal/atfwd/AtCmdHandler$AtCmdParseException; {:try_start_6 .. :try_end_6} :catch_0
 
-    .line 390
     :catch_0
     move-exception v1
 
@@ -1170,7 +1082,6 @@
     .restart local v4       #valid:Lcom/android/internal/atfwd/AtCkpdCmdHandler$ParsedCkpdCmd;
     move-object v2, v3
 
-    .line 391
     .end local v3           #ret:Lcom/android/internal/atfwd/AtCmdResponse;
     .local v1, e:Lcom/android/internal/atfwd/AtCmdHandler$AtCmdParseException;
     .restart local v2       #ret:Lcom/android/internal/atfwd/AtCmdResponse;
@@ -1197,7 +1108,6 @@
 
     invoke-static {v6, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 392
     new-instance v2, Lcom/android/internal/atfwd/AtCmdResponse;
 
     .end local v2           #ret:Lcom/android/internal/atfwd/AtCmdResponse;
@@ -1205,11 +1115,9 @@
 
     invoke-direct {v2, v7, v6}, Lcom/android/internal/atfwd/AtCmdResponse;-><init>(ILjava/lang/String;)V
 
-    .line 393
     .restart local v2       #ret:Lcom/android/internal/atfwd/AtCmdResponse;
     goto :goto_1
 
-    .line 395
     .end local v1           #e:Lcom/android/internal/atfwd/AtCmdHandler$AtCmdParseException;
     :cond_1
     new-instance v2, Lcom/android/internal/atfwd/AtCmdResponse;
@@ -1222,7 +1130,6 @@
     .restart local v2       #ret:Lcom/android/internal/atfwd/AtCmdResponse;
     goto :goto_1
 
-    .line 390
     :catch_1
     move-exception v1
 

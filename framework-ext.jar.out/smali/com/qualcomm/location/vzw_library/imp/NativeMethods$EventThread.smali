@@ -26,12 +26,10 @@
     .parameter
 
     .prologue
-    .line 75
     iput-object p1, p0, Lcom/qualcomm/location/vzw_library/imp/NativeMethods$EventThread;->this$0:Lcom/qualcomm/location/vzw_library/imp/NativeMethods;
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
 
-    .line 77
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/qualcomm/location/vzw_library/imp/NativeMethods$EventThread;->fgTerminate:Z
@@ -45,7 +43,6 @@
     .parameter "x1"
 
     .prologue
-    .line 75
     invoke-direct {p0, p1}, Lcom/qualcomm/location/vzw_library/imp/NativeMethods$EventThread;-><init>(Lcom/qualcomm/location/vzw_library/imp/NativeMethods;)V
 
     return-void
@@ -57,10 +54,8 @@
     .locals 3
 
     .prologue
-    .line 81
     invoke-super {p0}, Ljava/lang/Thread;->run()V
 
-    .line 83
     iget-object v1, p0, Lcom/qualcomm/location/vzw_library/imp/NativeMethods$EventThread;->this$0:Lcom/qualcomm/location/vzw_library/imp/NativeMethods;
 
     #getter for: Lcom/qualcomm/location/vzw_library/imp/NativeMethods;->VERBOSE:Z
@@ -76,7 +71,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 86
     :cond_0
     :goto_0
     :try_start_0
@@ -90,7 +84,6 @@
 
     if-nez v1, :cond_1
 
-    .line 89
     iget-object v1, p0, Lcom/qualcomm/location/vzw_library/imp/NativeMethods$EventThread;->this$0:Lcom/qualcomm/location/vzw_library/imp/NativeMethods;
 
     #calls: Lcom/qualcomm/location/vzw_library/imp/NativeMethods;->native_wait_for_event()V
@@ -100,15 +93,12 @@
 
     goto :goto_0
 
-    .line 92
     :catch_0
     move-exception v0
 
-    .line 93
     .local v0, e:Ljava/lang/Exception;
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 95
     .end local v0           #e:Ljava/lang/Exception;
     :cond_1
     iget-object v1, p0, Lcom/qualcomm/location/vzw_library/imp/NativeMethods$EventThread;->this$0:Lcom/qualcomm/location/vzw_library/imp/NativeMethods;
@@ -126,7 +116,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 96
     :cond_2
     return-void
 .end method

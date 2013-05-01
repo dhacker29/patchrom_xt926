@@ -21,10 +21,8 @@
     .end annotation
 
     .prologue
-    .line 49
     invoke-direct {p0, p1}, Lcom/android/internal/atfwd/AtCmdBaseHandler;-><init>(Landroid/content/Context;)V
 
-    .line 50
     return-void
 .end method
 
@@ -34,7 +32,6 @@
     .locals 1
 
     .prologue
-    .line 54
     const-string v0, "+CFUN"
 
     return-object v0
@@ -49,16 +46,13 @@
 
     const/4 v5, 0x0
 
-    .line 59
     const/4 v1, 0x0
 
-    .line 61
     .local v1, ret:Lcom/android/internal/atfwd/AtCmdResponse;
     invoke-virtual {p1}, Lcom/android/internal/atfwd/AtCmd;->getTokens()[Ljava/lang/String;
 
     move-result-object v2
 
-    .line 63
     .local v2, tokens:[Ljava/lang/String;
     array-length v3, v2
 
@@ -86,7 +80,6 @@
 
     if-nez v3, :cond_1
 
-    .line 67
     :cond_0
     const-string v3, "AtCfunCmdHandler"
 
@@ -94,7 +87,6 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 68
     new-instance v1, Lcom/android/internal/atfwd/AtCmdResponse;
 
     .end local v1           #ret:Lcom/android/internal/atfwd/AtCmdResponse;
@@ -102,22 +94,18 @@
 
     invoke-direct {v1, v5, v3}, Lcom/android/internal/atfwd/AtCmdResponse;-><init>(ILjava/lang/String;)V
 
-    .line 85
     .restart local v1       #ret:Lcom/android/internal/atfwd/AtCmdResponse;
     :goto_0
     return-object v1
 
-    .line 70
     :cond_1
     new-instance v0, Lcom/android/internal/atfwd/AtCfunCmdHandler$1;
 
     invoke-direct {v0, p0}, Lcom/android/internal/atfwd/AtCfunCmdHandler$1;-><init>(Lcom/android/internal/atfwd/AtCfunCmdHandler;)V
 
-    .line 81
     .local v0, rebootThread:Ljava/lang/Thread;
     invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
-    .line 82
     new-instance v1, Lcom/android/internal/atfwd/AtCmdResponse;
 
     .end local v1           #ret:Lcom/android/internal/atfwd/AtCmdResponse;

@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 279
     iput-object p1, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread$6;->this$1:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .locals 2
 
     .prologue
-    .line 281
     iget-object v0, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread$6;->this$1:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;
 
     #getter for: Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->mCallback:Lcom/qualcomm/location/vzw_library/IVzwHalGpsCallback;
@@ -53,7 +51,6 @@
 
     invoke-interface {v0, v1}, Lcom/qualcomm/location/vzw_library/IVzwHalGpsCallback;->ReportEngineStatus(I)V
 
-    .line 282
     iget-object v0, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread$6;->this$1:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;
 
     #getter for: Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->mCallbackThread:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$CallbackThread;
@@ -65,6 +62,5 @@
 
     iput-boolean v1, v0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$CallbackThread;->fgContinue:Z
 
-    .line 283
     return-void
 .end method

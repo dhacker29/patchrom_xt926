@@ -48,7 +48,6 @@
 
     const/4 v2, 0x0
 
-    .line 40
     new-instance v0, Lcom/qualcomm/location/vzw_library/imp/VzwHalGpsLocationProviderImp$FixModeDecisionState;
 
     const-string v1, "Dormant"
@@ -81,7 +80,6 @@
 
     sput-object v0, Lcom/qualcomm/location/vzw_library/imp/VzwHalGpsLocationProviderImp$FixModeDecisionState;->MSA:Lcom/qualcomm/location/vzw_library/imp/VzwHalGpsLocationProviderImp$FixModeDecisionState;
 
-    .line 39
     const/4 v0, 0x4
 
     new-array v0, v0, [Lcom/qualcomm/location/vzw_library/imp/VzwHalGpsLocationProviderImp$FixModeDecisionState;
@@ -118,7 +116,6 @@
     .end annotation
 
     .prologue
-    .line 39
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -129,7 +126,6 @@
     .parameter "name"
 
     .prologue
-    .line 39
     const-class v0, Lcom/qualcomm/location/vzw_library/imp/VzwHalGpsLocationProviderImp$FixModeDecisionState;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -145,7 +141,6 @@
     .locals 1
 
     .prologue
-    .line 39
     sget-object v0, Lcom/qualcomm/location/vzw_library/imp/VzwHalGpsLocationProviderImp$FixModeDecisionState;->$VALUES:[Lcom/qualcomm/location/vzw_library/imp/VzwHalGpsLocationProviderImp$FixModeDecisionState;
 
     invoke-virtual {v0}, [Lcom/qualcomm/location/vzw_library/imp/VzwHalGpsLocationProviderImp$FixModeDecisionState;->clone()Ljava/lang/Object;

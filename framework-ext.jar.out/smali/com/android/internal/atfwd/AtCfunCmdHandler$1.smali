@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 70
     iput-object p1, p0, Lcom/android/internal/atfwd/AtCfunCmdHandler$1;->this$0:Lcom/android/internal/atfwd/AtCfunCmdHandler;
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
@@ -38,7 +37,6 @@
     .locals 4
 
     .prologue
-    .line 73
     :try_start_0
     const-string v2, "power"
 
@@ -50,7 +48,6 @@
 
     move-result-object v1
 
-    .line 74
     .local v1, pm:Landroid/os/IPowerManager;
     const/4 v2, 0x0
 
@@ -58,16 +55,13 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 79
     .end local v1           #pm:Landroid/os/IPowerManager;
     :goto_0
     return-void
 
-    .line 75
     :catch_0
     move-exception v0
 
-    .line 76
     .local v0, e:Landroid/os/RemoteException;
     const-string v2, "AtCfunCmdHandler"
 

@@ -56,7 +56,6 @@
 
     const/4 v3, 0x0
 
-    .line 31
     new-instance v0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineState;
 
     const-string v1, "UNKNOWN"
@@ -169,7 +168,6 @@
     .end annotation
 
     .prologue
-    .line 31
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -180,7 +178,6 @@
     .parameter "name"
 
     .prologue
-    .line 31
     const-class v0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineState;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -196,7 +193,6 @@
     .locals 1
 
     .prologue
-    .line 31
     sget-object v0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineState;->$VALUES:[Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineState;
 
     invoke-virtual {v0}, [Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineState;->clone()Ljava/lang/Object;

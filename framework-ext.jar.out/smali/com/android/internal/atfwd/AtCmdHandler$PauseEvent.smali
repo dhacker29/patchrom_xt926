@@ -24,13 +24,10 @@
     .parameter "time"
 
     .prologue
-    .line 75
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 76
     iput-wide p1, p0, Lcom/android/internal/atfwd/AtCmdHandler$PauseEvent;->mTime:J
 
-    .line 77
     return-void
 .end method
 
@@ -40,7 +37,6 @@
     .locals 2
 
     .prologue
-    .line 79
     iget-wide v0, p0, Lcom/android/internal/atfwd/AtCmdHandler$PauseEvent;->mTime:J
 
     return-wide v0

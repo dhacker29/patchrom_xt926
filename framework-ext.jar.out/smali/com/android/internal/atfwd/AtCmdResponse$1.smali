@@ -32,7 +32,6 @@
     .locals 0
 
     .prologue
-    .line 84
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,18 +44,15 @@
     .parameter "source"
 
     .prologue
-    .line 90
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
-    .line 91
     .local v1, result:I
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 92
     .local v0, response:Ljava/lang/String;
     new-instance v2, Lcom/android/internal/atfwd/AtCmdResponse;
 
@@ -70,7 +66,6 @@
     .parameter "x0"
 
     .prologue
-    .line 84
     invoke-virtual {p0, p1}, Lcom/android/internal/atfwd/AtCmdResponse$1;->createFromParcel(Landroid/os/Parcel;)Lcom/android/internal/atfwd/AtCmdResponse;
 
     move-result-object v0
@@ -83,7 +78,6 @@
     .parameter "size"
 
     .prologue
-    .line 96
     new-array v0, p1, [Lcom/android/internal/atfwd/AtCmdResponse;
 
     return-object v0
@@ -94,7 +88,6 @@
     .parameter "x0"
 
     .prologue
-    .line 84
     invoke-virtual {p0, p1}, Lcom/android/internal/atfwd/AtCmdResponse$1;->newArray(I)[Lcom/android/internal/atfwd/AtCmdResponse;
 
     move-result-object v0

@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 312
     iput-object p1, p0, Lcom/android/internal/atfwd/AtCkpdCmdHandler$2;->this$0:Lcom/android/internal/atfwd/AtCkpdCmdHandler;
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
@@ -40,10 +39,8 @@
     .prologue
     const/4 v8, 0x0
 
-    .line 314
     const/4 v9, 0x0
 
-    .line 316
     .local v9, cmd:Lcom/android/internal/atfwd/AtCkpdCmdHandler$ParsedCkpdCmd;
     :cond_0
     const-string v4, "AtCkpdCmdHandler"
@@ -52,7 +49,6 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 317
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/atfwd/AtCkpdCmdHandler$2;->this$0:Lcom/android/internal/atfwd/AtCkpdCmdHandler;
@@ -64,7 +60,6 @@
 
     monitor-enter v5
 
-    .line 318
     :goto_0
     :try_start_0
     move-object/from16 v0, p0
@@ -84,7 +79,6 @@
 
     if-eqz v4, :cond_1
 
-    .line 320
     :try_start_1
     move-object/from16 v0, p0
 
@@ -102,11 +96,9 @@
 
     goto :goto_0
 
-    .line 321
     :catch_0
     move-exception v10
 
-    .line 322
     .local v10, e:Ljava/lang/InterruptedException;
     :try_start_2
     const-string v4, "AtCkpdCmdHandler"
@@ -117,7 +109,6 @@
 
     goto :goto_0
 
-    .line 327
     .end local v10           #e:Ljava/lang/InterruptedException;
     :catchall_0
     move-exception v4
@@ -128,7 +119,6 @@
 
     throw v4
 
-    .line 326
     :cond_1
     :try_start_3
     move-object/from16 v0, p0
@@ -150,15 +140,12 @@
 
     move-object v9, v0
 
-    .line 327
     monitor-exit v5
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 328
     if-eqz v9, :cond_0
 
-    .line 329
     const-string v4, "AtCkpdCmdHandler"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -181,7 +168,6 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 331
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/atfwd/AtCkpdCmdHandler$2;->this$0:Lcom/android/internal/atfwd/AtCkpdCmdHandler;
@@ -196,7 +182,6 @@
 
     check-cast v14, Landroid/os/PowerManager;
 
-    .line 333
     .local v14, pm:Landroid/os/PowerManager;
     const v4, 0x3000001a
 
@@ -206,7 +191,6 @@
 
     move-result-object v15
 
-    .line 336
     .local v15, wl:Landroid/os/PowerManager$WakeLock;
     invoke-virtual {v9}, Lcom/android/internal/atfwd/AtCkpdCmdHandler$ParsedCkpdCmd;->getEvents()Ljava/util/Vector;
 
@@ -228,13 +212,11 @@
 
     move-result-object v12
 
-    .line 337
     .local v12, evt:Ljava/lang/Object;
     instance-of v4, v12, Lcom/android/internal/atfwd/AtCmdHandler$PauseEvent;
 
     if-eqz v4, :cond_2
 
-    .line 339
     :try_start_4
     check-cast v12, Lcom/android/internal/atfwd/AtCmdHandler$PauseEvent;
 
@@ -249,11 +231,9 @@
 
     goto :goto_1
 
-    .line 340
     :catch_1
     move-exception v10
 
-    .line 341
     .restart local v10       #e:Ljava/lang/InterruptedException;
     const-string v4, "AtCkpdCmdHandler"
 
@@ -263,7 +243,6 @@
 
     goto :goto_1
 
-    .line 345
     .end local v10           #e:Ljava/lang/InterruptedException;
     .restart local v12       #evt:Ljava/lang/Object;
     :cond_2
@@ -271,7 +250,6 @@
 
     if-nez v4, :cond_3
 
-    .line 346
     const-string v4, "AtCkpdCmdHandler"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -304,7 +282,6 @@
 
     goto :goto_1
 
-    .line 351
     :cond_3
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
@@ -313,10 +290,8 @@
     .local v2, dntime:J
     move-object v11, v12
 
-    .line 352
     check-cast v11, Landroid/view/KeyEvent;
 
-    .line 353
     .local v11, ev:Landroid/view/KeyEvent;
     new-instance v1, Landroid/view/KeyEvent;
 
@@ -332,12 +307,10 @@
 
     invoke-direct/range {v1 .. v8}, Landroid/view/KeyEvent;-><init>(JJIII)V
 
-    .line 358
     .end local v11           #ev:Landroid/view/KeyEvent;
     .local v1, ev:Landroid/view/KeyEvent;
     invoke-virtual {v15}, Landroid/os/PowerManager$WakeLock;->acquire()V
 
-    .line 359
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/atfwd/AtCkpdCmdHandler$2;->this$0:Lcom/android/internal/atfwd/AtCkpdCmdHandler;
@@ -345,7 +318,6 @@
     #calls: Lcom/android/internal/atfwd/AtCkpdCmdHandler;->injectKeyEvent(Landroid/view/KeyEvent;Z)V
     invoke-static {v4, v1, v8}, Lcom/android/internal/atfwd/AtCkpdCmdHandler;->access$200(Lcom/android/internal/atfwd/AtCkpdCmdHandler;Landroid/view/KeyEvent;Z)V
 
-    .line 360
     invoke-virtual {v15}, Landroid/os/PowerManager$WakeLock;->release()V
 
     goto :goto_1

@@ -32,13 +32,10 @@
     .parameter "state"
 
     .prologue
-    .line 146
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 147
     iput-object p1, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$SimArgs;->simState:Lcom/android/internal/telephony/IccCard$State;
 
-    .line 148
     return-void
 .end method
 
@@ -47,7 +44,6 @@
     .parameter "intent"
 
     .prologue
-    .line 152
     const-string v4, "android.intent.action.SIM_STATE_CHANGED"
 
     invoke-virtual {p0}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -60,7 +56,6 @@
 
     if-nez v4, :cond_0
 
-    .line 153
     new-instance v4, Ljava/lang/IllegalArgumentException;
 
     const-string v5, "only handles intent ACTION_SIM_STATE_CHANGED"
@@ -69,7 +64,6 @@
 
     throw v4
 
-    .line 155
     :cond_0
     const-string v4, "subscription"
 
@@ -81,7 +75,6 @@
 
     sput v4, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$SimArgs;->sSubscription:I
 
-    .line 156
     const-string v4, "KeyguardUpdateMonitor"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -106,14 +99,12 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 157
     const-string v4, "ss"
 
     invoke-virtual {p0, v4}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 158
     .local v3, stateExtra:Ljava/lang/String;
     const-string v4, "ABSENT"
 
@@ -123,14 +114,12 @@
 
     if-eqz v4, :cond_2
 
-    .line 159
     const-string v4, "reason"
 
     invoke-virtual {p0, v4}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 162
     .local v0, absentReason:Ljava/lang/String;
     const-string v4, "PERM_DISABLED"
 
@@ -140,10 +129,8 @@
 
     if-eqz v4, :cond_1
 
-    .line 164
     sget-object v2, Lcom/android/internal/telephony/IccCard$State;->PERM_DISABLED:Lcom/android/internal/telephony/IccCard$State;
 
-    .line 187
     .end local v0           #absentReason:Ljava/lang/String;
     .local v2, state:Lcom/android/internal/telephony/IccCard$State;
     :goto_0
@@ -153,7 +140,6 @@
 
     return-object v4
 
-    .line 166
     .end local v2           #state:Lcom/android/internal/telephony/IccCard$State;
     .restart local v0       #absentReason:Ljava/lang/String;
     :cond_1
@@ -162,7 +148,6 @@
     .restart local v2       #state:Lcom/android/internal/telephony/IccCard$State;
     goto :goto_0
 
-    .line 168
     .end local v0           #absentReason:Ljava/lang/String;
     .end local v2           #state:Lcom/android/internal/telephony/IccCard$State;
     :cond_2
@@ -174,13 +159,11 @@
 
     if-eqz v4, :cond_3
 
-    .line 169
     sget-object v2, Lcom/android/internal/telephony/IccCard$State;->READY:Lcom/android/internal/telephony/IccCard$State;
 
     .restart local v2       #state:Lcom/android/internal/telephony/IccCard$State;
     goto :goto_0
 
-    .line 170
     .end local v2           #state:Lcom/android/internal/telephony/IccCard$State;
     :cond_3
     const-string v4, "LOCKED"
@@ -191,14 +174,12 @@
 
     if-eqz v4, :cond_7
 
-    .line 171
     const-string v4, "reason"
 
     invoke-virtual {p0, v4}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 173
     .local v1, lockedReason:Ljava/lang/String;
     const-string v4, "PIN"
 
@@ -208,13 +189,11 @@
 
     if-eqz v4, :cond_4
 
-    .line 174
     sget-object v2, Lcom/android/internal/telephony/IccCard$State;->PIN_REQUIRED:Lcom/android/internal/telephony/IccCard$State;
 
     .restart local v2       #state:Lcom/android/internal/telephony/IccCard$State;
     goto :goto_0
 
-    .line 175
     .end local v2           #state:Lcom/android/internal/telephony/IccCard$State;
     :cond_4
     const-string v4, "PUK"
@@ -225,13 +204,11 @@
 
     if-eqz v4, :cond_5
 
-    .line 176
     sget-object v2, Lcom/android/internal/telephony/IccCard$State;->PUK_REQUIRED:Lcom/android/internal/telephony/IccCard$State;
 
     .restart local v2       #state:Lcom/android/internal/telephony/IccCard$State;
     goto :goto_0
 
-    .line 177
     .end local v2           #state:Lcom/android/internal/telephony/IccCard$State;
     :cond_5
     const-string v4, "PERSO"
@@ -242,13 +219,11 @@
 
     if-eqz v4, :cond_6
 
-    .line 178
     sget-object v2, Lcom/android/internal/telephony/IccCard$State;->PERSO_LOCKED:Lcom/android/internal/telephony/IccCard$State;
 
     .restart local v2       #state:Lcom/android/internal/telephony/IccCard$State;
     goto :goto_0
 
-    .line 180
     .end local v2           #state:Lcom/android/internal/telephony/IccCard$State;
     :cond_6
     sget-object v2, Lcom/android/internal/telephony/IccCard$State;->UNKNOWN:Lcom/android/internal/telephony/IccCard$State;
@@ -256,7 +231,6 @@
     .restart local v2       #state:Lcom/android/internal/telephony/IccCard$State;
     goto :goto_0
 
-    .line 182
     .end local v1           #lockedReason:Ljava/lang/String;
     .end local v2           #state:Lcom/android/internal/telephony/IccCard$State;
     :cond_7
@@ -268,16 +242,16 @@
 
     if-eqz v4, :cond_8
 
-    .line 183
     sget-object v2, Lcom/android/internal/telephony/IccCard$State;->CARD_IO_ERROR:Lcom/android/internal/telephony/IccCard$State;
 
     .restart local v2       #state:Lcom/android/internal/telephony/IccCard$State;
     goto :goto_0
 
-    .line 185
     .end local v2           #state:Lcom/android/internal/telephony/IccCard$State;
     :cond_8
-    sget-object v2, Lcom/android/internal/telephony/IccCard$State;->UNKNOWN:Lcom/android/internal/telephony/IccCard$State;
+    invoke-static {v3}, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$Injector;->getIccCardState(Ljava/lang/String;)Lcom/android/internal/telephony/IccCard$State;
+
+    move-result-object v2
 
     .restart local v2       #state:Lcom/android/internal/telephony/IccCard$State;
     goto :goto_0
@@ -289,7 +263,6 @@
     .locals 1
 
     .prologue
-    .line 191
     iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$SimArgs;->simState:Lcom/android/internal/telephony/IccCard$State;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/IccCard$State;->toString()Ljava/lang/String;

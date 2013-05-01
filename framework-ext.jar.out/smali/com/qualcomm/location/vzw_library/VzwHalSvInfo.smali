@@ -44,10 +44,8 @@
     .locals 1
 
     .prologue
-    .line 17
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 27
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/qualcomm/location/vzw_library/VzwHalSvInfo;->mValidFlagMask:I
@@ -61,7 +59,6 @@
     .locals 1
 
     .prologue
-    .line 44
     const/16 v0, 0x20
 
     return v0
@@ -71,7 +68,6 @@
     .locals 1
 
     .prologue
-    .line 65
     iget v0, p0, Lcom/qualcomm/location/vzw_library/VzwHalSvInfo;->NumSatellitesInView:I
 
     return v0
@@ -81,7 +77,6 @@
     .locals 1
 
     .prologue
-    .line 78
     iget-object v0, p0, Lcom/qualcomm/location/vzw_library/VzwHalSvInfo;->SatellitesInViewAzimuth:[F
 
     return-object v0
@@ -91,7 +86,6 @@
     .locals 1
 
     .prologue
-    .line 86
     iget-object v0, p0, Lcom/qualcomm/location/vzw_library/VzwHalSvInfo;->SatellitesInViewElevation:[F
 
     return-object v0
@@ -101,7 +95,6 @@
     .locals 1
 
     .prologue
-    .line 94
     iget-object v0, p0, Lcom/qualcomm/location/vzw_library/VzwHalSvInfo;->SatellitesInViewPRN:[I
 
     return-object v0
@@ -111,7 +104,6 @@
     .locals 1
 
     .prologue
-    .line 102
     iget-object v0, p0, Lcom/qualcomm/location/vzw_library/VzwHalSvInfo;->SatellitesInViewSignalToNoiseRatio:[F
 
     return-object v0
@@ -121,7 +113,6 @@
     .locals 1
 
     .prologue
-    .line 119
     iget-object v0, p0, Lcom/qualcomm/location/vzw_library/VzwHalSvInfo;->SatellitesWithAlmanac:[I
 
     return-object v0
@@ -131,7 +122,6 @@
     .locals 1
 
     .prologue
-    .line 111
     iget-object v0, p0, Lcom/qualcomm/location/vzw_library/VzwHalSvInfo;->SatellitesWithEphemeris:[I
 
     return-object v0
@@ -141,7 +131,6 @@
     .locals 1
 
     .prologue
-    .line 53
     iget v0, p0, Lcom/qualcomm/location/vzw_library/VzwHalSvInfo;->mValidFlagMask:I
 
     return v0
@@ -152,14 +141,12 @@
     .parameter "numSatellitesInView"
 
     .prologue
-    .line 69
     if-ltz p1, :cond_0
 
     const/16 v0, 0x20
 
     if-le p1, v0, :cond_1
 
-    .line 71
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -169,11 +156,9 @@
 
     throw v0
 
-    .line 74
     :cond_1
     iput p1, p0, Lcom/qualcomm/location/vzw_library/VzwHalSvInfo;->NumSatellitesInView:I
 
-    .line 75
     return-void
 .end method
 
@@ -182,10 +167,8 @@
     .parameter "satellitesInViewAzimuth"
 
     .prologue
-    .line 82
     iput-object p1, p0, Lcom/qualcomm/location/vzw_library/VzwHalSvInfo;->SatellitesInViewAzimuth:[F
 
-    .line 83
     return-void
 .end method
 
@@ -194,10 +177,8 @@
     .parameter "satellitesInViewElevation"
 
     .prologue
-    .line 90
     iput-object p1, p0, Lcom/qualcomm/location/vzw_library/VzwHalSvInfo;->SatellitesInViewElevation:[F
 
-    .line 91
     return-void
 .end method
 
@@ -206,10 +187,8 @@
     .parameter "satellitesInViewPRN"
 
     .prologue
-    .line 98
     iput-object p1, p0, Lcom/qualcomm/location/vzw_library/VzwHalSvInfo;->SatellitesInViewPRN:[I
 
-    .line 99
     return-void
 .end method
 
@@ -218,10 +197,8 @@
     .parameter "satellitesInViewSignalToNoiseRatio"
 
     .prologue
-    .line 107
     iput-object p1, p0, Lcom/qualcomm/location/vzw_library/VzwHalSvInfo;->SatellitesInViewSignalToNoiseRatio:[F
 
-    .line 108
     return-void
 .end method
 
@@ -230,10 +207,8 @@
     .parameter "satellitesWithAlmanac"
 
     .prologue
-    .line 123
     iput-object p1, p0, Lcom/qualcomm/location/vzw_library/VzwHalSvInfo;->SatellitesWithAlmanac:[I
 
-    .line 124
     return-void
 .end method
 
@@ -242,10 +217,8 @@
     .parameter "satellitesWithEphemeris"
 
     .prologue
-    .line 115
     iput-object p1, p0, Lcom/qualcomm/location/vzw_library/VzwHalSvInfo;->SatellitesWithEphemeris:[I
 
-    .line 116
     return-void
 .end method
 
@@ -254,9 +227,7 @@
     .parameter "mask"
 
     .prologue
-    .line 61
     iput p1, p0, Lcom/qualcomm/location/vzw_library/VzwHalSvInfo;->mValidFlagMask:I
 
-    .line 62
     return-void
 .end method

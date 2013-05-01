@@ -69,46 +69,32 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 56
     invoke-direct {p0}, Landroid/hardware/Camera$Face;-><init>()V
 
-    .line 59
     iput v0, p0, Lcom/qualcomm/camera/QCFace;->smileDegree:I
 
-    .line 60
     iput v0, p0, Lcom/qualcomm/camera/QCFace;->smileScore:I
 
-    .line 61
     iput v0, p0, Lcom/qualcomm/camera/QCFace;->blinkDetected:I
 
-    .line 62
     iput v0, p0, Lcom/qualcomm/camera/QCFace;->faceRecognized:I
 
-    .line 63
     iput v0, p0, Lcom/qualcomm/camera/QCFace;->gazeAngle:I
 
-    .line 64
     iput v0, p0, Lcom/qualcomm/camera/QCFace;->updownDir:I
 
-    .line 65
     iput v0, p0, Lcom/qualcomm/camera/QCFace;->leftrightDir:I
 
-    .line 66
     iput v0, p0, Lcom/qualcomm/camera/QCFace;->rollDir:I
 
-    .line 67
     iput v0, p0, Lcom/qualcomm/camera/QCFace;->leyeBlink:I
 
-    .line 68
     iput v0, p0, Lcom/qualcomm/camera/QCFace;->reyeBlink:I
 
-    .line 69
     iput v0, p0, Lcom/qualcomm/camera/QCFace;->leftrightGaze:I
 
-    .line 70
     iput v0, p0, Lcom/qualcomm/camera/QCFace;->topbottomGaze:I
 
-    .line 57
     return-void
 .end method
 
@@ -118,7 +104,6 @@
     .locals 1
 
     .prologue
-    .line 100
     iget v0, p0, Lcom/qualcomm/camera/QCFace;->blinkDetected:I
 
     return v0
@@ -128,18 +113,15 @@
     .locals 4
 
     .prologue
-    .line 218
     const-string v3, "ro.qc.sdk.camera.facialproc"
 
     invoke-static {v3}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 220
     .local v2, propertyVal:Ljava/lang/String;
     const/4 v1, 0x0
 
-    .line 221
     .local v1, methodList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     const-string v3, "true"
 
@@ -149,91 +131,74 @@
 
     if-eqz v3, :cond_0
 
-    .line 223
     new-instance v1, Ljava/util/ArrayList;
 
     .end local v1           #methodList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 224
     .restart local v1       #methodList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     const-string v3, "getSmileDegree"
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 225
     const-string v3, "getSmileScore"
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 226
     const-string v3, "getBlinkDetected"
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 227
     const-string v3, "getFaceRecognized"
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 228
     const-string v3, "getGazeAngle"
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 229
     const-string v3, "getUpDownDirection"
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 230
     const-string v3, "getLeftRightDirection"
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 231
     const-string v3, "getRollDirection"
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 232
     const-string v3, "getLeftRightGazeDegree"
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 233
     const-string v3, "getTopBottomGazeDegree"
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 234
     const-string v3, "getLeftEyeBlinkDegree"
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 235
     const-string v3, "getRightEyeBlinkDegree"
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 236
     const-string v3, "getQCFaceInfo"
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 239
     :cond_0
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 240
     .local v0, capabilitiesBundle:Landroid/os/Bundle;
     const-string v3, "key_active_method_names"
 
     invoke-virtual {v0, v3, v1}, Landroid/os/Bundle;->putStringArrayList(Ljava/lang/String;Ljava/util/ArrayList;)V
 
-    .line 243
     return-object v0
 .end method
 
@@ -241,7 +206,6 @@
     .locals 1
 
     .prologue
-    .line 109
     iget v0, p0, Lcom/qualcomm/camera/QCFace;->faceRecognized:I
 
     return v0
@@ -251,7 +215,6 @@
     .locals 1
 
     .prologue
-    .line 118
     iget v0, p0, Lcom/qualcomm/camera/QCFace;->gazeAngle:I
 
     return v0
@@ -261,7 +224,6 @@
     .locals 1
 
     .prologue
-    .line 154
     iget v0, p0, Lcom/qualcomm/camera/QCFace;->leyeBlink:I
 
     return v0
@@ -271,7 +233,6 @@
     .locals 1
 
     .prologue
-    .line 136
     iget v0, p0, Lcom/qualcomm/camera/QCFace;->leftrightDir:I
 
     return v0
@@ -281,7 +242,6 @@
     .locals 1
 
     .prologue
-    .line 172
     iget v0, p0, Lcom/qualcomm/camera/QCFace;->leftrightGaze:I
 
     return v0
@@ -291,12 +251,10 @@
     .locals 3
 
     .prologue
-    .line 197
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 198
     .local v0, faceInfo:Landroid/os/Bundle;
     const-string v1, "smileValue"
 
@@ -304,77 +262,66 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 200
     const-string v1, "leftEyeClosedValue"
 
     iget v2, p0, Lcom/qualcomm/camera/QCFace;->leyeBlink:I
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 201
     const-string v1, "rightEyeClosedValue"
 
     iget v2, p0, Lcom/qualcomm/camera/QCFace;->reyeBlink:I
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 203
     const-string v1, "facePitchDegree"
 
     iget v2, p0, Lcom/qualcomm/camera/QCFace;->updownDir:I
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 204
     const-string v1, "faceYawDegree"
 
     iget v2, p0, Lcom/qualcomm/camera/QCFace;->leftrightDir:I
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 205
     const-string v1, "faceRollDegree"
 
     iget v2, p0, Lcom/qualcomm/camera/QCFace;->rollDir:I
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 206
     const-string v1, "gazeUpDownDegree"
 
     iget v2, p0, Lcom/qualcomm/camera/QCFace;->topbottomGaze:I
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 207
     const-string v1, "gazeLeftRightDegree"
 
     iget v2, p0, Lcom/qualcomm/camera/QCFace;->leftrightGaze:I
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 209
     const-string v1, "blinkDetected"
 
     iget v2, p0, Lcom/qualcomm/camera/QCFace;->blinkDetected:I
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 210
     const-string v1, "smileScore"
 
     iget v2, p0, Lcom/qualcomm/camera/QCFace;->smileScore:I
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 211
     const-string v1, "faceRecognized"
 
     iget v2, p0, Lcom/qualcomm/camera/QCFace;->faceRecognized:I
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 213
     return-object v0
 .end method
 
@@ -382,7 +329,6 @@
     .locals 1
 
     .prologue
-    .line 163
     iget v0, p0, Lcom/qualcomm/camera/QCFace;->reyeBlink:I
 
     return v0
@@ -392,7 +338,6 @@
     .locals 1
 
     .prologue
-    .line 145
     iget v0, p0, Lcom/qualcomm/camera/QCFace;->rollDir:I
 
     return v0
@@ -402,7 +347,6 @@
     .locals 1
 
     .prologue
-    .line 82
     iget v0, p0, Lcom/qualcomm/camera/QCFace;->smileDegree:I
 
     return v0
@@ -412,7 +356,6 @@
     .locals 1
 
     .prologue
-    .line 91
     iget v0, p0, Lcom/qualcomm/camera/QCFace;->smileScore:I
 
     return v0
@@ -422,7 +365,6 @@
     .locals 1
 
     .prologue
-    .line 181
     iget v0, p0, Lcom/qualcomm/camera/QCFace;->topbottomGaze:I
 
     return v0
@@ -432,7 +374,6 @@
     .locals 1
 
     .prologue
-    .line 127
     iget v0, p0, Lcom/qualcomm/camera/QCFace;->updownDir:I
 
     return v0

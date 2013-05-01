@@ -23,7 +23,6 @@
     .locals 3
 
     .prologue
-    .line 253
     invoke-static {}, Lcom/qualcomm/location/vzw_library/imp/VzwHalGpsLocationProviderImp$FixModeDecisionState;->values()[Lcom/qualcomm/location/vzw_library/imp/VzwHalGpsLocationProviderImp$FixModeDecisionState;
 
     move-result-object v0

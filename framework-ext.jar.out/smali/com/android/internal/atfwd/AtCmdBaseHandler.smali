@@ -16,13 +16,10 @@
     .parameter "c"
 
     .prologue
-    .line 39
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
-    .line 40
     iput-object p1, p0, Lcom/android/internal/atfwd/AtCmdBaseHandler;->mContext:Landroid/content/Context;
 
-    .line 41
     return-void
 .end method
 
@@ -32,7 +29,6 @@
     .locals 1
 
     .prologue
-    .line 44
     iget-object v0, p0, Lcom/android/internal/atfwd/AtCmdBaseHandler;->mContext:Landroid/content/Context;
 
     return-object v0

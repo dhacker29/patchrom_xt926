@@ -42,17 +42,14 @@
     .parameter
 
     .prologue
-    .line 75
     iput-object p1, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->this$0:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator;
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
 
-    .line 83
     sget-object v0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineState;->UNKNOWN:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineState;
 
     iput-object v0, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->mState:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineState;
 
-    .line 86
     new-instance v0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$CallbackThread;
 
     iget-object v1, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->this$0:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator;
@@ -63,12 +60,10 @@
 
     iput-object v0, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->mCallbackThread:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$CallbackThread;
 
-    .line 88
     const-wide v0, 0x3ff3c083126e978dL
 
     iput-wide v0, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->mLat:D
 
-    .line 89
     const-wide v0, 0x4012456d5cfaacdaL
 
     iput-wide v0, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->mLon:D
@@ -82,7 +77,6 @@
     .parameter "x1"
 
     .prologue
-    .line 75
     invoke-direct {p0, p1}, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;-><init>(Lcom/qualcomm/location/vzw_library/imp/EngineSimulator;)V
 
     return-void
@@ -93,7 +87,6 @@
     .parameter "x0"
 
     .prologue
-    .line 75
     iget-object v0, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->mCallback:Lcom/qualcomm/location/vzw_library/IVzwHalGpsCallback;
 
     return-object v0
@@ -104,7 +97,6 @@
     .parameter "x0"
 
     .prologue
-    .line 75
     iget-object v0, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->mCallbackThread:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$CallbackThread;
 
     return-object v0
@@ -115,7 +107,6 @@
     .parameter "x0"
 
     .prologue
-    .line 75
     invoke-direct {p0}, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->getEngineState()Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineState;
 
     move-result-object v0
@@ -127,7 +118,6 @@
     .locals 1
 
     .prologue
-    .line 93
     monitor-enter p0
 
     :try_start_0
@@ -151,7 +141,6 @@
     .locals 2
 
     .prologue
-    .line 98
     monitor-enter p0
 
     :try_start_0
@@ -160,17 +149,14 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 102
     :goto_0
     monitor-exit p0
 
     return-void
 
-    .line 99
     :catch_0
     move-exception v0
 
-    .line 100
     .local v0, e:Ljava/lang/InterruptedException;
     :try_start_1
     invoke-virtual {v0}, Ljava/lang/InterruptedException;->printStackTrace()V
@@ -179,7 +165,6 @@
 
     goto :goto_0
 
-    .line 98
     .end local v0           #e:Ljava/lang/InterruptedException;
     :catchall_0
     move-exception v1
@@ -195,7 +180,6 @@
     .prologue
     const-wide v6, 0x3f50624dd2f1a9fcL
 
-    .line 155
     :try_start_0
     iget-object v3, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->this$0:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator;
 
@@ -208,7 +192,6 @@
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 157
     :try_start_1
     iget-object v3, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->this$0:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator;
 
@@ -223,7 +206,6 @@
 
     invoke-virtual {v3, v5}, Ljava/util/LinkedList;->addLast(Ljava/lang/Object;)V
 
-    .line 162
     iget-object v3, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->this$0:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator;
 
     #getter for: Lcom/qualcomm/location/vzw_library/imp/EngineSimulator;->mCallbackQueue:Ljava/util/LinkedList;
@@ -233,12 +215,10 @@
 
     invoke-virtual {v3}, Ljava/lang/Object;->notify()V
 
-    .line 163
     monitor-exit v4
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 165
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -247,29 +227,24 @@
 
     if-ge v0, v3, :cond_0
 
-    .line 168
     :try_start_2
     monitor-enter p0
     :try_end_2
     .catch Ljava/lang/InterruptedException; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 170
     const-wide/16 v3, 0xc8
 
     :try_start_3
     invoke-virtual {p0, v3, v4}, Ljava/lang/Object;->wait(J)V
 
-    .line 181
     monitor-exit p0
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    .line 165
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 163
     .end local v0           #i:I
     :catchall_0
     move-exception v3
@@ -284,15 +259,12 @@
     :try_end_5
     .catch Ljava/lang/InterruptedException; {:try_start_5 .. :try_end_5} :catch_0
 
-    .line 247
     :catch_0
     move-exception v3
 
-    .line 250
     :goto_1
     return-void
 
-    .line 181
     .restart local v0       #i:I
     :catchall_1
     move-exception v3
@@ -305,76 +277,63 @@
     :try_start_7
     throw v3
 
-    .line 200
     :cond_0
     new-instance v1, Lcom/qualcomm/location/vzw_library/VzwHalLocation;
 
     invoke-direct {v1}, Lcom/qualcomm/location/vzw_library/VzwHalLocation;-><init>()V
 
-    .line 201
     .local v1, location:Lcom/qualcomm/location/vzw_library/VzwHalLocation;
     monitor-enter p0
     :try_end_7
     .catch Ljava/lang/InterruptedException; {:try_start_7 .. :try_end_7} :catch_0
 
-    .line 204
     :try_start_8
     iget-wide v3, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->mLat:D
 
     invoke-virtual {v1, v3, v4}, Lcom/qualcomm/location/vzw_library/VzwHalLocation;->setLatitude(D)V
 
-    .line 205
     iget-wide v3, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->mLon:D
 
     invoke-virtual {v1, v3, v4}, Lcom/qualcomm/location/vzw_library/VzwHalLocation;->setLongitude(D)V
 
-    .line 206
     iget v3, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->mSessionId:I
 
     invoke-virtual {v1, v3}, Lcom/qualcomm/location/vzw_library/VzwHalLocation;->setSessionId(I)V
 
-    .line 207
     iget v3, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->mMode:I
 
     invoke-virtual {v1, v3}, Lcom/qualcomm/location/vzw_library/VzwHalLocation;->setFixMode(I)V
 
-    .line 209
     iget-wide v3, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->mLat:D
 
     add-double/2addr v3, v6
 
     iput-wide v3, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->mLat:D
 
-    .line 210
     iget-wide v3, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->mLon:D
 
     add-double/2addr v3, v6
 
     iput-wide v3, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->mLon:D
 
-    .line 211
     monitor-exit p0
     :try_end_8
     .catchall {:try_start_8 .. :try_end_8} :catchall_3
 
-    .line 214
     :try_start_9
     monitor-enter p0
     :try_end_9
     .catch Ljava/lang/InterruptedException; {:try_start_9 .. :try_end_9} :catch_0
 
-    .line 218
     :try_start_a
     sget-object v3, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineState;->IDLE:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineState;
 
     iput-object v3, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->mState:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineState;
 
-    .line 219
     monitor-exit p0
     :try_end_a
     .catchall {:try_start_a .. :try_end_a} :catchall_4
 
-    .line 223
     :try_start_b
     iget-object v3, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->this$0:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator;
 
@@ -387,13 +346,11 @@
     :try_end_b
     .catch Ljava/lang/InterruptedException; {:try_start_b .. :try_end_b} :catch_0
 
-    .line 225
     :try_start_c
     new-instance v2, Lcom/qualcomm/location/vzw_library/VzwHalLocation;
 
     invoke-direct {v2, v1}, Lcom/qualcomm/location/vzw_library/VzwHalLocation;-><init>(Landroid/location/Location;)V
 
-    .line 226
     .local v2, location_copy:Lcom/qualcomm/location/vzw_library/VzwHalLocation;
     iget-object v3, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->this$0:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator;
 
@@ -408,7 +365,6 @@
 
     invoke-virtual {v3, v5}, Ljava/util/LinkedList;->addLast(Ljava/lang/Object;)V
 
-    .line 231
     iget-object v3, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->this$0:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator;
 
     #getter for: Lcom/qualcomm/location/vzw_library/imp/EngineSimulator;->mCallbackQueue:Ljava/util/LinkedList;
@@ -418,12 +374,10 @@
 
     invoke-virtual {v3}, Ljava/lang/Object;->notify()V
 
-    .line 232
     monitor-exit v4
     :try_end_c
     .catchall {:try_start_c .. :try_end_c} :catchall_5
 
-    .line 237
     :try_start_d
     iget-object v3, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->this$0:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator;
 
@@ -436,7 +390,6 @@
     :try_end_d
     .catch Ljava/lang/InterruptedException; {:try_start_d .. :try_end_d} :catch_0
 
-    .line 239
     :try_start_e
     iget-object v3, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->this$0:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator;
 
@@ -451,7 +404,6 @@
 
     invoke-virtual {v3, v5}, Ljava/util/LinkedList;->addLast(Ljava/lang/Object;)V
 
-    .line 244
     iget-object v3, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->this$0:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator;
 
     #getter for: Lcom/qualcomm/location/vzw_library/imp/EngineSimulator;->mCallbackQueue:Ljava/util/LinkedList;
@@ -461,7 +413,6 @@
 
     invoke-virtual {v3}, Ljava/lang/Object;->notify()V
 
-    .line 245
     monitor-exit v4
 
     goto :goto_1
@@ -478,7 +429,6 @@
     :try_end_f
     .catch Ljava/lang/InterruptedException; {:try_start_f .. :try_end_f} :catch_0
 
-    .line 211
     .end local v2           #location_copy:Lcom/qualcomm/location/vzw_library/VzwHalLocation;
     :catchall_3
     move-exception v3
@@ -493,7 +443,6 @@
     :try_end_11
     .catch Ljava/lang/InterruptedException; {:try_start_11 .. :try_end_11} :catch_0
 
-    .line 219
     :catchall_4
     move-exception v3
 
@@ -507,7 +456,6 @@
     :try_end_13
     .catch Ljava/lang/InterruptedException; {:try_start_13 .. :try_end_13} :catch_0
 
-    .line 232
     :catchall_5
     move-exception v3
 
@@ -526,7 +474,6 @@
     .locals 1
 
     .prologue
-    .line 105
     monitor-enter p0
 
     :try_start_0
@@ -536,12 +483,10 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 106
     monitor-exit p0
 
     return-void
 
-    .line 105
     :catchall_0
     move-exception v0
 
@@ -554,12 +499,10 @@
     .locals 5
 
     .prologue
-    .line 110
     new-instance v0, Lcom/qualcomm/location/vzw_library/VzwHalLocation;
 
     invoke-direct {v0}, Lcom/qualcomm/location/vzw_library/VzwHalLocation;-><init>()V
 
-    .line 114
     .local v0, location:Lcom/qualcomm/location/vzw_library/VzwHalLocation;
     iget-object v2, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->this$0:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator;
 
@@ -570,13 +513,11 @@
 
     monitor-enter v3
 
-    .line 116
     :try_start_0
     new-instance v1, Lcom/qualcomm/location/vzw_library/VzwHalLocation;
 
     invoke-direct {v1, v0}, Lcom/qualcomm/location/vzw_library/VzwHalLocation;-><init>(Landroid/location/Location;)V
 
-    .line 117
     .local v1, location_copy:Lcom/qualcomm/location/vzw_library/VzwHalLocation;
     iget-object v2, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->this$0:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator;
 
@@ -591,12 +532,10 @@
 
     invoke-virtual {v2, v4}, Ljava/util/LinkedList;->addLast(Ljava/lang/Object;)V
 
-    .line 122
     monitor-exit v3
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 123
     iget-object v2, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->this$0:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator;
 
     #getter for: Lcom/qualcomm/location/vzw_library/imp/EngineSimulator;->mCallbackQueue:Ljava/util/LinkedList;
@@ -606,10 +545,8 @@
 
     invoke-virtual {v2}, Ljava/lang/Object;->notify()V
 
-    .line 125
     monitor-enter p0
 
-    .line 127
     :try_start_1
     sget-object v2, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineState;->FINAL_SENT:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineState;
 
@@ -617,7 +554,6 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 129
     const-wide/16 v2, 0xc8
 
     :try_start_2
@@ -626,19 +562,16 @@
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
     .catch Ljava/lang/InterruptedException; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 133
     :goto_0
     :try_start_3
     sget-object v2, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineState;->IDLE:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineState;
 
     iput-object v2, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->mState:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineState;
 
-    .line 134
     monitor-exit p0
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    .line 138
     iget-object v2, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->this$0:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator;
 
     #getter for: Lcom/qualcomm/location/vzw_library/imp/EngineSimulator;->mCallbackQueue:Ljava/util/LinkedList;
@@ -648,7 +581,6 @@
 
     monitor-enter v3
 
-    .line 140
     :try_start_4
     iget-object v2, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->this$0:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator;
 
@@ -663,12 +595,10 @@
 
     invoke-virtual {v2, v4}, Ljava/util/LinkedList;->addLast(Ljava/lang/Object;)V
 
-    .line 145
     monitor-exit v3
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
-    .line 146
     iget-object v2, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->this$0:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator;
 
     #getter for: Lcom/qualcomm/location/vzw_library/imp/EngineSimulator;->mCallbackQueue:Ljava/util/LinkedList;
@@ -678,10 +608,8 @@
 
     invoke-virtual {v2}, Ljava/lang/Object;->notify()V
 
-    .line 148
     return-void
 
-    .line 122
     .end local v1           #location_copy:Lcom/qualcomm/location/vzw_library/VzwHalLocation;
     :catchall_0
     move-exception v2
@@ -693,7 +621,6 @@
 
     throw v2
 
-    .line 134
     .restart local v1       #location_copy:Lcom/qualcomm/location/vzw_library/VzwHalLocation;
     :catchall_1
     move-exception v2
@@ -705,7 +632,6 @@
 
     throw v2
 
-    .line 145
     :catchall_2
     move-exception v2
 
@@ -716,7 +642,6 @@
 
     throw v2
 
-    .line 130
     :catch_0
     move-exception v2
 
@@ -729,7 +654,6 @@
     .locals 1
 
     .prologue
-    .line 296
     monitor-enter p0
 
     :try_start_0
@@ -737,17 +661,14 @@
 
     iput-object v0, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->mState:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineState;
 
-    .line 297
     invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 298
     monitor-exit p0
 
     return-void
 
-    .line 296
     :catchall_0
     move-exception v0
 
@@ -760,7 +681,6 @@
     .locals 1
 
     .prologue
-    .line 301
     monitor-enter p0
 
     :try_start_0
@@ -768,19 +688,16 @@
 
     iput-object v0, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->mState:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineState;
 
-    .line 302
     invoke-virtual {p0}, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->start()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 303
     const/4 v0, 0x1
 
     monitor-exit p0
 
     return v0
 
-    .line 301
     :catchall_0
     move-exception v0
 
@@ -794,7 +711,6 @@
     .parameter "bits"
 
     .prologue
-    .line 315
     monitor-enter p0
 
     monitor-exit p0
@@ -806,20 +722,16 @@
     .locals 4
 
     .prologue
-    .line 253
     const/4 v0, 0x1
 
-    .line 254
     .local v0, fgContinue:Z
     iget-object v1, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->mCallbackThread:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$CallbackThread;
 
     invoke-virtual {v1}, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$CallbackThread;->start()V
 
-    .line 259
     :goto_0
     if-eqz v0, :cond_0
 
-    .line 260
     sget-object v1, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$1;->$SwitchMap$com$qualcomm$location$vzw_library$imp$EngineSimulator$EngineState:[I
 
     invoke-direct {p0}, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->getEngineState()Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineState;
@@ -834,7 +746,6 @@
 
     packed-switch v1, :pswitch_data_0
 
-    .line 277
     iget-object v1, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->this$0:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator;
 
     #getter for: Lcom/qualcomm/location/vzw_library/imp/EngineSimulator;->mCallbackQueue:Ljava/util/LinkedList;
@@ -844,7 +755,6 @@
 
     monitor-enter v2
 
-    .line 279
     :try_start_0
     iget-object v1, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->this$0:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator;
 
@@ -859,7 +769,6 @@
 
     invoke-virtual {v1, v3}, Ljava/util/LinkedList;->addLast(Ljava/lang/Object;)V
 
-    .line 285
     iget-object v1, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->this$0:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator;
 
     #getter for: Lcom/qualcomm/location/vzw_library/imp/EngineSimulator;->mCallbackQueue:Ljava/util/LinkedList;
@@ -869,42 +778,34 @@
 
     invoke-virtual {v1}, Ljava/lang/Object;->notify()V
 
-    .line 286
     monitor-exit v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 287
     const/4 v0, 0x0
 
-    .line 288
     goto :goto_0
 
-    .line 262
     :pswitch_0
     invoke-direct {p0}, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->state_idle()V
 
     goto :goto_0
 
-    .line 265
     :pswitch_1
     invoke-direct {p0}, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->state_recv_req()V
 
     goto :goto_0
 
-    .line 268
     :pswitch_2
     invoke-direct {p0}, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->state_recv()V
 
     goto :goto_0
 
-    .line 271
     :pswitch_3
     invoke-direct {p0}, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->state_recv_stop_req()V
 
     goto :goto_0
 
-    .line 286
     :catchall_0
     move-exception v1
 
@@ -915,11 +816,9 @@
 
     throw v1
 
-    .line 291
     :cond_0
     return-void
 
-    .line 260
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -934,7 +833,6 @@
     .parameter "callback"
 
     .prologue
-    .line 307
     monitor-enter p0
 
     :try_start_0
@@ -942,12 +840,10 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 308
     monitor-exit p0
 
     return-void
 
-    .line 307
     :catchall_0
     move-exception v0
 
@@ -963,7 +859,6 @@
     .parameter "port"
 
     .prologue
-    .line 311
     monitor-enter p0
 
     monitor-exit p0
@@ -977,7 +872,6 @@
     .parameter "sessionId"
 
     .prologue
-    .line 318
     monitor-enter p0
 
     :try_start_0
@@ -987,34 +881,28 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 320
     iput p2, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->mSessionId:I
 
-    .line 322
     sget-object v0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineState;->IDLE:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineState;
 
     iget-object v1, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->mState:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineState;
 
     if-ne v0, v1, :cond_0
 
-    .line 324
     invoke-virtual {p1}, Lcom/qualcomm/location/vzw_library/VzwHalCriteria;->getFixMode()I
 
     move-result v0
 
     iput v0, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->mMode:I
 
-    .line 325
     sget-object v0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineState;->IDLE_START_REQ:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineState;
 
     iput-object v0, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->mState:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineState;
 
-    .line 326
     invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 334
     const/4 v0, 0x1
 
     :goto_0
@@ -1022,13 +910,11 @@
 
     return v0
 
-    .line 332
     :cond_0
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 318
     :catchall_0
     move-exception v0
 
@@ -1041,7 +927,6 @@
     .locals 3
 
     .prologue
-    .line 338
     monitor-enter p0
 
     :try_start_0
@@ -1051,24 +936,20 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 340
     sget-object v0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineState;->RECV:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineState;
 
     iget-object v1, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->mState:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineState;
 
     if-ne v0, v1, :cond_0
 
-    .line 342
     sget-object v0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineState;->RECV_STOP_REQ:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineState;
 
     iput-object v0, p0, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineSimulatorThread;->mState:Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineState;
 
-    .line 343
     invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 350
     :goto_0
     const/4 v0, 0x1
 
@@ -1076,7 +957,6 @@
 
     return v0
 
-    .line 348
     :cond_0
     :try_start_1
     const-string v0, "VzwHalEngineSim"
@@ -1107,7 +987,6 @@
 
     goto :goto_0
 
-    .line 338
     :catchall_0
     move-exception v0
 

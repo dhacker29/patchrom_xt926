@@ -23,7 +23,6 @@
     .locals 3
 
     .prologue
-    .line 260
     invoke-static {}, Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineState;->values()[Lcom/qualcomm/location/vzw_library/imp/EngineSimulator$EngineState;
 
     move-result-object v0

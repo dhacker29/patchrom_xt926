@@ -102,7 +102,6 @@
     .locals 1
 
     .prologue
-    .line 107
     const/4 v0, 0x0
 
     sput-object v0, Lcom/qualcomm/location/vzw_library/IVzwHalGpsLocationProvider;->mImp:Lcom/qualcomm/location/vzw_library/imp/VzwHalGpsLocationProviderImp;
@@ -114,7 +113,6 @@
     .locals 0
 
     .prologue
-    .line 22
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -124,19 +122,16 @@
     .locals 1
 
     .prologue
-    .line 110
     sget-object v0, Lcom/qualcomm/location/vzw_library/IVzwHalGpsLocationProvider;->mImp:Lcom/qualcomm/location/vzw_library/imp/VzwHalGpsLocationProviderImp;
 
     if-nez v0, :cond_0
 
-    .line 112
     new-instance v0, Lcom/qualcomm/location/vzw_library/imp/VzwHalGpsLocationProviderImp;
 
     invoke-direct {v0}, Lcom/qualcomm/location/vzw_library/imp/VzwHalGpsLocationProviderImp;-><init>()V
 
     sput-object v0, Lcom/qualcomm/location/vzw_library/IVzwHalGpsLocationProvider;->mImp:Lcom/qualcomm/location/vzw_library/imp/VzwHalGpsLocationProviderImp;
 
-    .line 114
     :cond_0
     sget-object v0, Lcom/qualcomm/location/vzw_library/IVzwHalGpsLocationProvider;->mImp:Lcom/qualcomm/location/vzw_library/imp/VzwHalGpsLocationProviderImp;
 
