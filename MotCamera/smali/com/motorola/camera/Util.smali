@@ -13,7 +13,7 @@
 
 
 # static fields
-.field private static final ACTION_MOT_CGALLERY:Ljava/lang/String; = "com.motorola.contracts.gallery.Intent.ActionBrowseImage"
+.field private static final ACTION_MOT_CGALLERY:Ljava/lang/String; = "android.intent.action.VIEW"
 
 .field private static final ACTION_REVIEW:Ljava/lang/String; = "com.android.camera.action.REVIEW"
 
@@ -997,7 +997,7 @@
     new-instance v1, Landroid/content/Intent;
 
     .end local v1           #intent:Landroid/content/Intent;
-    const-string v2, "com.motorola.contracts.gallery.Intent.ActionBrowseImage"
+    const-string v2, "android.intent.action.VIEW"
 
     invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
@@ -1016,8 +1016,6 @@
     const-string v2, "com.motorola.motgallery"
 
     const-string v3, "com.motorola.cgallery.BrowseImages"
-
-    invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 502
     invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
