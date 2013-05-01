@@ -405,15 +405,6 @@
 
 
 # virtual methods
-.method public getFreeAdn()I
-    .locals 1
-
-    .prologue
-    iget v0, p0, Lcom/android/internal/telephony/uicc/AdnRecordCache;->freeAdn:I
-
-    return v0
-.end method
-
 .method public getAdnCapacity()I
     .locals 1
     .annotation build Landroid/annotation/MiuiHook;
@@ -421,9 +412,9 @@
     .end annotation
 
     .prologue
-    iget-object v0, p0, Lcom/android/internal/telephony/AdnRecordCache;->mAdnCacheManager:Lcom/android/internal/telephony/AdnCacheManager;
+    iget-object v0, p0, Lcom/android/internal/telephony/uicc/AdnRecordCache;->mAdnCacheManager:Lcom/android/internal/telephony/uicc/AdnCacheManager;
 
-    invoke-virtual {v0}, Lcom/android/internal/telephony/AdnCacheManager;->getAdnCapacity()I
+    invoke-virtual {v0}, Lcom/android/internal/telephony/uicc/AdnCacheManager;->getAdnCapacity()I
 
     move-result v0
 
@@ -437,9 +428,9 @@
     .end annotation
 
     .prologue
-    iget-object v0, p0, Lcom/android/internal/telephony/AdnRecordCache;->mAdnCacheManager:Lcom/android/internal/telephony/AdnCacheManager;
+    iget-object v0, p0, Lcom/android/internal/telephony/uicc/AdnRecordCache;->mAdnCacheManager:Lcom/android/internal/telephony/uicc/AdnCacheManager;
 
-    invoke-virtual {v0}, Lcom/android/internal/telephony/AdnCacheManager;->getFreeAdn()I
+    invoke-virtual {v0}, Lcom/android/internal/telephony/uicc/AdnCacheManager;->getFreeAdn()I
 
     move-result v0
 

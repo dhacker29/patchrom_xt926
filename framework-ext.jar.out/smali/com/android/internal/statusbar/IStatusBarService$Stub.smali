@@ -58,8 +58,6 @@
 
 .field static final TRANSACTION_setImeWindowStatus:I = 0x8
 
-.field static final TRANSACTION_setStatusBarTransparent:I = 0x14
-
 .field static final TRANSACTION_setStatus:I = 0x14
 
 .field static final TRANSACTION_setSystemUiVisibility:I = 0xf
@@ -766,39 +764,6 @@
     const/4 v1, 0x1
 
     goto/16 :goto_0
-
-    :sswitch_14
-    const-string v1, "com.android.internal.statusbar.IStatusBarService"
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v1
-
-    if-eqz v1, :cond_5
-
-    const/4 v2, 0x1
-
-    .restart local v2       #_arg0:Z
-    :goto_6
-    invoke-virtual {p0, v2}, Lcom/android/internal/statusbar/IStatusBarService$Stub;->setStatusBarTransparent(Z)V
-
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    const/4 v1, 0x1
-
-    goto/16 :goto_0
-
-    .end local v2           #_arg0:Z
-    :cond_5
-    const/4 v2, 0x0
-
-    goto :goto_6
-
-    nop
 
     :sswitch_14
     const-string v1, "com.android.internal.statusbar.IStatusBarService"

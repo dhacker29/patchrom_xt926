@@ -2176,24 +2176,14 @@
     .prologue
     invoke-static {p0, p1}, Lcom/android/internal/telephony/SMSDispatcher$Injector;->checkFireWallForSms(Lcom/android/internal/telephony/SMSDispatcher;[[B)Z
 
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    :goto_0
-    return-void
-
-    :cond_0
     const/4 v9, 0x1
 
-    .line 942
     new-instance v5, Lcom/motorola/android/internal/telephony/AppDirectedSms;
 
     iget-object v6, p0, Lcom/android/internal/telephony/SMSDispatcher;->mContext:Landroid/content/Context;
 
     invoke-direct {v5, v6}, Lcom/motorola/android/internal/telephony/AppDirectedSms;-><init>(Landroid/content/Context;)V
 
-    .line 943
     .local v5, sms:Lcom/motorola/android/internal/telephony/AppDirectedSms;
     invoke-virtual {p0}, Lcom/android/internal/telephony/SMSDispatcher;->getFormat()Ljava/lang/String;
 
@@ -2203,7 +2193,6 @@
 
     move-result-object v1
 
-    .line 944
     .local v1, appPrefix:Ljava/lang/String;
     const-string v6, "SMSDispatcher"
 
@@ -2227,15 +2216,12 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 945
     if-eqz v1, :cond_1
 
-    .line 946
     invoke-virtual {v5, v1}, Lcom/motorola/android/internal/telephony/AppDirectedSms;->getValidatedPackage(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 947
     .local v4, packageName:Ljava/lang/String;
     const-string v6, "SMSDispatcher"
 
@@ -2259,13 +2245,10 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 949
     if-eqz v4, :cond_0
 
-    .line 950
     invoke-virtual {v5, v4}, Lcom/motorola/android/internal/telephony/AppDirectedSms;->dispatchAppDirectedSms(Ljava/lang/String;)V
 
-    .line 951
     const-string v6, "SMSDispatcher"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -2288,18 +2271,15 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 957
     :goto_0
     const/4 v6, 0x0
 
     invoke-virtual {p0, v9, v9, v6}, Lcom/android/internal/telephony/SMSDispatcher;->acknowledgeLastIncomingSms(ZILandroid/os/Message;)V
 
-    .line 979
     .end local v4           #packageName:Ljava/lang/String;
     :goto_1
     return-void
 
-    .line 954
     .restart local v4       #packageName:Ljava/lang/String;
     :cond_0
     const-string v6, "SMSDispatcher"
@@ -2310,7 +2290,6 @@
 
     goto :goto_0
 
-    .line 961
     .end local v4           #packageName:Ljava/lang/String;
     :cond_1
     new-instance v3, Landroid/content/Intent;
@@ -2319,7 +2298,6 @@
 
     invoke-direct {v3, v6}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 963
     .local v3, intent:Landroid/content/Intent;
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
@@ -2329,7 +2307,6 @@
 
     move-result v0
 
-    .line 964
     .local v0, activePhone:I
     invoke-virtual {p0}, Lcom/android/internal/telephony/SMSDispatcher;->getFormat()Ljava/lang/String;
 
@@ -2406,14 +2383,6 @@
     .prologue
     invoke-static {p0, p1}, Lcom/android/internal/telephony/SMSDispatcher$Injector;->checkFireWallForSms(Lcom/android/internal/telephony/SMSDispatcher;[[B)Z
 
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    :goto_0
-    return-void
-
-    :cond_0
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -2534,7 +2503,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_0
+    return-void
 .end method
 
 .method protected abstract getFormat()Ljava/lang/String;
