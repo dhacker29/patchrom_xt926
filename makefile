@@ -29,8 +29,8 @@ local-phone-apps := ApplicationsProvider BlurUpdater_VZW CertInstaller Cmas \
     MediaProvider MotCamera MotoDockHelperService MotorolaSettingsProvider MotionTrigger \
     OmaDrmService OneTimeInitializer QualcommSettings Setup SmartActions SmartActionFW \
     SmartActionMFW SmartCarDock SmartDock UserDictionaryProvider VisualizationWallpapers VoiceSearch \
-	appdirectedsmspermission AudioEffects VZWAPNLib vzwapnpermission VZWAPNService \
-	BackupRestoreConfirmation
+    appdirectedsmspermission AudioEffects VZWAPNLib vzwapnpermission VZWAPNService \
+    BackupRestoreConfirmation
 
 
 # To include the local targets before and after zip the final ZIP file, 

@@ -1,4 +1,3 @@
-Segmentation fault
 system 0 0 755
 system/app 0 0 755
 system/app/AcousticWarning.apk 0 0 644

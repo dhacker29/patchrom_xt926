@@ -65,16 +65,9 @@ system/bin/umount|system/bin/toolbox
 system/bin/uptime|system/bin/toolbox
 system/bin/vmstat|system/bin/toolbox
 system/bin/watchprops|system/bin/toolbox
-system/bin/wiperiface|system/bin/wiperiface_v02
 system/bin/wipe|system/bin/toolbox
-system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini|system/etc/firmware/wlan/prima/inis/WCNSS_qcom_cfg.ini
-system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin|persist/WCNSS_qcom_wlan_nv.bin
 system/fonts/DroidSans-Bold.ttf|system/fonts/Roboto-Bold.ttf
 system/fonts/DroidSans.ttf|system/fonts/Roboto-Regular.ttf
-system/lib/libwiperjni.so|system/lib/libwiperjni_v02.so
-system/lib/libxt_native.so|system/lib/libxt_v02.so
-system/lib/modules/wlan.ko|system/lib/modules/prima/prima_wlan.ko
-system/vendor/firmware|firmware/image
 system/xbin/acpid|system/xbin/busybox
 system/xbin/addgroup|system/xbin/busybox
 system/xbin/adduser|system/xbin/busybox
