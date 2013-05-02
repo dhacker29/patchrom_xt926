@@ -7,8 +7,7 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/android/internal/telephony/cdma/CdmaConnection$1;,
-        Lcom/android/internal/telephony/cdma/CdmaConnection$MyHandler;,
-        Lcom/android/internal/telephony/cdma/CdmaConnection$Injector;
+        Lcom/android/internal/telephony/cdma/CdmaConnection$MyHandler;
     }
 .end annotation
 
@@ -1150,9 +1149,6 @@
 .method private static isPause(C)Z
     .locals 1
     .parameter "c"
-    .annotation build Landroid/annotation/MiuiHook;
-        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_CODE:Landroid/annotation/MiuiHook$MiuiHookType;
-    .end annotation
 
     .prologue
     .line 926
@@ -1359,18 +1355,22 @@
     :goto_0
     move v1, v2
 
+    .line 741
     :cond_0
     return v1
 
+    .line 725
     :cond_1
     const/16 v3, 0x2c
 
     if-ne p1, v3, :cond_2
 
+    .line 726
     sget-object v1, Lcom/android/internal/telephony/Connection$PostDialState;->PAUSE:Lcom/android/internal/telephony/Connection$PostDialState;
 
-    invoke-static {p0, v1}, Lcom/android/internal/telephony/cdma/CdmaConnection$Injector;->setPostDialState(Lcom/android/internal/telephony/cdma/CdmaConnection;Lcom/android/internal/telephony/Connection$PostDialState;)V
+    invoke-direct {p0, v1}, Lcom/android/internal/telephony/cdma/CdmaConnection;->setPostDialState(Lcom/android/internal/telephony/Connection$PostDialState;)V
 
+    .line 731
     iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaConnection;->h:Landroid/os/Handler;
 
     iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaConnection;->h:Landroid/os/Handler;
@@ -2202,9 +2202,6 @@
 
 .method public getRemainingPostDialString()Ljava/lang/String;
     .locals 6
-    .annotation build Landroid/annotation/MiuiHook;
-        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_CODE:Landroid/annotation/MiuiHook$MiuiHookType;
-    .end annotation
 
     .prologue
     const/4 v5, 0x0
@@ -2255,19 +2252,18 @@
 
     move-result-object v1
 
+    .line 753
     .local v1, subStr:Ljava/lang/String;
-    invoke-static {v1}, Lcom/android/internal/telephony/cdma/CdmaConnection$Injector;->nullifyString(Ljava/lang/String;)Ljava/lang/String;
+    if-eqz v1, :cond_1
 
-    move-result-object v3
-
-    if-eqz v3, :cond_1
-
+    .line 754
     const/16 v3, 0x3b
 
     invoke-virtual {v1, v3}, Ljava/lang/String;->indexOf(I)I
 
     move-result v2
 
+    .line 755
     .local v2, wIndex:I
     const/16 v3, 0x2c
 

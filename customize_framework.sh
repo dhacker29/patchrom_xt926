@@ -16,6 +16,7 @@ if [ $2 = "out/framework" ];then
 	cp -r "framework-ext.jar.out" "out/framework-ext.jar.out" 
 	cp -r "out/framework2/smali/miui" "out/framework-ext.jar.out/smali"
 	cp -r "out/framework2/smali/com/miui" "out/framework-ext.jar.out/smali/com"
+	rm -rf "out/framework-ext.jar.out/smali/miui/telephony"
 
 	for file in `find "$1/smali/com/" -name "*.smali"`
 	do

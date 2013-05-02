@@ -217,6 +217,7 @@
 
     throw v0
 
+    .line 521
     :cond_0
     return-void
 .end method
@@ -225,10 +226,12 @@
     .locals 1
 
     .prologue
+    .line 230
     iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->mThread:Landroid/os/HandlerThread;
 
     invoke-virtual {v0}, Landroid/os/HandlerThread;->quit()Z
 
+    .line 233
     return-void
 .end method
 
@@ -236,24 +239,29 @@
     .locals 1
 
     .prologue
+    .line 561
     iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->adnCache:Lcom/android/internal/telephony/uicc/AdnRecordCache;
 
     if-eqz v0, :cond_0
 
+    .line 562
     iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->adnCache:Lcom/android/internal/telephony/uicc/AdnRecordCache;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/uicc/AdnRecordCache;->getAdnCapacity()I
 
     move-result v0
 
+    .line 565
     :goto_0
     return v0
 
+    .line 564
     :cond_0
     const-string v0, "Failure while trying to update by search due to uninitialised adncache"
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->logd(Ljava/lang/String;)V
 
+    .line 565
     const/4 v0, 0x0
 
     goto :goto_0
@@ -273,6 +281,7 @@
     .end annotation
 
     .prologue
+    .line 428
     iget-object v2, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v2}, Lcom/android/internal/telephony/PhoneBase;->getContext()Landroid/content/Context;
@@ -560,24 +569,29 @@
     .locals 1
 
     .prologue
+    .line 550
     iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->adnCache:Lcom/android/internal/telephony/uicc/AdnRecordCache;
 
     if-eqz v0, :cond_0
 
+    .line 551
     iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->adnCache:Lcom/android/internal/telephony/uicc/AdnRecordCache;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/uicc/AdnRecordCache;->getFreeAdn()I
 
     move-result v0
 
+    .line 554
     :goto_0
     return v0
 
+    .line 553
     :cond_0
     const-string v0, "Failure while trying to update by search due to uninitialised adncache"
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->logd(Ljava/lang/String;)V
 
+    .line 554
     const/4 v0, 0x0
 
     goto :goto_0
@@ -596,17 +610,21 @@
     .end annotation
 
     .prologue
+    .line 487
     const-string v2, "getSdnRecordsInEF"
 
     invoke-virtual {p0, v2}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->logd(Ljava/lang/String;)V
 
+    .line 488
     iget-object v3, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->mSdnReadLock:Ljava/lang/Object;
 
     monitor-enter v3
 
+    .line 489
     :try_start_0
     invoke-virtual {p0}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->checkThread()V
 
+    .line 490
     iget-object v2, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->mBaseHandler:Landroid/os/Handler;
 
     const/4 v4, 0x5
@@ -615,11 +633,13 @@
 
     move-result-object v1
 
+    .line 492
     .local v1, response:Landroid/os/Message;
     iget-object v2, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->adnCache:Lcom/android/internal/telephony/uicc/AdnRecordCache;
 
     if-eqz v2, :cond_0
 
+    .line 493
     iget-object v2, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->adnCache:Lcom/android/internal/telephony/uicc/AdnRecordCache;
 
     const/16 v4, 0x6f49
@@ -636,6 +656,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 496
     :try_start_1
     iget-object v2, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->mSdnReadLock:Ljava/lang/Object;
 
@@ -644,19 +665,23 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
 
+    .line 504
     :goto_0
     :try_start_2
     monitor-exit v3
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
+    .line 505
     iget-object v2, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->mSdnRecords:Ljava/util/List;
 
     return-object v2
 
+    .line 497
     :catch_0
     move-exception v0
 
+    .line 498
     .local v0, e:Ljava/lang/InterruptedException;
     :try_start_3
     const-string v2, "interrupted while trying to load sdn from the SIM"
@@ -665,6 +690,7 @@
 
     goto :goto_0
 
+    .line 504
     .end local v0           #e:Ljava/lang/InterruptedException;
     .end local v1           #response:Landroid/os/Message;
     :catchall_0
@@ -676,6 +702,7 @@
 
     throw v2
 
+    .line 501
     .restart local v1       #response:Landroid/os/Message;
     :cond_0
     :try_start_4
@@ -698,10 +725,12 @@
     .locals 1
 
     .prologue
+    .line 245
     const-string v0, "simphonebook"
 
     invoke-static {v0, p0}, Landroid/os/ServiceManager;->addService(Ljava/lang/String;Landroid/os/IBinder;)V
 
+    .line 246
     return-void
 .end method
 
@@ -714,6 +743,7 @@
     .parameter "pin2"
 
     .prologue
+    .line 378
     iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/PhoneBase;->getContext()Landroid/content/Context;
