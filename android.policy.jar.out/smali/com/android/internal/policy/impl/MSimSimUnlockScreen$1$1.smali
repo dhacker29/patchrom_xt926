@@ -165,7 +165,7 @@
 
     move-result v8
 
-    invoke-virtual {v7, v8}, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->reportSimUnlocked(I)V
+    invoke-virtual {v8}, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->reportSimUnlocked()V
 
     .line 181
     iget-object v7, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$1$1;->this$1:Lcom/android/internal/policy/impl/MSimSimUnlockScreen$1;

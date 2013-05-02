@@ -1107,15 +1107,13 @@
 
     move-result v1
 
-    .line 911
     .local v1, disabledByAdmin:Z
     iget-object v5, p0, Lcom/android/internal/policy/impl/LockScreen;->mUpdateMonitor:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
-    invoke-virtual {v5, p1}, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->isSimLocked(I)Z
+    invoke-virtual {p0}, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->isSimLocked()Z
 
     move-result v2
 
-    .line 912
     .local v2, disabledBySimState:Z
     iget-object v5, p0, Lcom/android/internal/policy/impl/LockScreen;->mUnlockWidgetMethods:Lcom/android/internal/policy/impl/LockScreen$UnlockWidgetCommonMethods;
 
