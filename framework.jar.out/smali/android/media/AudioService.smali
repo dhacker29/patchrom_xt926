@@ -819,12 +819,6 @@
 
     sput v0, Landroid/media/AudioService;->SOUND_EFFECT_VOLUME_DB:I
 
-    new-instance v0, Lmiui/view/VolumePanel;
-
-    invoke-direct {v0, p1, p0}, Lmiui/view/VolumePanel;-><init>(Landroid/content/Context;Landroid/media/AudioService;)V
-
-    iput-object v0, p0, Landroid/media/AudioService;->mVolumePanel:Lmiui/view/VolumePanel;
-
     iput v11, p0, Landroid/media/AudioService;->mMode:I
 
     iput v11, p0, Landroid/media/AudioService;->mState:I

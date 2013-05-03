@@ -24,15 +24,12 @@
     .parameter
 
     .prologue
-    .line 3050
     iput-object p1, p0, Landroid/media/AudioService$AudioSystemThread;->this$0:Landroid/media/AudioService;
 
-    .line 3051
     const-string v0, "AudioService"
 
     invoke-direct {p0, v0}, Ljava/lang/Thread;-><init>(Ljava/lang/String;)V
 
-    .line 3052
     return-void
 .end method
 
@@ -42,19 +39,16 @@
     .locals 5
 
     .prologue
-    .line 3057
     invoke-static {}, Landroid/os/Looper;->prepare()V
 
-    .line 3059
     iget-object v1, p0, Landroid/media/AudioService$AudioSystemThread;->this$0:Landroid/media/AudioService;
 
     monitor-enter v1
 
-    .line 3060
     :try_start_0
     iget-object v0, p0, Landroid/media/AudioService$AudioSystemThread;->this$0:Landroid/media/AudioService;
 
-    new-instance v2, Landroid/view/VolumePanel;
+    new-instance v2, Lmiui/view/VolumePanel;
 
     iget-object v3, p0, Landroid/media/AudioService$AudioSystemThread;->this$0:Landroid/media/AudioService;
 
@@ -65,12 +59,11 @@
 
     iget-object v4, p0, Landroid/media/AudioService$AudioSystemThread;->this$0:Landroid/media/AudioService;
 
-    invoke-direct {v2, v3, v4}, Landroid/view/VolumePanel;-><init>(Landroid/content/Context;Landroid/media/AudioService;)V
+    invoke-direct {v2, v3, v4}, Lmiui/view/VolumePanel;-><init>(Landroid/content/Context;Landroid/media/AudioService;)V
 
-    #setter for: Landroid/media/AudioService;->mVolumePanel:Landroid/view/VolumePanel;
+    #setter for: Landroid/media/AudioService;->mVolumePanel:Lmiui/view/VolumePanel;
     invoke-static {v0, v2}, Landroid/media/AudioService;->access$4302(Landroid/media/AudioService;Landroid/view/VolumePanel;)Landroid/view/VolumePanel;
 
-    .line 3061
     iget-object v0, p0, Landroid/media/AudioService$AudioSystemThread;->this$0:Landroid/media/AudioService;
 
     new-instance v2, Landroid/media/AudioService$AudioHandler;
@@ -84,23 +77,18 @@
     #setter for: Landroid/media/AudioService;->mAudioHandler:Landroid/media/AudioService$AudioHandler;
     invoke-static {v0, v2}, Landroid/media/AudioService;->access$102(Landroid/media/AudioService;Landroid/media/AudioService$AudioHandler;)Landroid/media/AudioService$AudioHandler;
 
-    .line 3064
     iget-object v0, p0, Landroid/media/AudioService$AudioSystemThread;->this$0:Landroid/media/AudioService;
 
     invoke-virtual {v0}, Ljava/lang/Object;->notify()V
 
-    .line 3065
     monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 3068
     invoke-static {}, Landroid/os/Looper;->loop()V
 
-    .line 3069
     return-void
 
-    .line 3065
     :catchall_0
     move-exception v0
 
